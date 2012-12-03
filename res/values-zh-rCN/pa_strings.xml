@@ -390,6 +390,55 @@
     <string name="auto_brightness_menu_edit_lux">Ambient brightness range</string>
     <string name="auto_brightness_menu_split">Split</string>
     <string name="auto_brightness_menu_remove">移除</string>
+    
+    <string name="lock_screen_title">锁屏界面</string>
+    <string name="lockscreen_target_info">把滑块拉到指定的位置以选择快捷方式</string>
+    <string name="lockscreen_target_title">锁屏快捷方式</string>
+    <string name="lockscreen_target_summary">查看或改变锁屏界面上的快捷方式</string>
+    <string name="lockscreen_target_reset">锁屏快捷方式已还原为默认值</string>
+    <string name="lockscreen_target_save">锁屏快捷方式已保存</string>
+    <string name="lockscreen_target_reset_title">重置</string>
+    <string name="lockscreen_target_reset_message">删除所有用户设定的快捷方式并还原为默认值?</string>
+    <string name="lockscreen_target_empty">空</string>
+    <string name="lockscreen_target_edit_title">编辑快捷方式与图标</string>
+    <string name="lockscreen_target_edit_msg">选定或改变与快捷方式所关联的程序与图标</string>
+    <string name="lockscreen_vibrate_enabled_title">振动反馈</string>
+    <string name="lockscreen_vibrate_enabled_head">解锁时产生振动反馈</string>
+    <string name="lockscreen_battery_status_title">电池状态</string>
+    <string name="lockscreen_battery_status_charging">仅在充电时显示</string>
+    <string name="lockscreen_battery_status_alwayson">总是显示</string>
+    
+    <string name="picker_activities">活动</string>
+    <string name="select_custom_app_title">选择自定义程序</string>
+    <string name="select_custom_activity_title">选择自定义活动</string>
+    <string name="icon_picker_choose_icon_title">选择图标</string>
+    <string name="icon_picker_alarm">闹钟</string>
+    <string name="icon_picker_browser">浏览器</string>
+    <string name="icon_picker_calendar">日历</string>
+    <string name="icon_picker_camera">相机</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_contacts">联系人</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_email2">Email Holo</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">图库</string>
+    <string name="icon_picker_google_small">Google (小)</string>
+    <string name="icon_picker_googleplus">Google+</string>
+    <string name="icon_picker_googletalk">环聊</string>
+    <string name="icon_picker_maps">地图</string>
+    <string name="icon_picker_movie">影片</string>
+    <string name="icon_picker_music">音乐</string>
+    <string name="icon_picker_nav_normal">导航</string>
+    <string name="icon_picker_phone">电话</string>
+    <string name="icon_picker_podcast">播客</string>
+    <string name="icon_picker_rss">RSS</string>
+    <string name="icon_picker_search">搜索</string>
+    <string name="icon_picker_sms">短信</string>
+    <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_title">选择图标来源</string>
+    <string name="icon_picker_system_icons_title">系统图标</string>
+    <string name="icon_picker_gallery_title">图库</string>
+    <string name="icon_picker_pack_title">图标包</string>
 
     <!-- Custom lock screen background -->
     <string name="lockscreen_custom_background_title">背景</string>

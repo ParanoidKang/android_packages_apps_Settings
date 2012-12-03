@@ -1581,6 +1581,7 @@
 
         <!-- ParanoidAndroid customization -->
        <activity android:name=".paranoid.Lockscreen" />
+       <activity android:name=".cyanogenmod.LockscreenTargets" />
        <activity android:name=".paranoid.Toolbar" />
        <activity android:name=".paranoid.Halo" />
        <activity android:name=".paranoid.PieControls" />
