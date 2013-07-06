@@ -349,6 +349,7 @@ public class InstalledAppDetails extends Fragment
     private void initUninstallButtons() {
         mUpdatedSysApp = (mAppEntry.info.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0;
         boolean enabled = true;
+<<<<<<< HEAD
         boolean specialDisable = false;
         if (mUpdatedSysApp) {
             mUninstallButton.setText(R.string.app_factory_reset);
@@ -358,6 +359,18 @@ public class InstalledAppDetails extends Fragment
                 mSpecialDisableButton.setOnClickListener(this);
             }
         } else {
+=======
+        if (mUpdatedSysApp) {
+            mUninstallButton.setText(R.string.app_factory_reset);
+            boolean specialDisable = false;
+            if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                specialDisable = handleDisableable(mSpecialDisableButton);
+                mSpecialDisableButton.setOnClickListener(this);
+            }
+            mMoreControlButtons.setVisibility(specialDisable ? View.VISIBLE : View.GONE);
+        } else {
+            mMoreControlButtons.setVisibility(View.GONE);
+>>>>>>> upstream/jellybean
             if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
                 enabled = handleDisableable(mUninstallButton);
             } else if ((mPackageInfo.applicationInfo.flags
@@ -369,6 +382,7 @@ public class InstalledAppDetails extends Fragment
                 enabled = false;
             } else {
                 mUninstallButton.setText(R.string.uninstall_text);
+<<<<<<< HEAD
                 // regular app
                 if(enabled = handleDisableable(mSpecialDisableButton)) {
                     // enabled will be false if its a launcher or signed with system cert, for safety.
@@ -378,6 +392,10 @@ public class InstalledAppDetails extends Fragment
             }
         }
         mMoreControlButtons.setVisibility(specialDisable ? View.VISIBLE : View.GONE);
+=======
+            }
+        }
+>>>>>>> upstream/jellybean
         // If this is a device admin, it can't be uninstall or disabled.
         // We do this here so the text of the button is still set correctly.
         if (mDpm.packageHasActiveAdmins(mPackageInfo.packageName)) {
@@ -411,10 +429,26 @@ public class InstalledAppDetails extends Fragment
     }
 
     private void initPrivacyGuardButton() {
+<<<<<<< HEAD
         // TODO: We probably want to disable this optional for the built-in apps
         boolean enabled = mPm.getPrivacyGuardSetting(mAppEntry.info.packageName);
         mPrivacyGuardSwitch.setChecked(enabled);
         mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
+=======
+        if (mPrivacyGuardSwitch == null) {
+            return;
+        }
+
+        mPrivacyGuardSwitch.setChecked(mPm.getPrivacyGuardSetting(mAppEntry.info.packageName));
+
+        // disable privacy guard switch if the app is signed with the platform certificate
+        // to avoid the user shooting himself in the foot
+        if (isThisASystemPackage()) {
+            mPrivacyGuardSwitch.setEnabled(false);
+        } else {
+            mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
+        }
+>>>>>>> upstream/jellybean
     }
 
     /** Called when the activity is first created. */
@@ -1219,10 +1253,24 @@ public class InstalledAppDetails extends Fragment
                     .setNegativeButton(R.string.dlg_cancel, null)
                     .create();
                 case DLG_PRIVACY_GUARD:
+<<<<<<< HEAD
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(getActivity().getText(R.string.privacy_guard_dlg_title))
                     .setIconAttribute(android.R.attr.alertDialogIcon)
                     .setMessage(getActivity().getText(R.string.privacy_guard_dlg_text))
+=======
+                    final int messageResId;
+                    if ((getOwner().mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                        messageResId = R.string.privacy_guard_dlg_system_app_text;
+                    } else {
+                        messageResId = R.string.privacy_guard_dlg_text;
+                    }
+
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.privacy_guard_dlg_title)
+                    .setIconAttribute(android.R.attr.alertDialogIcon)
+                    .setMessage(messageResId)
+>>>>>>> upstream/jellybean
                     .setPositiveButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -1386,6 +1434,7 @@ public class InstalledAppDetails extends Fragment
                 }
             }
         } else if(v == mSpecialDisableButton) {
+<<<<<<< HEAD
             if((mAppEntry.info.flags & ApplicationInfo.FLAG_INSTALLED) != 0 && mAppEntry.info.enabled) {
                 showDialogInner(DLG_DISABLE, 0);
             } else {
@@ -1393,6 +1442,9 @@ public class InstalledAppDetails extends Fragment
                         PackageManager.COMPONENT_ENABLED_STATE_DEFAULT)
                 .execute((Object)null);
             }
+=======
+            showDialogInner(DLG_SPECIAL_DISABLE, 0);
+>>>>>>> upstream/jellybean
         } else if(v == mActivitiesButton) {
             mPm.clearPackagePreferredActivities(packageName);
             try {
