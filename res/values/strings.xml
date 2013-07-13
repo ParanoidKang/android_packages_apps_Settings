@@ -4429,6 +4429,7 @@
     <string name="notification_light_disabled">Disabled</string>
     <string name="notification_light_default_value">Default</string>
     <string name="choose_app">Choose application</string>
+    <string name="profile_applist_title">Applications</string>
 
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Edit light settings</string>
