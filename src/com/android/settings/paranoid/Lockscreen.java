@@ -165,11 +165,7 @@ public class Lockscreen extends SettingsPreferenceFragment
                     ? 1 : 0);
         } else if (preference == mQuickUnlock) {
             Settings.System.putBoolean(mContext.getContentResolver(),
-<<<<<<< HEAD
-                    Settings.System.LOCKSCREEN_QUICK_UNLOCK, mQuickUnlock.isChecked());
-=======
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK, ((CheckBoxPreference) preference).isChecked());
->>>>>>> parent of fed846d... Revert "Lock screen: Hide initial pages hints feature (2/2)"
             return true;
         } else if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(),
