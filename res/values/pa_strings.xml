@@ -95,22 +95,27 @@
     <string name="home_screen_widgets_summary">Allows widgets from the home screen to be added on lock screen</string>
     <string name="home_screen_widgets_warning_title">This may be dangerous!</string>
     <string name="home_screen_widgets_warning">Allowing home screen widgets to be added on lock screen, may lead to security issues, do you want to continue?</string>
-    <!-- Shortcuts -->
-    <string name="lock_screen_shortcuts_title">Shortcuts</string>
-    <string name="lock_screen_shortcuts_summary">View or change custom lock screen shortcuts</string>
-    <string name="lock_screen_shortcuts_add">@string/notification_light_add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
-    <string name="icon_picker_type">Select icon type:</string>
-    <string name="icon_default">Default</string>
-    <string name="icon_presets">Presets</string>
-    <string name="icon_custom">Custom</string>
+    <!-- Lock Screen Shortcuts -->
+    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
+    <string name="lockscreen_target_title">Slider shortcuts</string>
+    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
+    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
+    <string name="lockscreen_target_reset_title">Reset</string>
+    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
+    <string name="lockscreen_target_empty">Empty</string>
+    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
+    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <!-- Lock screen shortcuts -->
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
     <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_picker_alarm">Alarm</string>
     <string name="icon_picker_browser">Browser</string>
     <string name="icon_picker_calendar">Calendar</string>
     <string name="icon_picker_camera">Camera</string>
+    <string name="icon_picker_chrome">Chrome</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>
@@ -121,12 +126,26 @@
     <string name="icon_picker_maps">Maps</string>
     <string name="icon_picker_movie">Movie</string>
     <string name="icon_picker_music">Music</string>
-    <string name="icon_picker_nav">Navigation</string>
+    <string name="icon_picker_nav_normal">Navigation</string>
     <string name="icon_picker_phone">Phone</string>
     <string name="icon_picker_podcast">Podcast</string>
     <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+
+    <!-- String for IconPicker -->
+    <string name="icon_picker_title">Choose icon source</string>
+    <string name="icon_picker_system_icons_title">System icons</string>
+    <string name="icon_picker_gallery_title">Gallery</string>
+    <string name="icon_picker_pack_title">Icon pack</string>
+    
+    <string name="storage_rescan_media">Rescan media for the storage volume</string>
+    <string name="storage_rescan_media_complete">Scan completed</string>
+    
+    <!-- Lockscreen, hide initial pages hints -->
+    <string name="lockscreen_hide_hints_title">Hide hints</string>
+    <string name="lockscreen_hide_hints_summary">If checked hides the widgets\' hints when the screen is turned on (only in portrait mode).</string>
 
     <!-- Volume sub settings -->
     <string name="volume_button_setting_title">Volume buttons settings</string>
