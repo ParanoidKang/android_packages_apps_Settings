@@ -24,6 +24,12 @@
         android:title="@string/lockscreen_custom_background_title"
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values" />
+        
+    <PreferenceScreen
+        android:key="lockscreen_targets"
+        android:fragment="com.android.settings.paranoid.LockscreenTargets"
+        android:title="@string/lockscreen_target_title"
+        android:summary="@string/lockscreen_target_summary" />
 
     <CheckBoxPreference
         android:key="allow_rotation"
@@ -41,6 +47,11 @@
         android:summary="@string/see_through_summary" />
 
     <CheckBoxPreference
+        android:key="lockscreen_hide_hints"
+        android:title="@string/lockscreen_hide_hints_title"
+        android:summary="@string/lockscreen_hide_hints_summary" />
+
+    <CheckBoxPreference
         android:key="home_screen_widgets"
         android:title="@string/home_screen_widgets_title"
         android:summary="@string/home_screen_widgets_summary" />
@@ -49,12 +60,6 @@
         android:key="maximize_widgets"
         android:title="@string/maximize_widgets_title"
         android:summary="@string/maximize_widgets_summary" />
-
-    <PreferenceScreen
-        android:key="lock_screen_shortcuts"
-        android:fragment="com.android.settings.paranoid.Shortcuts"
-        android:title="@string/lock_screen_shortcuts_title"
-        android:summary="@string/lock_screen_shortcuts_summary" />
 
     <PreferenceCategory
         android:key="volume_button_settings"

@@ -25,6 +25,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -33,32 +34,39 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.settings.R;
-import com.android.settings.ApplicationsDialogPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class NotificationLightSettings extends ApplicationsDialogPreference implements
+public class NotificationLightSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, View.OnLongClickListener {
     private static final String TAG = "NotificationLightSettings";
     private static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR = "notification_light_pulse_default_color";
@@ -73,14 +81,18 @@ public class NotificationLightSettings extends ApplicationsDialogPreference impl
     public static final int ACTION_TEST = 0;
     public static final int ACTION_DELETE = 1;
     private static final int MENU_ADD = 0;
+    private static final int DIALOG_APPS = 0;
     private int mDefaultColor;
     private int mDefaultLedOn;
     private int mDefaultLedOff;
+    private List<ResolveInfo> mInstalledApps;
+    private PackageManager mPackageManager;
     private boolean mCustomEnabled;
     private boolean mLightEnabled;
     private ApplicationLightPreference mDefaultPref;
     private CheckBoxPreference mCustomEnabledPref;
     private Menu mMenu;
+    AppAdapter mAppAdapter;
     private String mApplicationList;
     private Map<String, Application> mApplications;
 
@@ -351,13 +363,27 @@ public class NotificationLightSettings extends ApplicationsDialogPreference impl
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ADD:
+                showDialog(DIALOG_APPS);
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Utility classes and supporting methods
+     */
+    @Override
+    public Dialog onCreateDialog(int id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final Dialog dialog;
+        switch (id) {
+            case DIALOG_APPS:
                 final ListView list = new ListView(getActivity());
                 list.setAdapter(mAppAdapter);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(R.string.choose_app);
                 builder.setView(list);
-                final Dialog dialog = builder.create();
+                dialog = builder.create();
 
                 list.setOnItemClickListener(new OnItemClickListener() {
                     @Override
@@ -368,10 +394,11 @@ public class NotificationLightSettings extends ApplicationsDialogPreference impl
                         dialog.cancel();
                     }
                 });
-                dialog.show();
-                return true;
+                break;
+            default:
+                dialog = null;
         }
-        return false;
+        return dialog;
     }
 
     /**
@@ -434,4 +461,115 @@ public class NotificationLightSettings extends ApplicationsDialogPreference impl
         }
 
     };
+    
+    /**
+     * AppItem class
+     */
+    class AppItem implements Comparable<AppItem> {
+        CharSequence title;
+        String packageName;
+        Drawable icon;
+
+        @Override
+        public int compareTo(AppItem another) {
+            return this.title.toString().compareTo(another.title.toString());
+        }
+    }
+
+    /**
+     * AppAdapter class
+     */
+    class AppAdapter extends BaseAdapter {
+        protected List<ResolveInfo> mInstalledAppInfo;
+        protected List<AppItem> mInstalledApps = new LinkedList<AppItem>();
+
+        private void reloadList() {
+            final Handler handler = new Handler();
+            new Thread(new Runnable() {
+
+                @Override
+                public void run() {
+                    synchronized (mInstalledApps) {
+                        mInstalledApps.clear();
+                        for (ResolveInfo info : mInstalledAppInfo) {
+                            final AppItem item = new AppItem();
+                            item.title = info.loadLabel(mPackageManager);
+                            item.icon = info.loadIcon(mPackageManager);
+                            item.packageName = info.activityInfo.packageName;
+                            handler.post(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    int index = Collections.binarySearch(mInstalledApps, item);
+                                    if (index < 0) {
+                                        index = -index - 1;
+                                        mInstalledApps.add(index, item);
+                                    }
+                                    notifyDataSetChanged();
+                                }
+                            });
+                        }
+                    }
+                }
+            }).start();
+        }
+
+        public AppAdapter(List<ResolveInfo> installedAppsInfo) {
+            mInstalledAppInfo = installedAppsInfo;
+        }
+
+        public void update() {
+            reloadList();
+        }
+
+        @Override
+        public int getCount() {
+            return mInstalledApps.size();
+        }
+
+        @Override
+        public AppItem getItem(int position) {
+            return mInstalledApps.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return mInstalledApps.get(position).packageName.hashCode();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder holder;
+            if (convertView != null) {
+                holder = (ViewHolder) convertView.getTag();
+            } else {
+                final LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = layoutInflater.inflate(R.layout.preference_icon, null, false);
+                holder = new ViewHolder();
+                convertView.setTag(holder);
+                holder.title = (TextView) convertView.findViewById(com.android.internal.R.id.title);
+                holder.summary = (TextView) convertView.findViewById(com.android.internal.R.id.summary);
+                holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+            }
+            AppItem applicationInfo = getItem(position);
+
+            if (holder.title != null) {
+                holder.title.setText(applicationInfo.title);
+            }
+            if (holder.summary != null) {
+                holder.summary.setVisibility(View.GONE);
+            }
+            if (holder.icon != null) {
+                Drawable loadIcon = applicationInfo.icon;
+                holder.icon.setImageDrawable(loadIcon);
+            }
+            return convertView;
+        }
+    }
+
+    static class ViewHolder {
+        TextView title;
+        TextView summary;
+        ImageView icon;
+    }
 }

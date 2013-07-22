@@ -264,7 +264,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         
         // App security settings
         addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
-        
         return root;
     }
 

@@ -1263,7 +1263,7 @@
 
         <activity android:name="ActivityPicker"
                 android:label="@string/activity_picker_label"
-                android:theme="@*android:style/Theme.Dialog.Alert"
+                android:theme="@*android:style/Theme.Holo.Dialog.Alert"
                 android:finishOnCloseSystemDialogs="true">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
@@ -1521,6 +1521,8 @@
 
         <!-- ParanoidAndroid customization -->
        <activity android:name=".paranoid.Lockscreen" />
+       
+       <activity android:name=".paranoid.LockscreenTargets" />
 
        <activity android:name=".paranoid.Toolbar" />
 

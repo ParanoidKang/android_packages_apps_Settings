@@ -220,6 +220,7 @@ public class PrivacyGuardManager extends Fragment
             platformCert = null;
         }
 
+
         for (PackageInfo info : packages) {
             final ApplicationInfo appInfo = info.applicationInfo;
 
