@@ -522,6 +522,10 @@
     <string name="android_beam_disabled_summary" msgid="1737782116894793393">"无法使用，因为 NFC 已关闭"</string>
     <string name="android_beam_label" msgid="6257036050366775040">"Android Beam"</string>
     <string name="android_beam_explained" msgid="6981652347448777459">"打开此功能后，您只需将自己的设备与另一台支持 NFC 的设备靠在一起，即可将您设备上的应用内容同步分享给对方。例如，您可以发送网页、YouTube 视频、联系人等等。"\n\n"您只需将设备靠在一起（通常是背靠背）然后触摸屏幕即可，所分享的内容由相应的应用确定。"</string>
+    <string name="nfc_polling_mode_title">NFC轮询模式</string>
+    <string name="nfc_polling_mode_screen_off">关闭屏幕</string>
+    <string name="nfc_polling_mode_screen_locked">打开屏幕，未解锁</string>
+    <string name="nfc_polling_mode_screen_unlocked">打开屏幕，已解锁 (默认)</string>
     <string name="nsd_quick_toggle_title" msgid="3125572815278848258">"网络服务发现"</string>
     <string name="nsd_quick_toggle_summary" msgid="155692215972781276">"允许其他设备上的应用发现此设备上的应用"</string>
     <string name="wifi_quick_toggle_title" msgid="874495178395350104">"Wi-Fi"</string>
