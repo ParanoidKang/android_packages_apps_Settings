@@ -99,6 +99,12 @@
     <string name="home_screen_widgets_summary">Allows widgets from the home screen to be added on lock screen</string>
     <string name="home_screen_widgets_warning_title">This may be dangerous!</string>
     <string name="home_screen_widgets_warning">Allowing home screen widgets to be added on lock screen, may lead to security issues, do you want to continue?</string>
+    
+    <!-- Widgets toggle -->
+    <string name="lockscreen_enable_widgets_title">Widget pager</string>
+    <string name="lockscreen_enable_widgets_summary">Allow multiple widget pages to be added and selected</string>
+    <string name="lockscreen_enable_camera_title">Camera widget</string>
+    <string name="lockscreen_enable_camera_summary">Show the camera widget to the right of the unlock screen</string>
 
     <!-- Volume sub settings -->
     <string name="volume_button_setting_title">Volume buttons settings</string>

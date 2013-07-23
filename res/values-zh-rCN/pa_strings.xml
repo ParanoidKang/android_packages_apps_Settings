@@ -99,7 +99,11 @@
     <string name="home_screen_widgets_summary">允许桌面插件添加到锁屏</string>
     <string name="home_screen_widgets_warning_title">警告</string>
     <string name="home_screen_widgets_warning">允许桌面插件添加到锁屏，可能导致安全问题，是否继续？</string>
-
+    <string name="lockscreen_enable_widgets_title">插件页面</string>
+    <string name="lockscreen_enable_widgets_summary">显示锁屏左侧插件页面</string>
+    <string name="lockscreen_enable_camera_title">相机插件</string>
+    <string name="lockscreen_enable_camera_summary">显示锁屏右侧相机插件</string>
+    
     <!-- Volume sub settings -->
     <string name="volume_button_setting_title">音量键设置</string>
     <!-- Volume music controls -->

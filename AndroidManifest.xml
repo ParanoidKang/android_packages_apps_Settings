@@ -98,6 +98,12 @@
             android:hardwareAccelerated="true"
             android:requiredForAllUsers="true"
             android:supportsRtl="true">
+        
+        <receiver android:name=".paranoid.Lockscreen$DeviceAdminLockscreenReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_lockscreen" />
+        </receiver>
 
         <uses-library android:name="org.cyanogenmod.hardware" required="false" />
 
