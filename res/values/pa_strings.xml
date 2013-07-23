@@ -143,10 +143,6 @@
     
     <string name="storage_rescan_media">Rescan media for the storage volume</string>
     <string name="storage_rescan_media_complete">Scan completed</string>
-    
-    <!-- Lockscreen, hide initial pages hints -->
-    <string name="lockscreen_hide_hints_title">Hide hints</string>
-    <string name="lockscreen_hide_hints_summary">If checked hides the widgets\' hints when the screen is turned on (only in portrait mode).</string>
 
     <!-- Volume sub settings -->
     <string name="volume_button_setting_title">Volume buttons settings</string>
