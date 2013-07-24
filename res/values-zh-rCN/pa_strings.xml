@@ -282,6 +282,10 @@
     <string name="volume_key_cursor_control_off">禁用</string>
     <string name="volume_key_cursor_control_on">音量上/下将会使光标左/右移动</string>
     <string name="volume_key_cursor_control_on_reverse">音量上/下将会使光标右/左移动</string>
+    
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">返回键终止应用</string>
+    <string name="kill_app_longpress_back_summary">长按返回键终止当前应用</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">物理按键</string>

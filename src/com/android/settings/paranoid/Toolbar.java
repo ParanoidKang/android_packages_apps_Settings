@@ -53,6 +53,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String KEY_SHOW_CLOCK = "show_clock";
     private static final String KEY_CIRCLE_BATTERY = "circle_battery";
     private static final String KEY_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
@@ -93,6 +94,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private CheckBoxPreference mPieSearch;
     private CheckBoxPreference mPieCenter;
     private CheckBoxPreference mPieStick;
+    private CheckBoxPreference mKillAppLongpressBack;
     private PreferenceScreen mNavigationBarControls;
     private PreferenceCategory mNavigationCategory;
 
@@ -245,6 +247,10 @@ public class Toolbar extends SettingsPreferenceFragment
         mStatusBarDoNotDisturb = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_DONOTDISTURB);
         mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_DONOTDISTURB, 0) == 1));
+                
+        mKillAppLongpressBack = (CheckBoxPreference) prefSet.findPreference(KILL_APP_LONGPRESS_BACK);
+        mKillAppLongpressBack.setChecked(Settings.Secure.getInt(
+            getActivity().getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
 
         if (!Utils.isTablet()) {
             prefSet.removePreference(mStatusBarMaxNotif);
@@ -328,6 +334,10 @@ public class Toolbar extends SettingsPreferenceFragment
         } else if (preference == mPieStick) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_STICK, mPieStick.isChecked() ? 1 : 0);
+        } else if (preference == mKillAppLongpressBack) {
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK,
+                mKillAppLongpressBack.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
