@@ -206,6 +206,17 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
+    
+    <!-- Permissions Management -->
+    <header
+        android:id="@+id/permissions_settings"
+        android:icon="@drawable/ic_settings_permissions"
+        android:title="@string/permissions_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mokee.permissionsmanager"
+            android:targetClass="com.mokee.permissionsmanager.activity.MainActivity" />
+    </header>
 
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"

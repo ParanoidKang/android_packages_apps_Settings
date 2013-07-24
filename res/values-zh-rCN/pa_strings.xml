@@ -518,4 +518,7 @@
     <string name="privacy_guard_manager_show_system_apps">显示内置应用程序</string>
     <string name="privacy_guard_manager_filter_permissions">权限过滤</string>
     <string name="privacy_guard_dlg_system_app_text">当系统应用启用隐私防护的时候，应用将不能访问或提供隐私数据，这可能导致其他应用出错</string>
+    
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">权限管理</string>
 </resources>

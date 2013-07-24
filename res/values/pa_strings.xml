@@ -532,4 +532,7 @@
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
     <string name="privacy_guard_manager_filter_permissions">Permission filter</string>
     <string name="privacy_guard_dlg_system_app_text">When enabling Privacy Guard for a built-in app, the app will not be able to access or provide personal data. This may cause other apps to misbehave.</string>
+    
+    <!-- Permissions Management -->
+ <string name="permissions_settings_title">Permissions Management</string>
 </resources>
