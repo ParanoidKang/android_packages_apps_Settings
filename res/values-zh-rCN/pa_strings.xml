@@ -73,6 +73,10 @@
     <string name="battery_light_medium_color_title">正在充电</string>
     <string name="battery_light_full_color_title">已充满</string>
     
+    <!-- Display Screen-on and off Electron beam animations -->
+    <string name="screen_off_animation_title">关屏动画</string>
+    <string name="screen_off_animation_summary">显示关屏CRT特效</string>
+    
     <!-- Customization main menu category heading [CHAR LIMIT=40] -->
     <string name="header_category_customization">RemixPA</string>
 
