@@ -244,8 +244,7 @@ public class LockscreenTargets extends Fragment implements
                         if (activityInfo != null) {
                             front = activityInfo.loadIcon(mPm);
                         } else {
-                            front = mResources.getDrawable(
-                                    android.R.drawable.sym_def_app_icon).mutate();
+                            front = mResources.getDrawable(android.R.drawable.sym_def_app_icon);
                         }
                     }
                 } catch (URISyntaxException e) {
@@ -254,14 +253,12 @@ public class LockscreenTargets extends Fragment implements
             }
 
             if (back == null || front == null) {
-                Drawable emptyIcon = mResources.getDrawable(R.drawable.ic_empty).mutate();
-                front = emptyIcon;
+                front = mResources.getDrawable(R.drawable.ic_empty);
             }
 
             StateListDrawable drawable = LockscreenTargetUtils.getLayeredDrawable(
-                    mActivity, back,front, inset, frontBlank);
-            mTargetStore.add(new TargetInfo(uri, drawable, iconType,
-                    iconSource, front.getConstantState().newDrawable().mutate()));
+                    mActivity, back, front, inset, frontBlank);
+            mTargetStore.add(new TargetInfo(uri, drawable, iconType, iconSource, front));
         }
 
         ArrayList<TargetDrawable> targetDrawables = new ArrayList<TargetDrawable>();
@@ -299,38 +296,43 @@ public class LockscreenTargets extends Fragment implements
     private void saveAll() {
         StringBuilder targetLayout = new StringBuilder();
         ArrayList<String> existingImages = new ArrayList<String>();
+        boolean hasValidTargets = false;
 
         for (int i = mTargetOffset + 1; i <= mTargetOffset + mMaxTargets; i++) {
             TargetInfo info = mTargetStore.get(i);
+            String uri = info.uri;
 
-            if (info.uri.equals(GlowPadView.EMPTY_TARGET)) {
-                continue;
-            }
             if (info.iconSource != null) {
                 existingImages.add(info.iconSource);
             }
 
-            try {
-                Intent intent = Intent.parseUri(info.uri, 0);
-                if (info.iconType != null) {
-                    intent.putExtra(info.iconType, info.iconSource);
-                }
-                if (info.packageName != null) {
-                    intent.putExtra(GlowPadView.ICON_PACKAGE, info.packageName);
-                } else {
-                    intent.removeExtra(GlowPadView.ICON_PACKAGE);
-                }
+            if (!TextUtils.equals(uri, GlowPadView.EMPTY_TARGET)) {
+                try {
+                    Intent intent = Intent.parseUri(info.uri, 0);
+                    if (info.iconType != null) {
+                        intent.putExtra(info.iconType, info.iconSource);
+                    }
+                    if (info.packageName != null) {
+                        intent.putExtra(GlowPadView.ICON_PACKAGE, info.packageName);
+                    } else {
+                        intent.removeExtra(GlowPadView.ICON_PACKAGE);
+                    }
 
-                if (targetLayout.length() > 0) {
-                    targetLayout.append("|");
+                    uri = intent.toUri(0);
+                    hasValidTargets = true;
+                } catch (URISyntaxException e) {
+                    Log.w(TAG, "Invalid uri " + info.uri + " on save, ignoring");
+                    uri = GlowPadView.EMPTY_TARGET;
                 }
-                targetLayout.append(intent.toUri(0));
-            } catch (URISyntaxException e) {
-                Log.w(TAG, "Invalid uri " + info.uri + " on save, ignoring");
             }
+
+            if (targetLayout.length() > 0) {
+                targetLayout.append("|");
+            }
+            targetLayout.append(uri);
         }
 
-        final String targets = targetLayout.length() == 0 ? null : targetLayout.toString();
+        final String targets = hasValidTargets ? targetLayout.toString() : null;
         Settings.System.putString(mActivity.getContentResolver(),
                 Settings.System.LOCKSCREEN_TARGETS, targets);
 
@@ -375,7 +377,7 @@ public class LockscreenTargets extends Fragment implements
             activeLayer.setDrawableByLayerId(0, new InsetDrawable(activeBack, 0, 0, 0, 0));
         }
 
-        item.defaultIcon = mDialogIcon.getDrawable().getConstantState().newDrawable().mutate();
+        item.defaultIcon = mDialogIcon.getDrawable();
         item.uri = uri;
         item.iconType = iconType;
         item.iconSource = iconSource;
@@ -389,7 +391,7 @@ public class LockscreenTargets extends Fragment implements
             ActivityInfo activityInfo = intent.resolveActivityInfo(mPm,
                     PackageManager.GET_ACTIVITIES);
             Drawable icon = activityInfo != null
-                    ? activityInfo.loadIcon(mPm).mutate()
+                    ? activityInfo.loadIcon(mPm)
                     : mResources.getDrawable(android.R.drawable.sym_def_app_icon);
 
             mDialogLabel.setText(friendlyName);
@@ -501,7 +503,7 @@ public class LockscreenTargets extends Fragment implements
         mDialogLabel = (Button) view.findViewById(R.id.label);
 
         TargetInfo item = mTargetStore.get(target);
-        mDialogIcon.setImageDrawable(item.defaultIcon.mutate());
+        mDialogIcon.setImageDrawable(item.defaultIcon);
 
         TargetInfo icon = new TargetInfo(null);
         icon.iconType = item.iconType;
