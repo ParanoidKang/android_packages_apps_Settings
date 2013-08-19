@@ -568,4 +568,8 @@
     <string name="swipe_back_layout_edge_right">Right</string>
     <string name="swipe_back_layout_edge_bottom">Bottom</string>
     <string name="swipe_back_layout_edge_all">All</string>
+    
+     <!-- Backlight brightness settings screen -->
+    <string name="adaptive_backlight_title">Adaptive backlight</string>
+    <string name="adaptive_backlight_summary">Intelligently vary the backlight brightness of the display and help maximize battery life</string>
 </resources>
