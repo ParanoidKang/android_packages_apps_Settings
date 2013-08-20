@@ -85,5 +85,12 @@
                 android:dialogTitle="@string/color_calibration_title"
                 android:summary="@string/color_calibration_summary"
                 android:persistent="false" />
+        
+        <com.android.settings.cyanogenmod.DisplayGamma
+                android:key="gamma_tuning"
+                android:title="@string/gamma_tuning_title_head"
+                android:dialogTitle="@string/gamma_tuning_title_head"
+                android:summary="@string/gamma_tuning_summary_head"
+                android:persistent="false" />
 
 </PreferenceScreen>

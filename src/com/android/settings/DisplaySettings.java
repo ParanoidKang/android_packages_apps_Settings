@@ -39,6 +39,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -69,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
+    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
@@ -149,8 +151,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWifiDisplayPreference = null;
         }
 
-        if (!DisplayColor.isSupported()) {
-            removePreference(KEY_DISPLAY_COLOR);
+        final PreferenceGroup calibrationCategory =
+                (PreferenceGroup) findPreference(KEY_DISPLAY_CALIBRATION_CATEGORY);
+
+        if (!DisplayColor.isSupported() && !DisplayGamma.isSupported()) {
+            getPreferenceScreen().removePreference(calibrationCategory);
+        } else {
+            if (!DisplayColor.isSupported()) {
+                calibrationCategory.removePreference(findPreference(KEY_DISPLAY_COLOR));
+            }
+            if (!DisplayGamma.isSupported()) {
+                calibrationCategory.removePreference(findPreference(KEY_DISPLAY_GAMMA));
+            }
         }
         
         mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);

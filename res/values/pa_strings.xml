@@ -519,6 +519,11 @@
     <string name="key_backlight_title">Backlight</string>
     <string name="button_backlight_title">Button backlight brightness</string>
     <string name="keyboard_backlight_title">Keyboard backlight brightness</string>
+    
+    <!-- Hardware tunables - Gamma calibration -->
+    <string name="category_gamma_title">Gamma</string>
+    <string name="gamma_tuning_title_head">Gamma calibration</string>
+    <string name="gamma_tuning_summary_head">Tweak gamma values</string>
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
