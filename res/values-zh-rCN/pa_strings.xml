@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Copyright (C) 2013 ParanoidAndroid Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Sound settings screen -->
+    <string name="link_volume_ringtones">链接铃声与通知的音量</string>
+    <string name="link_volume_mutes">静音模式将会影响通知</string>
+    <string name="volume_overlay_title">声控面板风格</string>
+    <string name="volume_overlay_single">单行</string>
+    <string name="volume_overlay_expandable">折叠</string>
+    <string name="volume_overlay_expanded">展开</string>
+    <string name="volume_overlay_none">无</string>
+    <string name="volume_ring_only_description">铃声</string>
+    <string name="notification_sound_limiter_title">通知提示间隔</string>
+    <string name="notification_sound_limiter_summary">设置通知提示间隔时间</string>
+    <string name="notification_sound_default_time">默认</string>
+    <string name="volume_keys_control_ring_stream">音量键控制铃声音量</string>
+
+    <!-- Display settings screen, notification light settings -->
+    <string name="notification_light_general_title">常规</string>
+    <string name="notification_light_applist_title">应用</string>
+    <string name="notification_light_use_custom">使用自定义值</string>
+    <string name="notification_light_add">添加</string>
+    <string name="notification_light_reset">重置</string>
+    <string name="notification_light_enabled">已启用</string>
+    <string name="notification_light_disabled">已禁用</string>
+    <string name="notification_light_default_value">默认</string>
+    <string name="choose_app">选择应用</string>
+
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">编辑指示灯设置</string>
+    <string name="pulse_speed_title">呼吸长度与速度</string>
+    <string name="picker_arrow" translatable="false">→</string>
+    <string name="default_time">正常</string>
+    <string name="custom_time">自定义</string>
+    <string name="dialog_test">测试</string>
+    <string name="dialog_delete_title">删除</string>
+    <string name="dialog_delete_message">移除选中的项目?</string>
+    <string name="dialog_test_message">请将屏幕关闭以便测试新的指示灯设置. 关闭此对话框将停止测试.</string>
+    <string name="dialog_test_button">关闭</string>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">始终开启</string>
+    <string name="pulse_length_very_short">非常短促</string>
+    <string name="pulse_length_short">短促</string>
+    <string name="pulse_length_normal">正常</string>
+    <string name="pulse_length_long">长久</string>
+    <string name="pulse_length_very_long">非常长久</string>
+    <string name="pulse_speed_very_fast">非常快</string>
+    <string name="pulse_speed_fast">较快</string>
+    <string name="pulse_speed_normal">正常</string>
+    <string name="pulse_speed_slow">较慢</string>
+    <string name="pulse_speed_very_slow">非常慢</string>
+
+    <!-- Battery light settings -->
+    <string name="battery_light_title">电量指示灯</string>
+    <string name="battery_low_pulse_title">电量低时开启呼吸灯</string>
+    <string name="battery_light_list_title">颜色</string>
+    <string name="battery_light_low_color_title">电量低</string>
+    <string name="battery_light_medium_color_title">正在充电</string>
+    <string name="battery_light_full_color_title">已充满</string>
+    
+    <!-- Customization main menu category heading [CHAR LIMIT=40] -->
+    <string name="header_category_customization">RemixPA</string>
+
+    <!-- Lock screen sub menu [CHAR LIMIT=30] -->
+    <string name="lock_screen_settings">锁屏界面</string>
+    <!-- Allow rotation -->
+    <string name="allow_rotate_title">允许旋转</string>
+    <string name="allow_rotate_summary">允许锁屏启用横屏模式</string>
+    <!-- Quick Unlock -->
+    <string name="allow_quick_unlock_title">快速解锁</string>
+    <string name="allow_quick_unlock_summary">输入正确的密码后自动解锁</string>
+    <!-- Lock screen see through -->
+    <string name="see_through_title">锁屏透明</string>
+    <string name="see_through_summary">允许看到锁屏下的应用</string>
+    <!-- Maximize widgets -->
+    <string name="maximize_widgets_title">插件最大化</string>
+    <string name="maximize_widgets_summary">最大化显示插件</string>
+    <!-- Home screen widgets -->
+    <string name="home_screen_widgets_title">允许桌面插件</string>
+    <string name="home_screen_widgets_summary">允许桌面插件添加到锁屏</string>
+    <string name="home_screen_widgets_warning_title">警告</string>
+    <string name="home_screen_widgets_warning">允许桌面插件添加到锁屏，可能导致安全问题，是否继续？</string>
+
+    <!-- Volume sub settings -->
+    <string name="volume_button_setting_title">音量键设置</string>
+    <!-- Volume music controls -->
+    <string name="volbtn_music_controls_title">音量键音乐控制</string>
+    <string name="volbtn_music_controls_summary">当屏幕关闭时, 长按音量键即可改变音乐曲目</string>
+
+    <!-- Wakeup options -->
+    <string name="pref_volume_wake_title">音量键唤醒</string>
+    <string name="pref_volume_wake_summary">使用音量键唤醒设备</string>
+
+    <!-- Bars sub menu [CHAR LIMIT=30] -->
+    <string name="tool_bar_settings">Remix设置</string>
+    <string name="tool_bar_status_header">状态栏</string>
+    <string name="tool_bar_navigation_header">导航栏</string>
+
+    <!-- HALO -->
+    <string name="halo_settings_title">HALO</string>
+    <string name="halo_hide_title">打开应用后隐藏HALO</string>
+    <string name="halo_hide_summary">HALO会在新打开的应用上弹出然后自动隐藏</string>
+    <string name="halo_reversed_title">交换HALO手势</string>
+    <string name="halo_reversed_summary">交换任务切换和移动的触发手势</string>
+    <string name="halo_state_title">HALO策略</string>
+    <string name="halo_state_summary">启用通知黑白名单列表</string>
+    <string name="halo_state_black">黑名单</string>
+    <string name="halo_state_white">白名单</string>
+    <string name="halo_pause_title">暂停活动应用</string>
+    <string name="halo_pause_summary">当通过HALO打开一个应用时，将暂停相关应用</string>
+
+    <string name="halo_size_title">HALO大小</string>
+    <string name="halo_size_summary">设置HALO的显示大小</string>
+    <string name="halo_size_miniscule">最小</string>
+    <string name="halo_size_small">小</string>
+    <string name="halo_size_default">正常 (默认)</string>
+    <string name="halo_size_large">大</string>
+    <string name="halo_size_gigantic">巨大</string>
+    <string name="halo_size_monster">最大</string>
+
+    <!-- Quick pulldown -->
+    <string name="quick_pulldown_title">快速下拉</string>
+    <string name="quick_pulldown_summary">下拉状态栏的右侧将打开快速设置</string>
+    <!-- Show clock -->
+    <string name="show_clock_title">显示时钟</string>
+    <!-- Circle battery -->
+    <string name="circle_battery_title">圆形电量</string>
+    <!-- AM/PM style -->
+    <string name="am_pm_style_title">AM/PM 风格</string>
+    <string name="status_bar_size_normal">正常</string>
+    <string name="status_bar_size_small">小</string>
+    <string name="status_bar_hidden">隐藏 (默认)</string>
+    <string name="status_bar_am_pm_info">当前已设置为24小时格式</string>
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">通知数量</string>
+    <string name="status_bar_notif_count_summary">在状态栏显示通知数量</string>
+    <!-- Split menu -->
+    <string name="navigation_bar_tabui_menu_title">分离菜单按钮</string>
+    <string name="navigation_bar_tabui_menu_summary">显示单独的菜单按钮而不是合并到最近任务按钮</string>
+    <!-- Status bar notification limit -->
+    <string name="status_bar_max_notifications_title">通知限制</string>
+    <string name="status_bar_max_notifications_summary">选择显示通知的数量，仅在竖屏模式下生效</string>
+    <!-- Do not disturb -->
+    <string name="status_bar_donotdisturb_title">禁用滚动动画</string>
+    <string name="status_bar_donotdisturb_summary">禁用新通知的滚动动画</string>
+
+    <!-- Quick settings panel -->
+    <string name="quick_settings_panel_title">快速设置面板</string>
+    <string name="quick_settings_title">快速设置</string>
+    <string name="title_static_tiles">静态按钮</string>
+    <string name="tile_picker_title">按钮与布局</string>
+    <string name="tile_picker_summary">查看, 选择, 并改变显示按钮的布局</string>
+    <string name="tile_choose_title">选择一个按钮</string>
+    <string name="title_tile_airplane">飞行模式</string>
+    <string name="title_tile_battery">电量显示</string>
+    <string name="title_tile_bluetooth">蓝牙</string>
+    <string name="title_tile_brightness">亮度</string>
+    <string name="title_tile_sleep">进入睡眠</string>
+    <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_torch">手电筒</string>
+    <string name="title_tile_lockscreen">锁屏</string>
+    <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_mobiledata">移动数据</string>
+    <string name="title_tile_profile">情景模式</string>
+    <string name="title_tile_autorotate">屏幕旋转</string>
+    <string name="title_tile_settings">设置</string>
+    <string name="title_tile_sound">声音</string>
+    <string name="title_tile_sync">同步</string>
+    <string name="title_tile_wifiap">Wi-Fi 热点</string>
+    <string name="title_tile_wifi">Wi-Fi</string>
+    <string name="title_tile_wimax">WiMAX</string>
+    <string name="title_tile_user">用户切换器</string>
+    <string name="title_tile_networkmode">网络模式</string>
+    <string name="title_tile_nfc">NFC</string>
+    <string name="title_tile_screen_timeout">屏幕超时</string>
+    <string name="title_tile_usb_tether">USB 网络共享</string>
+    <string name="title_tile_quiet_hours">安静时段</string>
+    <string name="title_tile_desktop_mode">Pie</string>
+    <string name="title_tile_hybrid">@string/hybrid_settings</string>
+    <string name="title_tile_volume">Volume</string>
+    <string name="title_dynamic_tiles">动态按钮</string>
+    <string name="dynamic_tiles_note_title">注意</string>
+    <string name="dynamic_tiles_note_summary">动态按钮不是随时都会显示的, 它们仅会在有相关的系统事件时显示</string>
+    <string name="title_dynamic_alarm">闹钟</string>
+    <string name="title_dynamic_bugreport">错误报告</string>
+    <string name="title_dynamic_ime">输入法更改器</string>
+    <string name="title_dynamic_usbtether">USB 网络共享</string>
+    <string name="title_dynamic_wifi">Wi-Fi 显示</string>
+    <string name="title_general">常规</string>
+    <string name="title_quick_pulldown">快速下拉</string>
+    <string name="summary_quick_pulldown">从状态栏的%1$s边缘拉下时直接开启快速设置面板</string>
+    <string name="quick_pulldown_off">关闭</string>
+    <string name="quick_pulldown_summary_left">左</string>
+    <string name="quick_pulldown_summary_right">右</string>
+    <string name="quick_pulldown_left">左</string>
+    <string name="quick_pulldown_right">右</string>
+    <string name="title_collapse_panel">自动关闭面板</string>
+    <string name="summary_collapse_panel">做出操作后关闭快速设置面板</string>
+    <string name="title_floating_window">浮动窗口</string>
+    <string name="summary_floating_window">在浮动窗口中打开快速设置面板</string>
+
+    <!-- Reset tiles -->
+    <string name="tiles_add_title">添加</string>
+    <string name="tiles_reset_title">重置</string>
+    <string name="tiles_reset_message">您确定将显示的按钮与布局还原为默认值?</string>
+
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="advanced_settings_title">高级设置</string>
+
+    <!--- Volume key cursor control -->
+    <string name="volume_key_cursor_control_title">音量键光标控制</string>
+    <string name="volume_key_cursor_control_off">禁用</string>
+    <string name="volume_key_cursor_control_on">音量上/下将会使光标左/右移动</string>
+    <string name="volume_key_cursor_control_on_reverse">音量上/下将会使光标右/左移动</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">物理按键</string>
+    <string name="hardware_keys_bindings_title">按键行为</string>
+    <string name="hardware_keys_enable_custom_title">允许自定义的行为</string>
+    <string name="hardware_keys_home_long_press_title">Home 键 (长按)</string>
+    <string name="hardware_keys_menu_press_title">菜单键</string>
+    <string name="hardware_keys_menu_long_press_title">菜单键 (长按)</string>
+    <string name="hardware_keys_assist_press_title">搜索键</string>
+    <string name="hardware_keys_assist_long_press_title">搜索键 (长按)</string>
+    <string name="hardware_keys_app_switch_press_title">切换程序键</string>
+    <string name="hardware_keys_app_switch_long_press_title">切换程序键 (长按)</string>
+    <string name="hardware_keys_show_overflow_title">显示更多选项菜单键</string>
+    <string name="hardware_keys_show_overflow_summary">在程序内加入更多选项菜单键</string>
+    <string name="hardware_keys_show_overflow_toast_enable">更多选项菜单键在程序重启前可能不会显示</string>
+    <string name="hardware_keys_show_overflow_toast_disable">更多选项菜单键在程序重启前可能不会被隐藏</string>
+    <string name="hardware_keys_action_nothing">无作用</string>
+    <string name="hardware_keys_action_menu">开启/关闭菜单</string>
+    <string name="hardware_keys_action_app_switch">最近使用程序切换器</string>
+    <string name="hardware_keys_action_search">搜索助手</string>
+    <string name="hardware_keys_action_voice_search">语音搜索</string>
+    <string name="hardware_keys_action_in_app_search">程序内搜索</string>
+    <string name="pref_ring_mode_title">声音切换模式</string>
+    <string name="pref_ring_mode_summary">选择声音按钮的切换方式</string>
+    <string name="pref_network_mode_title">网络切换模式</string>
+    <string name="pref_screentimeout_mode_title">屏幕超时切换模式</string>
+    <string name="cm_sound_mode_silent">静音</string>
+    <string name="cm_sound_mode_vibrate">震动</string>
+    <string name="cm_sound_mode_sound">铃声</string>
+    <string name="cm_sound_mode_soundVibrate">铃声 &amp; 震动</string>
+
+    <!-- Pie controls -->
+    <string name="pie_controls_title">PIE控制</string>
+    <string name="pie_gravity_title">停靠位置</string>
+    <string name="pie_gravity_summary">设置PIE的停靠位置</string>
+    <string name="pie_gravity_top">顶部</string>
+    <string name="pie_gravity_bottom">底部</string>
+    <string name="pie_gravity_right">右侧</string>
+    <string name="pie_gravity_left">左侧</string> 
+    <string name="pie_mode_title">PIE动画</string>
+    <string name="pie_mode_summary">设置PIE动画的开启与响应速度</string>
+    <string name="pie_mode_bare">关闭</string>
+    <string name="pie_mode_quick">快速</string>
+    <string name="pie_mode_normal">正常</string>
+    <string name="pie_mode_slow">缓慢</string>
+    <string name="pie_size_title">PIE大小</string>
+    <string name="pie_size_summary">设置PIE控制器的大小</string>
+    <string name="pie_size_small">小</string>
+    <string name="pie_size_default">@string/pie_mode_default</string>
+    <string name="pie_size_large">大</string>
+    <string name="pie_size_gigantic">巨大</string>
+    <string name="pie_size_monster">最大</string>
+    <string name="pie_angle_title">底部角度</string>
+    <string name="pie_angle_summary">调整屏幕边缘与PIE之间的夹角</string>
+    <string name="pie_angle_none">无</string>
+    <string name="pie_angle_small">小</string>
+    <string name="pie_angle_default">正常</string>
+    <string name="pie_angle_big">大</string>
+    <string name="pie_angle_huge">极大</string>    
+    <string name="pie_gap_title">按键间隙</string>
+    <string name="pie_gap_summary">调整PIE的按键间隙</string>
+    <string name="pie_gap_none">无</string>
+    <string name="pie_gap_small">小</string>
+    <string name="pie_gap_big">大</string>
+    <string name="pie_gap_huge">极大</string>
+    <string name="pie_center_title">居中对齐</string>
+    <string name="pie_center_summary">在触发位置一侧居中对齐</string>
+    <string name="pie_stick_title">禁止旋转</string>
+    <string name="pie_stick_summary">锁定PIE控制器的位置，即使屏幕发生旋转</string>
+    <string name="pie_menu_title">菜单键</string>
+    <string name="pie_menu_summary">始终显示菜单键</string>
+    <string name="pie_search_title">搜索键</string>
+    <string name="pie_search_summary">显示搜索键</string>
+    <string name="pie_trigger_title">触发区域</string>
+    <string name="pie_trigger_summary">调整PIE控制器的触发区域范围</string>
+    <string name="pie_trigger_none">禁用</string>
+    <string name="pie_trigger_small">小</string>
+    <string name="pie_trigger_normal">正常(默认)</string>
+    <string name="pie_trigger_big">大</string>
+    <string name="pie_trigger_huge">极大</string>
+
+    <!-- Navigation Bar #CM -->
+    <string name="navigation_reset_title">重置</string>
+    <string name="navigation_bar_title">按键与布局</string>
+    <string name="navigation_bar_help_text">1 - 点击锁定图标以开始编辑\n\n2 - 点击任何按键以指定或改变它的功能\n\n3 - 长按任何按键以重新排列按键顺序\n\n4 - 再次点击锁定图标将会保存您的改变\n\n5 - 如果您想还原为系统默认值, 请点击重置键\n\n</string>
+    <string name="navigation_bar_tips">&#8226; 一个按键只能拥有一个行为\n\n&#8226; Home 键的行为是不能被改变的\n\n&#8226; 侧边按键的位置是不能改变的</string>
+    <string name="navigation_bar_tips_title">小提示</string>
+    <string name="navigation_bar_reset_message">您确定要删除目前的设置并还原为系统默认值?</string>
+    <string name="navigation_bar_save_message">导航栏设置已保存</string>
+    <string name="navigation_bar_reset_toast">导航栏设置已还原为系统默认值</string>
+    <string name="navigation_bar_menu_editable">可被编辑</string>
+    <string name="navigation_bar_menu_locked">已锁定</string>
+    
+    <!-- Hybrid sub menu [CHAR LIMIT=30] -->
+    <string name="hybrid_settings">Hybrid设置</string>
+
+    <string name="mod_version">ParanoidAndroid 版本</string>
+    <string name="mod_version_default">未知</string>
+    <string name="vibration_title">振动</string>
+    <string name="notification_convert_sound_to_vibration_title">收到通知时震动</string>
+    <string name="notification_convert_sound_to_vibration_summary">处于震动模式时, 所有的通知都将无视任何应用的单独设置并产生震动</string>
+
+    <!-- Quiet hours -->
+    <string name="quiet_hours_title">安静时段</string>
+    <string name="quiet_hours_summary">配置设备应该安静的时段</string>
+    <string name="quiet_hours_note_title">注意</string>
+    <string name="quiet_hours_note_summary">安静时段将不会影响来电的正常行为</string>
+    <string name="quiet_hours_enabled">开启安静时段</string>
+    <string name="quiet_hours_enabled_on">安静时段设置将会被执行</string>
+    <string name="quiet_hours_enabled_off">通知提醒将会像往常一样运行</string>
+    <string name="quiet_hours_start">安静时段起始时间</string>
+    <string name="quiet_hours_start_summary">什么时间开始执行安静时段的设置</string>
+    <string name="quiet_hours_end">安静时段结束时间</string>
+    <string name="quiet_hours_end_summary">什么时间结束安静时段的执行</string>
+    <string name="quiet_hours_mute">静音提醒</string>
+    <string name="quiet_hours_mute_on">通知提醒将会被静音</string>
+    <string name="quiet_hours_mute_off">声音像往常一样</string>
+    <string name="quiet_hours_still">禁用震动</string>
+    <string name="quiet_hours_still_on">设备将不会震动</string>
+    <string name="quiet_hours_still_off">设备将会像往常一样震动</string>
+    <string name="quiet_hours_dim">禁用指示灯</string>
+    <string name="quiet_hours_dim_on">指示灯将被禁用</string>
+    <string name="quiet_hours_dim_off">指示灯将会正常运行</string>
+    <string name="quiet_hours_haptic">禁用触控反馈</string>
+    <string name="quiet_hours_haptic_on">触控反馈将被禁用</string>
+    <string name="quiet_hours_haptic_off">触控反馈将像往常一样</string>
+    <string name="quiet_hours_active_from">从</string>
+    <string name="quiet_hours_active_to">激活到</string>
+    <string name="start_time_title">起始</string>
+    <string name="end_time_title">结束</string>
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">目前光线传感器值: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_dialog_title">自动亮度级别</string>
+    <string name="auto_brightness_level_format"><xliff:g id="start_level">%1$s</xliff:g> -\n<xliff:g id="end_level">%2$s</xliff:g> lux</string>
+    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="auto_brightness_adjust_button">调整</string>
+    <string name="auto_brightness_reset_button">重置</string>
+    <string name="auto_brightness_remove_button">移除</string>
+    <string name="auto_brightness_add_line">添加行</string>
+    <string name="auto_brightness_lux_dialog_title">环境亮度范围</string>
+    <string name="auto_brightness_split_dialog_title">分体式的亮度水平</string>
+    <string name="auto_brightness_start_lux">Range start (lux)</string>
+    <string name="auto_brightness_end_lux">Range end (lux)</string>
+    <string name="auto_brightness_reset_dialog_title">重置各级？</string>
+    <string name="auto_brightness_reset_confirmation">所有亮度各级将被重置为其默认设置。</string>
+    <string name="auto_brightness_split_lux_format">Split position (between <xliff:g id="min">%1$d</xliff:g> and <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_level_options">Light level options</string>
+    <string name="auto_brightness_menu_edit_lux">Ambient brightness range</string>
+    <string name="auto_brightness_menu_split">Split</string>
+    <string name="auto_brightness_menu_remove">移除</string>
+
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">背景</string>
+    <string name="lockscreen_custom_background_dialog_title">选择颜色</string>
+    <string name="lockscreen_background_result_successful">背景已成功改变</string>
+    <string name="lockscreen_background_result_not_successful">背景未被改变</string>
+    <string name="lockscreen_background_color_fill">颜色填充</string>
+    <string name="lockscreen_background_custom_image">自定义图片</string>
+    <string name="lockscreen_background_default_wallpaper">默认墙纸</string>
+    <string name="auto_brightness_sensitivity_title">调整灵敏度</string>
+    <string name="auto_brightness_sensitivity_verylow">非常低</string>
+    <string name="auto_brightness_sensitivity_low">低</string>
+    <string name="auto_brightness_sensitivity_medium">普通</string>
+    <string name="auto_brightness_sensitivity_high">高</string>
+    <string name="auto_brightness_sensitivity_veryhigh">非常高</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">使用触控笔时显示指针</string>
+    <string name="stylus_icon_enabled_summary">使用触控笔悬浮或绘图时将会显示指针</string>
+
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">触控笔手势</string>
+    <string name="category_spen_title">触控笔手势</string>
+    <string name="enable_subcat_title">触控笔</string>
+    <string name="enable_spen_title_head">启用触控笔手势</string>
+    <string name="enable_spen_summary_head">在触控笔按钮按住时允许通过手势而做出自定义操作. 警告: 应用程序可能无法接受在触控笔按钮按住时的用户输入</string>
+    <string name="gestures_subcat_title">手势</string>
+    <string name="gestures_left_spen_title_head">向左滑动</string>
+    <string name="gestures_left_spen_summary_head">允许在向左滑动时进行自定义的操作</string>
+    <string name="gestures_right_spen_title_head">向右滑动</string>
+    <string name="gestures_right_spen_summary_head">允许在向右滑动时进行自定义的操作</string>
+    <string name="gestures_up_spen_title_head">向上滑动</string>
+    <string name="gestures_up_spen_summary_head">允许在向上滑动时进行自定义的操作</string>
+    <string name="gestures_down_spen_title_head">向下滑动</string>
+    <string name="gestures_down_spen_summary_head">允许在向下滑动时进行自定义的操作</string>
+    <string name="gestures_long_spen_title_head">长按</string>
+    <string name="gestures_long_spen_summary_head">允许在长按时进行自定义的操作</string>
+    <string name="gestures_double_spen_title_head">双击</string>
+    <string name="gestures_double_spen_summary_head">允许在双击时进行自定义的操作</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">无作用</string>
+    <string name="gestures_action_home">转到主屏幕</string>
+    <string name="gestures_action_back">模拟后退键</string>
+    <string name="gestures_action_menu">模拟菜单键</string>
+    <string name="gestures_action_search">启动搜索</string>
+    <string name="gestures_action_recent">最近使用程序</string>
+
+    <!-- stylus gestures support -->
+    <string name="stylus_app_not_installed">%s 尚未被安装</string>
+
+    <!-- Hardware tunables - Vibrator intensity -->
+    <string name="vibrator_intensity_title">振动强度</string>
+    <string name="vibrator_warning">值高于％1$ d个不推荐</string>
+
+    <!-- Hardware tunables - Color calibration -->
+    <string name="color_calibration_title">颜色校准</string>
+    <string name="color_calibration_summary">校准屏幕上的颜色</string>
+    <string name="color_red_title">红色</string>
+    <string name="color_green_title">绿色</string>
+    <string name="color_blue_title">蓝色</string>
+
+    <!-- Hardware tunables - Key backlight -->
+    <string name="key_backlight_title">背光</string>
+    <string name="button_backlight_title">按钮的背光亮度</string>
+    <string name="keyboard_backlight_title">键盘背光灯的亮度</string>
+
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">返回按键结束程序</string>
+    <string name="kill_app_longpress_back_summary">长按返回键结束前台应用程序</string>
+
+    <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
+    <string name="accessibility_home_button_answers_call_prerefence_title">Home键答案调用</string>
+</resources>
