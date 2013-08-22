@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2013 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
-
 
     <!-- WIRELESS and NETWORKS -->
     <header android:id="@+id/wireless_section"
@@ -126,6 +125,52 @@
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
 
+    <!-- HALO -->
+    <header
+        android:id="@+id/halo_settings"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:icon="@drawable/ic_settings_halo" 
+        android:title="@string/halo_settings_title" />
+
+    <!-- Pie Controls -->
+    <header
+        android:id="@+id/pie_settings"
+        android:fragment="com.android.settings.paranoid.PieControls"
+        android:icon="@drawable/ic_settings_pie" 
+        android:title="@string/pie_controls_title" />
+        
+    <!-- Hybrid options -->
+    <header
+        android:id="@+id/hybrid_settings"
+        android:icon="@drawable/ic_settings_hybrid"
+        android:title="@string/hybrid_settings">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.paranoid.preferences"
+            android:targetClass="com.paranoid.preferences.MainActivity" />
+    </header>
+
+    <!-- Privacy -->
+    <header
+        android:fragment="com.android.settings.applications.AppOpsSummary"
+        android:icon="@drawable/ic_privacy_guard"
+        android:title="@string/appops_settings_title"
+        android:id="@+id/appops_settings" />
+
+    <!-- Lockscreen -->
+    <header
+        android:id="@+id/lock_screen_settings"
+        android:fragment="com.android.settings.paranoid.Lockscreen"
+        android:icon="@drawable/ic_settings_lock_screen" 
+        android:title="@string/lock_screen_settings" />
+
+    <!-- Statusbar -->
+    <header
+        android:id="@+id/tool_bar_settings"
+        android:fragment="com.android.settings.paranoid.Toolbar"
+        android:icon="@drawable/ic_settings_status_bar" 
+        android:title="@string/tool_bar_settings" />
+
     <!-- Location -->
     <header
         android:fragment="com.android.settings.LocationSettings"
@@ -139,13 +184,6 @@
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
         android:id="@+id/security_settings" />
-
-    <!-- Privacy -->
-    <header
-        android:fragment="com.android.settings.applications.AppOpsSummary"
-        android:icon="@drawable/ic_privacy_guard"
-        android:title="@string/appops_settings_title"
-        android:id="@+id/appops_settings" />
 
     <!-- Language -->
     <header
@@ -172,35 +210,6 @@
             android:icon="@drawable/ic_menu_add">
         <intent
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
-    </header>
-    
-    <!-- CUSTOMIZATION -->
-    <header android:id="@+id/customization_section"
-        android:title="@string/header_category_customization" />
-
-    <!-- Statusbar -->
-    <header
-        android:id="@+id/tool_bar_settings"
-        android:fragment="com.android.settings.paranoid.Toolbar"
-        android:icon="@drawable/ic_settings_status_bar" 
-        android:title="@string/tool_bar_settings" />
-
-    <!-- Lockscreen -->
-    <header
-        android:id="@+id/lock_screen_settings"
-        android:fragment="com.android.settings.paranoid.Lockscreen"
-        android:icon="@drawable/ic_settings_lock_screen" 
-        android:title="@string/lock_screen_settings" />
-        
-    <!-- Hybrid options -->
-    <header
-        android:id="@+id/hybrid_settings"
-        android:icon="@drawable/ic_settings_hybrid"
-        android:title="@string/hybrid_settings">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.paranoid.preferences"
-            android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>
 
     <!-- SYSTEM -->
