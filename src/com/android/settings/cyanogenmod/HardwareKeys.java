@@ -28,8 +28,6 @@ import android.provider.Settings;
 import android.widget.Toast;
 
 import com.android.settings.R;
-import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
-import com.android.settings.cyanogenmod.KeyboardBacklightBrightness;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
@@ -46,7 +44,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String KEY_SHOW_OVERFLOW = "hardware_keys_show_overflow";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
-    private static final String KEY_KEYBOARD_BACKLIGHT = "keyboard_backlight";
 
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
@@ -109,8 +106,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
-        final PreferenceCategory backlightCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACKLIGHT);
 
         if (hasHomeKey) {
 
@@ -153,15 +148,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                         hasAssistKey ? ACTION_NOTHING : ACTION_SEARCH);
             mMenuLongPressAction = initActionList(KEY_MENU_LONG_PRESS, longPressAction);
 
-            mShowActionOverflow =
-                    (CheckBoxPreference) prefScreen.findPreference(KEY_SHOW_OVERFLOW);
-
-            mShowActionOverflow.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1);
-
             hasAnyBindableKey = true;
         } else {
-            prefScreen.removePreference(menuCategory);
+            menuCategory.removePreference(findPreference(KEY_MENU_PRESS));
+            menuCategory.removePreference(findPreference(KEY_MENU_LONG_PRESS));
         }
 
         if (hasAssistKey) {
@@ -201,17 +191,19 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         } else {
             prefScreen.removePreference(mEnableCustomBindings);
         }
-
-        if (ButtonBacklightBrightness.isSupported() || KeyboardBacklightBrightness.isSupported()) {
-            if (!ButtonBacklightBrightness.isSupported()) {
-                backlightCategory.removePreference(findPreference(KEY_BUTTON_BACKLIGHT));
-            }
-
-            if (!KeyboardBacklightBrightness.isSupported()) {
-                backlightCategory.removePreference(findPreference(KEY_KEYBOARD_BACKLIGHT));
-            }
+        
+        if (hasAnyBindableKey) {
+            mShowActionOverflow = (CheckBoxPreference)
+                prefScreen.findPreference(Settings.System.UI_FORCE_OVERFLOW_BUTTON);
         } else {
-            prefScreen.removePreference(backlightCategory);
+            prefScreen.removePreference(menuCategory);
+            prefScreen.removePreference(findPreference(Settings.System.HARDWARE_KEY_REBINDING));
+        }
+
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefScreen.removePreference(backlight);
         }
     }
 
