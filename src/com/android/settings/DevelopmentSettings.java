@@ -275,6 +275,10 @@ public class DevelopmentSettings extends PreferenceFragment
         mShowTouches = findAndInitCheckboxPref(SHOW_TOUCHES_KEY);
         mShowScreenUpdates = findAndInitCheckboxPref(SHOW_SCREEN_UPDATES_KEY);
         mDisableOverlays = findAndInitCheckboxPref(DISABLE_OVERLAYS_KEY);
+        // Defined whether to disable overlays by developer
+        mDisableOverlays.setChecked(getResources().getBoolean(R.bool.config_disable_overlays));
+        writeDisableOverlaysOption();
+        
         mShowCpuUsage = findAndInitCheckboxPref(SHOW_CPU_USAGE_KEY);
         mForceHardwareUi = findAndInitCheckboxPref(FORCE_HARDWARE_UI_KEY);
         mForceMsaa = findAndInitCheckboxPref(FORCE_MSAA_KEY);
