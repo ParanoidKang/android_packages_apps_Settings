@@ -412,9 +412,11 @@
     <string name="auto_brightness_menu_split">Split</string>
     <string name="auto_brightness_menu_remove">Remove</string>
     
+    <!-- Lock Screen Shortcuts -->
+    <string name="profile_reset_title">Reset</string>
+    <string name="profile_applist_title">Applications</string>
     
     <string name="lock_screen_title">Lock screen</string>
-    <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
     <string name="lockscreen_target_title">Slider shortcuts</string>
     <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
