@@ -552,7 +552,7 @@ public class LockscreenTargets extends Fragment implements
             mDialogIcon.setTag(icon);
             setIconForDialog(iconDrawable);
         } else {
-            Log.w(TAG, "Could not fetch icon, keeping old one (type="  icon.iconType
+            Log.w(TAG, "Could not fetch icon, keeping old one (type=" + icon.iconType
                     + ", source=" + icon.iconSource + ", package= " + icon.packageName + ")");
         }
     }
