@@ -1876,6 +1876,8 @@
     <string name="global_locale_change_title" msgid="5956281361384221451">"更改语言"</string>
     <string name="global_font_change_title" msgid="1887126466191012035">"更改字体大小"</string>
     <string name="app_notifications_switch_label" msgid="9124072219553687583">"显示通知"</string>
+    <string name="app_halo_label_black">来自HALO黑名单</string>
+    <string name="app_halo_label_white">来自HALO白名单</string>
     <string name="help_label" msgid="1107174367904110532">"帮助"</string>
     <string name="user_account_title" msgid="1127193807312271167">"内容帐户"</string>
     <string name="user_picture_title" msgid="7297782792000291692">"照片 ID"</string>
@@ -1902,4 +1904,7 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"拍照"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"从图库中选择照片"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+    <string name="confirm_delete_apn">APN将被删除。</string>
+    <string name="usb_mass_storage_title">大容量存储</string>
+    <string name="usb_mass_storage_summary">启用USB大容量存储</string>
 </resources>

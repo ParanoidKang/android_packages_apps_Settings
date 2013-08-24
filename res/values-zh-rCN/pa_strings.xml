@@ -46,9 +46,9 @@
     <string name="picker_arrow" translatable="false">→</string>
     <string name="default_time">正常</string>
     <string name="custom_time">自定义</string>
-    <string name="dialog_test">测试</string>
     <string name="dialog_delete_title">删除</string>
     <string name="dialog_delete_message">移除选中的项目?</string>
+    <string name="dialog_test">测试</string>
     <string name="dialog_test_message">请将屏幕关闭以便测试新的指示灯设置. 关闭此对话框将停止测试.</string>
     <string name="dialog_test_button">关闭</string>
 
@@ -131,7 +131,6 @@
     <string name="halo_state_white">白名单</string>
     <string name="halo_pause_title">暂停活动应用</string>
     <string name="halo_pause_summary">当通过HALO打开一个应用时，将暂停相关应用</string>
-
     <string name="halo_size_title">HALO大小</string>
     <string name="halo_size_summary">设置HALO的显示大小</string>
     <string name="halo_size_miniscule">最小</string>
@@ -198,9 +197,9 @@
     <string name="title_tile_screen_timeout">屏幕超时</string>
     <string name="title_tile_usb_tether">USB 网络共享</string>
     <string name="title_tile_quiet_hours">安静时段</string>
-    <string name="title_tile_desktop_mode">Pie</string>
+    <string name="title_tile_desktop_mode">PIE</string>
     <string name="title_tile_hybrid">@string/hybrid_settings</string>
-    <string name="title_tile_volume">Volume</string>
+    <string name="title_tile_volume">声音</string>
     <string name="title_dynamic_tiles">动态按钮</string>
     <string name="dynamic_tiles_note_title">注意</string>
     <string name="dynamic_tiles_note_summary">动态按钮不是随时都会显示的, 它们仅会在有相关的系统事件时显示</string>
@@ -237,16 +236,16 @@
     <string name="volume_key_cursor_control_on_reverse">音量上/下将会使光标右/左移动</string>
 
     <!-- Hardware keys -->
-    <string name="hardware_keys_title">物理按键</string>
-    <string name="hardware_keys_bindings_title">按键行为</string>
+    <string name="button_settings">物理按键</string>
     <string name="hardware_keys_enable_custom_title">允许自定义的行为</string>
-    <string name="hardware_keys_home_long_press_title">Home 键 (长按)</string>
-    <string name="hardware_keys_menu_press_title">菜单键</string>
-    <string name="hardware_keys_menu_long_press_title">菜单键 (长按)</string>
-    <string name="hardware_keys_assist_press_title">搜索键</string>
-    <string name="hardware_keys_assist_long_press_title">搜索键 (长按)</string>
-    <string name="hardware_keys_app_switch_press_title">切换程序键</string>
-    <string name="hardware_keys_app_switch_long_press_title">切换程序键 (长按)</string>
+    <string name="hardware_keys_home_key_title">Home键</string>
+    <string name="hardware_keys_menu_key_title">菜单键</string>
+    <string name="hardware_keys_assist_key_title">搜索键</string>
+    <string name="hardware_keys_appswitch_key_title">切换程序键</string>
+    <string name="hardware_keys_volume_keys_title">音量键</string>
+    <string name="hardware_keys_short_press_title">短按动作</string>
+    <string name="hardware_keys_long_press_title">长按动作</string>
+    <string name="hardware_keys_double_tap_title">双击动作</string>
     <string name="hardware_keys_show_overflow_title">显示更多选项菜单键</string>
     <string name="hardware_keys_show_overflow_summary">在程序内加入更多选项菜单键</string>
     <string name="hardware_keys_show_overflow_toast_enable">更多选项菜单键在程序重启前可能不会显示</string>
@@ -330,7 +329,6 @@
     
     <!-- Hybrid sub menu [CHAR LIMIT=30] -->
     <string name="hybrid_settings">Hybrid设置</string>
-
     <string name="mod_version">ParanoidAndroid 版本</string>
     <string name="mod_version_default">未知</string>
     <string name="vibration_title">振动</string>
@@ -363,18 +361,22 @@
     <string name="quiet_hours_haptic_off">触控反馈将像往常一样</string>
     <string name="quiet_hours_active_from">从</string>
     <string name="quiet_hours_active_to">激活到</string>
+    <!-- Increasing ring -->
     <string name="increasing_ring_title">渐增铃声</string>
+    <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->
     <string name="checkbox_increasing_ring">启用</string>
+    <!-- Sound settings screen, the title of the volume bar to adjust the minimum increasing ring volume -->
     <string name="increasing_ring_min_volume_title">铃声和振动</string>
-    <string name="increasing_ring_volume_notice">注意：\ n作为起始量高于振铃的音量，铃声将播放使用振铃音量。</string>
-    <string name="increasing_ring_interval_title">增加间隔</string>
-    <string name="increasing_ring_interval_eachring">每个铃声间隔时长</string>
-    <string name="increasing_ring_interval_half_second">0.5 秒</string>
-    <string name="increasing_ring_interval_1second">1 秒</string>
-    <string name="increasing_ring_interval_2seconds">2 秒</string>
-    <string name="increasing_ring_interval_3seconds">3 秒</string>
-    <string name="increasing_ring_interval_5seconds">5 秒</string>
-    <string name="increasing_ring_interval_10seconds">10 秒</string>
+    <string name="increasing_ring_volume_notice">注意: \n如起始音量大于系统铃声音量, 系统铃声音量将会被使用.。</string>
+    <string name="increasing_ring_interval_title">增强间隔</string>
+    <string name="increasing_ring_interval_eachring">每次铃声播放</string>
+    <string name="increasing_ring_interval_half_second">每0.5 秒</string>
+    <string name="increasing_ring_interval_1second">每1 秒</string>
+    <string name="increasing_ring_interval_2seconds">每2 秒</string>
+    <string name="increasing_ring_interval_3seconds">每3 秒</string>
+    <string name="increasing_ring_interval_5seconds">每5 秒</string>
+    <string name="increasing_ring_interval_10seconds">每10 秒</string>
+    <!-- Time range preference -->
     <string name="start_time_title">起始</string>
     <string name="end_time_title">结束</string>
 
@@ -389,16 +391,19 @@
     <string name="auto_brightness_add_line">添加行</string>
     <string name="auto_brightness_lux_dialog_title">环境亮度范围</string>
     <string name="auto_brightness_split_dialog_title">分体式的亮度水平</string>
-    <string name="auto_brightness_start_lux">Range start (lux)</string>
-    <string name="auto_brightness_end_lux">Range end (lux)</string>
+    <string name="auto_brightness_start_lux">范围启动（LUX）</string>
+    <string name="auto_brightness_end_lux">范围结束（LUX）</string>
     <string name="auto_brightness_reset_dialog_title">重置各级？</string>
     <string name="auto_brightness_reset_confirmation">所有亮度各级将被重置为其默认设置。</string>
-    <string name="auto_brightness_split_lux_format">Split position (between <xliff:g id="min">%1$d</xliff:g> and <xliff:g id="max">%2$d</xliff:g> lux)</string>
-    <string name="auto_brightness_level_options">Light level options</string>
-    <string name="auto_brightness_menu_edit_lux">Ambient brightness range</string>
-    <string name="auto_brightness_menu_split">Split</string>
+    <string name="auto_brightness_split_lux_format">分离位置 (在 <xliff:g id="min">%1$d</xliff:g> 到 <xliff:g id="max">%2$d</xliff:g> lux 之间选择)</string>
+    <string name="auto_brightness_level_options">亮度级别选项</string>
+    <string name="auto_brightness_menu_edit_lux">环境亮度范围</string>
+    <string name="auto_brightness_menu_split">分离</string>
     <string name="auto_brightness_menu_remove">移除</string>
     
+    <!-- Lock Screen Shortcuts -->
+    <string name="profile_reset_title">重置</string>
+    <string name="profile_applist_title">应用</string>
     <string name="lock_screen_title">锁屏界面</string>
     <string name="lockscreen_target_info">把滑块拉到指定的位置以选择快捷方式</string>
     <string name="lockscreen_target_title">锁屏快捷方式</string>
@@ -410,12 +415,8 @@
     <string name="lockscreen_target_empty">空</string>
     <string name="lockscreen_target_edit_title">编辑快捷方式与图标</string>
     <string name="lockscreen_target_edit_msg">选定或改变与快捷方式所关联的程序与图标</string>
-    <string name="lockscreen_vibrate_enabled_title">振动反馈</string>
-    <string name="lockscreen_vibrate_enabled_head">解锁时产生振动反馈</string>
-    <string name="lockscreen_battery_status_title">电池状态</string>
-    <string name="lockscreen_battery_status_charging">仅在充电时显示</string>
-    <string name="lockscreen_battery_status_alwayson">总是显示</string>
-    
+
+    <!-- Lock screen shortcuts -->
     <string name="picker_activities">活动</string>
     <string name="select_custom_app_title">选择自定义程序</string>
     <string name="select_custom_activity_title">选择自定义活动</string>
@@ -424,8 +425,7 @@
     <string name="icon_picker_browser">浏览器</string>
     <string name="icon_picker_calendar">日历</string>
     <string name="icon_picker_camera">相机</string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_contacts">联系人</string>
+    <string name="icon_picker_chrome">谷歌浏览器</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>
@@ -443,6 +443,8 @@
     <string name="icon_picker_search">搜索</string>
     <string name="icon_picker_sms">短信</string>
     <string name="icon_picker_twitter">Twitter</string>
+
+    <!-- String for IconPicker -->
     <string name="icon_picker_title">选择图标来源</string>
     <string name="icon_picker_system_icons_title">系统图标</string>
     <string name="icon_picker_gallery_title">图库</string>

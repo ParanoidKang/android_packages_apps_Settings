@@ -133,7 +133,6 @@
     <string name="halo_state_white">White list</string>
     <string name="halo_pause_title">Pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused</string>
-
     <string name="halo_size_title">HALO size</string>
     <string name="halo_size_summary">Defines how big HALO is going to be</string>
     <string name="halo_size_miniscule">Miniscule</string>
@@ -176,7 +175,6 @@
     <string name="tile_picker_title">Tiles and layout</string>
     <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
     <string name="tile_choose_title">Choose a tile</string>
-
     <string name="title_tile_airplane">Airplane mode</string>
     <string name="title_tile_battery">Battery stats</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
@@ -204,7 +202,6 @@
     <string name="title_tile_desktop_mode">Pie</string>
     <string name="title_tile_hybrid">@string/hybrid_settings</string>
     <string name="title_tile_volume">Volume</string>
-
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
     <string name="dynamic_tiles_note_summary">Dynamic tiles are not always visible and will only show up if triggered by a system event</string>
@@ -213,7 +210,6 @@
     <string name="title_dynamic_ime">IME changer</string>
     <string name="title_dynamic_usbtether">@string/title_tile_usb_tether</string>
     <string name="title_dynamic_wifi">Wi-Fi display</string>
-
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Quick pulldown</string>
     <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
@@ -262,7 +258,6 @@
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
-
     <string name="pref_ring_mode_title">Sound modes</string>
     <string name="pref_ring_mode_summary">View or change the Sound button modes</string>
     <string name="pref_network_mode_title">Network modes</string>
@@ -273,22 +268,19 @@
     <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
 
     <!-- Pie controls -->
-    <string name="pie_controls_title">Pie controls</string>
-    
+    <string name="pie_controls_title">Pie controls</string> 
     <string name="pie_gravity_title">Pie gravity</string>
     <string name="pie_gravity_summary">Select the location where pie will be placed at</string>
     <string name="pie_gravity_top">Top</string>
     <string name="pie_gravity_bottom">Bottom</string>
     <string name="pie_gravity_right">Right</string>
-    <string name="pie_gravity_left">Left</string>
-    
+    <string name="pie_gravity_left">Left</string>   
     <string name="pie_mode_title">Pie style</string>
     <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
     <string name="pie_mode_bare">Bare</string>
     <string name="pie_mode_quick">Quick</string>
     <string name="pie_mode_default">Normal (default)</string>
-    <string name="pie_mode_slow">Slow</string>
-    
+    <string name="pie_mode_slow">Slow</string> 
     <string name="pie_size_title">Pie size</string>
     <string name="pie_size_summary">Define pie controls size</string>
     <string name="pie_size_small">Small</string>
@@ -296,7 +288,6 @@
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
     <string name="pie_size_monster">Monster</string>
-
     <string name="pie_angle_title">Bottom angle</string>
     <string name="pie_angle_summary">Adjust the angle between screen\'s edge and pie</string>
     <string name="pie_angle_none">None</string>
@@ -304,26 +295,20 @@
     <string name="pie_angle_normal">Normal (default)</string>
     <string name="pie_angle_big">Big</string>
     <string name="pie_angle_huge">Huge</string>
-    
     <string name="pie_gap_title">Item gap</string>
     <string name="pie_gap_summary">Adjust the gap that separates pie elements</string>
     <string name="pie_gap_none">None</string>
     <string name="pie_gap_small">Small</string>
     <string name="pie_gap_big">Big (default)</string>
     <string name="pie_gap_huge">Huge</string>
-
     <string name="pie_center_title">Middle alignment</string>
     <string name="pie_center_summary">Center pie on the trigger edge</string>
-
     <string name="pie_stick_title">Prevent rotation</string>
     <string name="pie_stick_summary">Avoids orientation change when screen rotates</string>
-
     <string name="pie_menu_title">Persistent menu button</string>
     <string name="pie_menu_summary">Always show menu button even when it\'s not necessary</string>
-
     <string name="pie_search_title">Search button</string>
     <string name="pie_search_summary">Enable search button on pie controls</string>
-
     <string name="pie_trigger_title">Trigger area</string>
     <string name="pie_trigger_summary">Determine the size of the region that registers swipes</string>
     <string name="pie_trigger_none">None (disable)</string>
@@ -346,10 +331,8 @@
     
     <!-- Hybrid sub menu [CHAR LIMIT=30] -->
     <string name="hybrid_settings">Hybrid properties</string>
-
-    <string name="mod_version">ParanoidAndroid version</string>
+   <string name="mod_version">ParanoidAndroid version</string>
     <string name="mod_version_default">Unknown</string>
-
     <string name="vibration_title">Phone vibration</string>
     <string name="notification_convert_sound_to_vibration_title">Notification conversion</string>
     <string name="notification_convert_sound_to_vibration_summary">Sounds to vibrations during vibrate mode</string>
@@ -425,7 +408,6 @@
     <!-- Lock Screen Shortcuts -->
     <string name="profile_reset_title">Reset</string>
     <string name="profile_applist_title">Applications</string>
-    
     <string name="lock_screen_title">Lock screen</string>
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
     <string name="lockscreen_target_title">Slider shortcuts</string>
@@ -480,7 +462,6 @@
     <string name="lockscreen_background_color_fill">Color fill</string>
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
-
     <string name="auto_brightness_sensitivity_title">Adjustment sensitivity</string>
     <string name="auto_brightness_sensitivity_verylow">Very low</string>
     <string name="auto_brightness_sensitivity_low">Low</string>
