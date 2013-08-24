@@ -107,7 +107,6 @@ public class LockscreenTargets extends Fragment implements
         setHasOptionsMenu(true);
 
         mActivity = getActivity();
-        mIsScreenLarge = Utils.isTablet();
         mResources = getResources();
 
         mTargetOffset = LockscreenTargetUtils.getTargetOffset(mActivity);
