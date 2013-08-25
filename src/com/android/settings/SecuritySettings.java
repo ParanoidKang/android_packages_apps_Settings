@@ -43,7 +43,9 @@ import android.security.KeyStore;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.internal.telephony.util.BlacklistUtils;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +87,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String LOCK_SYNC_ENCRYPTION_PASSWORD = "lock_sync_encryption_password";
 
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
+    private static final String KEY_BLACKLIST = "blacklist";
 
     private PackageManager mPM;
 
@@ -110,6 +113,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private Preference mNotificationAccess;
 
     private boolean mIsPrimary;
+
+    private PreferenceScreen mBlacklist;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -285,6 +290,17 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 deviceAdminCategory.removePreference(mToggleVerifyApps);
             } else {
                 mToggleVerifyApps.setEnabled(false);
+
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
+
+            // Determine options based on device telephony support
+            if (!mPM.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                // No telephony, remove dependent options
+                PreferenceGroup appCategory = (PreferenceGroup)
+                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
+                appCategory.removePreference(mBlacklist);
             }
         }
         
@@ -471,6 +487,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (mResetCredentials != null) {
             mResetCredentials.setEnabled(!mKeyStore.isEmpty());
         }
+
+        // Blacklist
+        updateBlacklistSummary();
     }
 
     @Override
@@ -591,5 +610,15 @@ public class SecuritySettings extends SettingsPreferenceFragment
         Intent intent = new Intent();
         intent.setClassName("com.android.facelock", "com.android.facelock.AddToSetup");
         startActivity(intent);
+    }
+
+    private void updateBlacklistSummary() {
+        if (mBlacklist != null) {
+            if (BlacklistUtils.isBlacklistEnabled(getActivity())) {
+                mBlacklist.setSummary(R.string.blacklist_summary);
+            } else {
+                mBlacklist.setSummary(R.string.blacklist_summary_disabled);
+            }
+        }
     }
 }
