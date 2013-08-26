@@ -290,18 +290,19 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 deviceAdminCategory.removePreference(mToggleVerifyApps);
             } else {
                 mToggleVerifyApps.setEnabled(false);
-
-            // App security settings
-            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
-            mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
-
-            // Determine options based on device telephony support
-            if (!mPM.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
-                // No telephony, remove dependent options
-                PreferenceGroup appCategory = (PreferenceGroup)
-                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
-                appCategory.removePreference(mBlacklist);
             }
+        }
+        
+        // App security settings
+        addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+        mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
+
+        // Determine options based on device telephony support
+        if (!mPM.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                // No telephony, remove dependent options
+            PreferenceGroup appCategory = (PreferenceGroup)
+                    root.findPreference(KEY_APP_SECURITY_CATEGORY);
+            appCategory.removePreference(mBlacklist);
         }
         
         mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);

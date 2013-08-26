@@ -524,6 +524,7 @@
     <string name="accessibility_home_button_answers_call_prerefence_title">Home键答案调用</string>
     
     <!-- BlackList -->
+    <string name="app_security_title">应用安全</string>
     <string name="blacklist_title">黑名单</string>
     <string name="blacklist_edit_dialog_title">编辑黑名单</string>
     <string name="blacklist_prefs">设置</string>
