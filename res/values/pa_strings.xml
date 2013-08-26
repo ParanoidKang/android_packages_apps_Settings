@@ -551,6 +551,7 @@
     <string name="blacklist_policy_block_messages">Block incoming messages</string>
 
     <!-- Blacklist management -->
+    <string name="app_security_title">App security</string>
     <string name="add_blacklist_number">Add number</string>
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
