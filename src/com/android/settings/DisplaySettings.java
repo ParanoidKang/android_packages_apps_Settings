@@ -151,22 +151,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWifiDisplayPreference = null;
         }
 
-        final PreferenceGroup calibrationCategory =
-                (PreferenceGroup) findPreference(KEY_DISPLAY_CALIBRATION_CATEGORY);
-
-        if (!DisplayColor.isSupported() && !DisplayGamma.isSupported()) {
-            getPreferenceScreen().removePreference(calibrationCategory);
-        } else {
-            if (!DisplayColor.isSupported()) {
-                calibrationCategory.removePreference(findPreference(KEY_DISPLAY_COLOR));
-            }
-            if (!DisplayGamma.isSupported()) {
-                calibrationCategory.removePreference(findPreference(KEY_DISPLAY_GAMMA));
-            }
-        }
-        
         mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
-        if (!AdaptiveBacklight.isSupported()) {
+        if (!isAdaptiveBacklightSupported()) {
             getPreferenceScreen().removePreference(mAdaptiveBacklight);
             mAdaptiveBacklight = null;
         }
@@ -447,7 +433,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
      * @param ctx A valid context
      */
     public static void restore(Context ctx) {
-        if (AdaptiveBacklight.isSupported()) {
+        if (isAdaptiveBacklightSupported()) {
             final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
             final boolean enabled = prefs.getBoolean(KEY_ADAPTIVE_BACKLIGHT, true);
             if (!AdaptiveBacklight.setEnabled(enabled)) {
@@ -455,6 +441,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 Log.d(TAG, "Adaptive backlight settings restored.");
             }
+        }
+    }
+
+    private static boolean isAdaptiveBacklightSupported() {
+        try {
+            return AdaptiveBacklight.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
         }
     }
 }
