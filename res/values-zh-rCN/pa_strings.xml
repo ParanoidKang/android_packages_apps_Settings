@@ -99,26 +99,23 @@
     <string name="home_screen_widgets_summary">允许桌面插件添加到锁屏</string>
     <string name="home_screen_widgets_warning_title">警告</string>
     <string name="home_screen_widgets_warning">允许桌面插件添加到锁屏，可能导致安全问题，是否继续？</string>
+    <!-- Widgets toggle -->
     <string name="lockscreen_enable_widgets_title">插件页面</string>
     <string name="lockscreen_enable_widgets_summary">显示锁屏左侧插件页面</string>
     <string name="lockscreen_enable_camera_title">相机插件</string>
     <string name="lockscreen_enable_camera_summary">显示锁屏右侧相机插件</string>
-    
     <!-- Volume sub settings -->
     <string name="volume_button_setting_title">音量键设置</string>
     <!-- Volume music controls -->
     <string name="volbtn_music_controls_title">音量键音乐控制</string>
     <string name="volbtn_music_controls_summary">当屏幕关闭时, 长按音量键即可改变音乐曲目</string>
-
     <!-- Wakeup options -->
     <string name="pref_volume_wake_title">音量键唤醒</string>
     <string name="pref_volume_wake_summary">使用音量键唤醒设备</string>
-
     <!-- Bars sub menu [CHAR LIMIT=30] -->
     <string name="tool_bar_settings">状态栏设置</string>
     <string name="tool_bar_status_header">状态栏</string>
     <string name="tool_bar_navigation_header">导航栏</string>
-
     <!-- HALO -->
     <string name="halo_settings_title">HALO</string>
     <string name="halo_hide_title">打开应用后隐藏HALO</string>
@@ -234,7 +231,6 @@
     <string name="volume_key_cursor_control_off">禁用</string>
     <string name="volume_key_cursor_control_on">音量上/下将会使光标左/右移动</string>
     <string name="volume_key_cursor_control_on_reverse">音量上/下将会使光标右/左移动</string>
-
     <!-- Hardware keys -->
     <string name="button_settings">物理按键</string>
     <string name="hardware_keys_enable_custom_title">允许自定义的行为</string>
@@ -512,9 +508,25 @@
     <string name="color_blue_title">蓝色</string>
 
     <!-- Hardware tunables - Key backlight -->
-    <string name="key_backlight_title">背光</string>
     <string name="button_backlight_title">按钮的背光亮度</string>
-    <string name="keyboard_backlight_title">键盘背光灯的亮度</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
+    <string name="button_backlight_seekbar_title">按钮的亮度</string>
+    <string name="keyboard_backlight_seekbar_title">键盘的亮度</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">请勿关闭</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
+    <string name="backlight_summary_disabled">禁用</string>
+    <string name="backlight_summary_enabled_with_timeout">启用 <xliff:g id="超时">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">启用</string>
+    
+    <!-- Hardware tunables - Gamma calibration -->
+    <string name="category_gamma_title">伽玛</string>
+    <string name="gamma_tuning_title_head">伽玛校准</string>
+    <string name="gamma_tuning_summary_head">调整伽玛值</string>
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">返回按键结束程序</string>
@@ -523,8 +535,7 @@
     <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
     <string name="accessibility_home_button_answers_call_prerefence_title">Home键答案调用</string>
     
-    <!-- BlackList -->
-    <string name="app_security_title">应用安全</string>
+    <!-- Blacklist preferences -->
     <string name="blacklist_title">黑名单</string>
     <string name="blacklist_edit_dialog_title">编辑黑名单</string>
     <string name="blacklist_prefs">设置</string>
@@ -547,9 +558,13 @@
     <string name="blacklist_regex_summary">使用 . 作为通配符和 * 作为重复字符, 例如: 123.* 将会阻止所有 123 为前缀的号码; .*123.* 将会阻止所有包含 123 的号码</string>
     <string name="blacklist_policy_block_calls">拦截电话</string>
     <string name="blacklist_policy_block_messages">拦截短信</string>
+
+    <!-- Blacklist management -->
+    <string name="app_security_title">应用安全</string>
     <string name="add_blacklist_number">添加号码</string>
     <string name="remove_blacklist_number_title">移除号码</string>
     <string name="remove_blacklist_entry">确认删除此黑名单条目？</string>
+    <string name="select_contact">选择联系人</string>
     
     <!-- Swipe Back Layout -->
     <string name="swipe_back_layout_title">滑动返回手势</string>
@@ -561,4 +576,8 @@
     <string name="swipe_back_layout_edge_right">右边</string>
     <string name="swipe_back_layout_edge_bottom">底部</string>
     <string name="swipe_back_layout_edge_all">全部</string>
+    
+     <!-- Backlight brightness settings screen -->
+    <string name="adaptive_backlight_title">自动背光</string>
+    <string name="adaptive_backlight_summary">智能改变背光显示屏的亮度，有助于最大限度地延长电池寿命</string>
 </resources>
