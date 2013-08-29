@@ -196,7 +196,7 @@
     <string name="title_tile_quiet_hours">安静时段</string>
     <string name="title_tile_desktop_mode">PIE</string>
     <string name="title_tile_hybrid">@string/hybrid_settings</string>
-    <string name="title_tile_volume">声音</string>
+    <string name="title_tile_volume">音量</string>
     <string name="title_dynamic_tiles">动态按钮</string>
     <string name="dynamic_tiles_note_title">注意</string>
     <string name="dynamic_tiles_note_summary">动态按钮不是随时都会显示的, 它们仅会在有相关的系统事件时显示</string>
@@ -508,16 +508,16 @@
     <string name="color_blue_title">蓝色</string>
 
     <!-- Hardware tunables - Key backlight -->
-    <string name="button_backlight_title">按钮的背光亮度</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">按钮的亮度</string>
-    <string name="keyboard_backlight_seekbar_title">键盘的亮度</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">请勿关闭</string>
+    <string name="button_backlight_title">按键背光</string>
+    <string name="button_backlight_enabled">启用按键背光</string>
+    <string name="keyboard_backlight_enabled">启用键盘背光</string>
+    <string name="button_backlight_seekbar_title">按键背光</string>
+    <string name="keyboard_backlight_seekbar_title">键盘背光</string>
+    <string name="backlight_timeout_title">背光超时</string>
+    <string name="backlight_timeout_unlimited">一直亮起</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> 秒</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> 秒</item>
     </plurals>
     <string name="backlight_summary_disabled">禁用</string>
     <string name="backlight_summary_enabled_with_timeout">启用 <xliff:g id="超时">%s</xliff:g></string>
@@ -533,7 +533,7 @@
     <string name="kill_app_longpress_back_summary">长按返回键结束前台应用程序</string>
 
     <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
-    <string name="accessibility_home_button_answers_call_prerefence_title">Home键答案调用</string>
+    <string name="accessibility_home_button_answers_call_prerefence_title">Home键接听来电</string>
     
     <!-- Blacklist preferences -->
     <string name="blacklist_title">黑名单</string>
