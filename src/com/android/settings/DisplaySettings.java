@@ -47,6 +47,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 import com.android.internal.view.RotationPolicy;
+import com.android.settings.cyanogenmod.DisplayColor;
+import com.android.settings.cyanogenmod.DisplayGamma;
 import com.android.settings.DreamSettings;
 import com.android.settings.Utils;
 
@@ -69,6 +71,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
+    private static final String KEY_DISPLAY_CALIBRATION_CATEGORY = "display_calibration_category";
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
@@ -163,6 +166,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.SCREEN_OFF_ANIMATION, 1) == 1);
         } else {
             getPreferenceScreen().removePreference(mScreenOffAnimation);
+        }
+        
+        if (!DisplayColor.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_COLOR));
+        }
+        if (!DisplayGamma.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_GAMMA));
         }
     }
 
