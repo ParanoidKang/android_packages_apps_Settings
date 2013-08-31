@@ -89,10 +89,6 @@
             android:key="hardware_keys"
             android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
             android:title="@string/button_settings" />
-            
-    <PreferenceScreen
-        android:key="swipe_back_layout_settings"
-        android:fragment="com.android.settings.swipe.SwipeBackLayout"
-        android:title="@string/swipe_back_layout_title" />
+            android:title="@string/hardware_keys_title" />
 
 </PreferenceScreen>

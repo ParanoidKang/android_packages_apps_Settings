@@ -575,17 +575,6 @@
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
     
-    <!-- Swipe Back Layout -->
-    <string name="swipe_back_layout_title">Swipe Back Gesture</string>
-    <string name="swipe_back_layout_enable_title">Enable Swipe Back Gesture</string>
-    <string name="swipe_back_layout_enable_summary">Enable or disable the Swipe Back Gesture</string>
-    <string name="swipe_back_layout_edge_title">Track Edge</string>
-    <string name="swipe_back_layout_edge_summary">Select an edge to track for swipe back gesture</string>
-    <string name="swipe_back_layout_edge_left">Left</string>
-    <string name="swipe_back_layout_edge_right">Right</string>
-    <string name="swipe_back_layout_edge_bottom">Bottom</string>
-    <string name="swipe_back_layout_edge_all">All</string>
-    
      <!-- Backlight brightness settings screen -->
     <string name="adaptive_backlight_title">Adaptive backlight</string>
     <string name="adaptive_backlight_summary">Intelligently vary the backlight brightness of the display and help maximize battery life</string>

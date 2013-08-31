@@ -566,18 +566,7 @@
     <string name="remove_blacklist_number_title">移除号码</string>
     <string name="remove_blacklist_entry">确认删除此黑名单条目？</string>
     <string name="select_contact">选择联系人</string>
-    
-    <!-- Swipe Back Layout -->
-    <string name="swipe_back_layout_title">滑动返回手势</string>
-    <string name="swipe_back_layout_enable_title">启用滑动返回手势</string>
-    <string name="swipe_back_layout_enable_summary">打开或关闭滑动返回手势</string>
-    <string name="swipe_back_layout_edge_title">选择边缘</string>
-    <string name="swipe_back_layout_edge_summary">选择要启用滑动手势的方向</string>
-    <string name="swipe_back_layout_edge_left">左边</string>
-    <string name="swipe_back_layout_edge_right">右边</string>
-    <string name="swipe_back_layout_edge_bottom">底部</string>
-    <string name="swipe_back_layout_edge_all">全部</string>
-    
+
      <!-- Backlight brightness settings screen -->
     <string name="adaptive_backlight_title">自动背光</string>
     <string name="adaptive_backlight_summary">智能改变背光显示屏的亮度，有助于最大限度地延长电池寿命</string>
