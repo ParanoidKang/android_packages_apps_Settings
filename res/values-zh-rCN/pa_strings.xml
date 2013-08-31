@@ -104,14 +104,7 @@
     <string name="lockscreen_enable_widgets_summary">显示锁屏左侧插件页面</string>
     <string name="lockscreen_enable_camera_title">相机插件</string>
     <string name="lockscreen_enable_camera_summary">显示锁屏右侧相机插件</string>
-    <!-- Volume sub settings -->
-    <string name="volume_button_setting_title">音量键设置</string>
-    <!-- Volume music controls -->
-    <string name="volbtn_music_controls_title">音量键音乐控制</string>
-    <string name="volbtn_music_controls_summary">当屏幕关闭时, 长按音量键即可改变音乐曲目</string>
-    <!-- Wakeup options -->
-    <string name="pref_volume_wake_title">音量键唤醒</string>
-    <string name="pref_volume_wake_summary">使用音量键唤醒设备</string>
+    
     <!-- Bars sub menu [CHAR LIMIT=30] -->
     <string name="tool_bar_settings">状态栏设置</string>
     <string name="tool_bar_status_header">状态栏</string>
@@ -253,6 +246,13 @@
     <string name="hardware_keys_action_voice_search">语音搜索</string>
     <string name="hardware_keys_action_in_app_search">程序内搜索</string>
     <string name="hardware_keys_action_sleep">锁屏</string>
+    <!-- Volume music controls -->
+    <string name="volbtn_music_controls_title">音量键音乐控制</string>
+    <string name="volbtn_music_controls_summary">当屏幕关闭时, 长按音量键即可改变音乐曲目</string>
+    <!-- Wakeup options -->
+    <string name="volume_wake_title">音量键唤醒</string>
+    <string name="volume_wake_summary">使用音量键唤醒设备</string>
+    
     <string name="pref_ring_mode_title">声音切换模式</string>
     <string name="pref_ring_mode_summary">选择声音按钮的切换方式</string>
     <string name="pref_network_mode_title">网络切换模式</string>
@@ -274,12 +274,12 @@
     <string name="pie_mode_summary">设置PIE动画的开启与响应速度</string>
     <string name="pie_mode_bare">关闭</string>
     <string name="pie_mode_quick">快速</string>
-    <string name="pie_mode_normal">正常</string>
+    <string name="pie_mode_default">正常(默认)</string>
     <string name="pie_mode_slow">缓慢</string>
     <string name="pie_size_title">PIE大小</string>
     <string name="pie_size_summary">设置PIE控制器的大小</string>
     <string name="pie_size_small">小</string>
-    <string name="pie_size_default">@string/pie_mode_default</string>
+    <string name="pie_size_default">正常(默认)</string>
     <string name="pie_size_large">大</string>
     <string name="pie_size_gigantic">巨大</string>
     <string name="pie_size_monster">最大</string>
@@ -287,7 +287,7 @@
     <string name="pie_angle_summary">调整屏幕边缘与PIE之间的夹角</string>
     <string name="pie_angle_none">无</string>
     <string name="pie_angle_small">小</string>
-    <string name="pie_angle_default">正常</string>
+    <string name="pie_angle_default">正常(默认)</string>
     <string name="pie_angle_big">大</string>
     <string name="pie_angle_huge">极大</string>    
     <string name="pie_gap_title">按键间隙</string>
@@ -528,6 +528,18 @@
     <string name="category_gamma_title">伽玛</string>
     <string name="gamma_tuning_title_head">伽玛校准</string>
     <string name="gamma_tuning_summary_head">调整伽玛值</string>
+    
+    <!--  Other device settings -->
+    <string name="more_device_controls_title">更多\u2026</string>
+    <string name="more_device_settings_title">更多设备选项</string>
+    <string name="sensors_motors_title">传感器</string>
+    <string name="display_calibration_title">显示</string>
+    
+    <!-- Category title for headset Settings.-->
+    <string name="headset_category_title">头戴设备</string>
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">启动音乐应用</string>
+    <string name="headset_connect_player_summary">插入耳机时启动默认的音乐应用</string>
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">返回按键结束程序</string>

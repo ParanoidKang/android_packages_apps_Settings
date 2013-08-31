@@ -40,10 +40,6 @@
     <string name="notification_light_default_value">Default</string>
     <string name="choose_app">Choose application</string>
 
-    <!-- Backlight brightness settings screen -->
-    <string name="adaptive_backlight_title">Adaptive backlight</string>
-    <string name="adaptive_backlight_summary">Intelligently vary the backlight brightness of the display and help maximize battery life</string>
-
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Edit light settings</string>
     <string name="pulse_speed_title">Pulse length and speed</string>
@@ -256,15 +252,12 @@
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
-<<<<<<< HEAD
     <string name="hardware_keys_action_sleep">Go to sleep</string>
-=======
     <string name="home_wake_title">Home button wake</string>
     <string name="home_wake_summary">Pressing the home button will wake your device</string>
     <string name="volume_wake_title">Volume button wake</string>
     <string name="volume_wake_summary">Pressing a volume button will wake your device</string>
 
->>>>>>> FETCH_HEAD
     <string name="pref_ring_mode_title">Sound modes</string>
     <string name="pref_ring_mode_summary">View or change the Sound button modes</string>
     <string name="pref_network_mode_title">Network modes</string>
@@ -537,24 +530,17 @@
     <string name="backlight_summary_disabled">Disabled</string>
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> FETCH_HEAD
     <!-- Hardware tunables - Gamma calibration -->
     <string name="category_gamma_title">Gamma</string>
     <string name="gamma_tuning_title_head">Gamma calibration</string>
     <string name="gamma_tuning_summary_head">Tweak gamma values</string>
-<<<<<<< HEAD
-=======
 
     <!--  Other device settings -->
     <string name="more_device_controls_title">More\u2026</string>
     <string name="more_device_settings_title">Other device options</string>
     <string name="sensors_motors_title">Sensors &amp; motors</string>
     <string name="display_calibration_title">Display calibration</string>
->>>>>>> FETCH_HEAD
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -562,7 +548,6 @@
 
     <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
     <string name="accessibility_home_button_answers_call_prerefence_title">Home button answers call</string>
-<<<<<<< HEAD
     
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Blacklist</string>
@@ -599,8 +584,7 @@
     <string name="adaptive_backlight_title">Adaptive backlight</string>
     <string name="adaptive_backlight_summary">Intelligently vary the backlight brightness of the display and help maximize battery life</string>
 
-    <!-- Category title for headset specific Settings.
-         [CHAR LIMIT=40] -->
+    <!-- Category title for headset Settings.-->
     <string name="headset_category_title">Headset</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Launch music app</string>

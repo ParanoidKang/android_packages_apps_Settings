@@ -47,8 +47,6 @@ public abstract class HWValueSliderPreference extends DialogPreference implement
 
     private HardwareInterface mHw;
 
-    private HardwareInterface mHw;
-
     private Drawable mProgressDrawable;
     private Drawable mProgressThumb;
     private LightingColorFilter mRedFilter;

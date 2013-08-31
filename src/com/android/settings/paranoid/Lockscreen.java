@@ -59,8 +59,6 @@ public class Lockscreen extends SettingsPreferenceFragment
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_HOME_SCREEN_WIDGETS = "home_screen_widgets";
     private static final String KEY_MAXIMIZE_WIDGETS = "maximize_widgets";
-    private static final String KEY_VOLBTN_MUSIC_CTRL = "music_controls";
-    private static final String KEY_VOLUME_WAKE = "volume_wake";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
 
     private static final int REQUEST_CODE_BG_WALLPAPER = 1024;
@@ -75,8 +73,6 @@ public class Lockscreen extends SettingsPreferenceFragment
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mHomeScreenWidgets;
     private CheckBoxPreference mMaximizeWidgets;
-    private CheckBoxPreference mVolBtnMusicCtrl;
-    private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mQuickUnlock;
     private CheckBoxPreference mEnableWidgets;
     private CheckBoxPreference mEnableCamera;
@@ -130,14 +126,6 @@ public class Lockscreen extends SettingsPreferenceFragment
         mEnableWidgets.setChecked((disabledFeatures & DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL) == 0);
         mEnableCamera.setChecked((disabledFeatures & DevicePolicyManager.KEYGUARD_DISABLE_SECURE_CAMERA) == 0);
 
-        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
-        mVolumeWake.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-
-        mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
-        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                   Settings.System.VOLBTN_MUSIC_CONTROLS, 0) == 1);
-                   
         if(Utils.getScreenType(mContext) == Utils.DEVICE_TABLET) {
             prefSet.removePreference(mAllowRotation);
             prefSet.removePreference(mMaximizeWidgets);
@@ -212,12 +200,6 @@ public class Lockscreen extends SettingsPreferenceFragment
             updateKeyguardState(mEnableCamera.isChecked(), mEnableWidgets.isChecked());
         } else if (preference == mEnableWidgets) {
             updateKeyguardState(mEnableCamera.isChecked(), mEnableWidgets.isChecked());
-         } else if (preference == mVolumeWake) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.VOLUME_WAKE_SCREEN, mVolumeWake.isChecked() ? 1 : 0);
-         } else if (preference == mVolBtnMusicCtrl) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.VOLBTN_MUSIC_CONTROLS, mVolBtnMusicCtrl.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
