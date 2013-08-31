@@ -1610,6 +1610,9 @@
                 android:resource="@id/security_settings" />
         </activity>
 
+        <activity android:name=".cyanogenmod.ButtonSettings" />
+        <activity android:name=".cyanogenmod.MoreDeviceSettings" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">

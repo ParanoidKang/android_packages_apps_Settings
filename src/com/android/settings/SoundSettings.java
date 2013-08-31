@@ -88,8 +88,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
     private static final String KEY_VIBRATOR_INTENSITY = "vibrator_intensity";
-    private static final String KEY_VOLBTN_MUSIC_CTRL = "music_controls";
-    private static final String KEY_VOLUME_WAKE = "volume_wake";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
