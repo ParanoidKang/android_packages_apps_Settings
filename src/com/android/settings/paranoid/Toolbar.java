@@ -44,17 +44,22 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String NAV_BAR_CATEGORY = "toolbar_navigation";
     private static final String NAV_BAR_CONTROLS = "navigation_bar_controls";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String STATUS_BAR_NETWORK_STATS = "status_bar_show_network_stats";
+    private static final String STATUS_BAR_NETWORK_STATS_UPDATE = "status_bar_network_status_update";
 
     private ListPreference mAmPmStyle;
     private ListPreference mStatusBarMaxNotif;
+    private ListPreference mStatusBarNetStatsUpdate;
     private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mShowClock;
     private CheckBoxPreference mCircleBattery;
     private CheckBoxPreference mStatusBarNotifCount;
     private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
+    private CheckBoxPreference mStatusBarNetworkStats;
     private PreferenceScreen mNavigationBarControls;
     private PreferenceCategory mNavigationCategory;
+    
 
     private Context mContext;
 
@@ -90,6 +95,17 @@ public class Toolbar extends SettingsPreferenceFragment
                 Settings.System.MAX_NOTIFICATION_ICONS, 2);
         mStatusBarMaxNotif.setValue(String.valueOf(maxNotIcons));
         mStatusBarMaxNotif.setOnPreferenceChangeListener(this);
+        
+        mStatusBarNetworkStats = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS);
+        mStatusBarNetworkStats.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_STATS, 0) == 1));
+                
+        mStatusBarNetStatsUpdate = (ListPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS_UPDATE);
+        long statsUpdate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, 500);
+        mStatusBarNetStatsUpdate.setValue(String.valueOf(statsUpdate));
+        mStatusBarNetStatsUpdate.setSummary(mStatusBarNetStatsUpdate.getEntry());
+        mStatusBarNetStatsUpdate.setOnPreferenceChangeListener(this);
 
         mNavigationCategory = (PreferenceCategory) prefSet.findPreference(NAV_BAR_CATEGORY);
 
@@ -158,13 +174,18 @@ public class Toolbar extends SettingsPreferenceFragment
                     Settings.System.STATUS_BAR_NOTIF_COUNT, mStatusBarNotifCount.isChecked()
                     ? 1 : 0);
         } else if (preference == mMenuButtonShow) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mStatusBarDoNotDisturb) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarNetworkStats) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS,
+                    mStatusBarNetworkStats.isChecked() ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -180,8 +201,15 @@ public class Toolbar extends SettingsPreferenceFragment
             return true;
         } else if (preference == mStatusBarMaxNotif) {
             int maxNotIcons = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
+            return true;
+        } else if (preference == mStatusBarNetStatsUpdate) {
+            long updateInterval = Long.valueOf((String) newValue);
+            int index = mStatusBarNetStatsUpdate.findIndexOfValue((String) newValue);
+            Settings.System.putLong(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, updateInterval);
+            mStatusBarNetStatsUpdate.setSummary(mStatusBarNetStatsUpdate.getEntries()[index]);
             return true;
         }
         return false;

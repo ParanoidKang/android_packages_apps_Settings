@@ -1,0 +1,8 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="entries_status_bar_network_stats_update">
+        <item>&#189; 秒</item>
+        <item>1 秒</item>
+        <item>2 秒</item>
+        <item>5 秒</item>
+    </string-array>
+</resources>
