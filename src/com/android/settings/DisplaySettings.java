@@ -283,11 +283,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
 
-
-        if (mAdaptiveBacklight != null) {
-            mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
-        }
-
         updateState();
     }
 
