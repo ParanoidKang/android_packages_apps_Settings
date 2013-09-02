@@ -49,16 +49,15 @@ public class Toolbar extends SettingsPreferenceFragment
     private ListPreference mAmPmStyle;
     private ListPreference mStatusBarMaxNotif;
     private ListPreference mStatusBarNetStatsUpdate;
+    private ListPreference mStatusBarNetworkStats;
     private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mShowClock;
     private CheckBoxPreference mCircleBattery;
     private CheckBoxPreference mStatusBarNotifCount;
     private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
-    private CheckBoxPreference mStatusBarNetworkStats;
     private PreferenceScreen mNavigationBarControls;
     private PreferenceCategory mNavigationCategory;
-    
 
     private Context mContext;
 
@@ -95,12 +94,14 @@ public class Toolbar extends SettingsPreferenceFragment
         mStatusBarMaxNotif.setValue(String.valueOf(maxNotIcons));
         mStatusBarMaxNotif.setOnPreferenceChangeListener(this);
         
-        mStatusBarNetworkStats = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS);
-        mStatusBarNetworkStats.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NETWORK_STATS, 0) == 1));
+        mStatusBarNetworkStats = (ListPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS);
+        mStatusBarNetworkStats.setValue(String.valueOf(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_STATS_STYLE, 0)));
+        mStatusBarNetworkStats.setSummary(mStatusBarNetworkStats.getEntry());
+        mStatusBarNetStatsUpdate.setOnPreferenceChangeListener(this);
                 
         mStatusBarNetStatsUpdate = (ListPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS_UPDATE);
-        long statsUpdate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+        long statsUpdate = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, 500);
         mStatusBarNetStatsUpdate.setValue(String.valueOf(statsUpdate));
         mStatusBarNetStatsUpdate.setSummary(mStatusBarNetStatsUpdate.getEntry());
@@ -173,11 +174,6 @@ public class Toolbar extends SettingsPreferenceFragment
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mStatusBarNetworkStats) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.STATUS_BAR_NETWORK_STATS,
-                    mStatusBarNetworkStats.isChecked() ? 1 : 0);
-            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -194,6 +190,15 @@ public class Toolbar extends SettingsPreferenceFragment
             int maxNotIcons = Integer.valueOf((String) newValue);
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
+            return true;
+        }  else if (preference == mStatusBarNetworkStats) {
+            int status = mStatusBarNetworkStats.findIndexOfValue((String) newValue);
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS,
+                    status == 0 ? 1 : 0);
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS_STYLE, status);
+            mStatusBarNetworkStats.setSummary(mStatusBarNetworkStats.getEntries()[status]);
             return true;
         } else if (preference == mStatusBarNetStatsUpdate) {
             long updateInterval = Long.valueOf((String) newValue);
