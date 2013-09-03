@@ -155,10 +155,6 @@
     <!-- Do not disturb -->
     <string name="status_bar_donotdisturb_title">禁用滚动动画</string>
     <string name="status_bar_donotdisturb_summary">禁用新通知的滚动动画</string>
-    <!-- Net speed -->
-    <string name="status_bar_network_title">网络流量</string>
-    <string name="status_bar_show_network_stats_title">显示当前网速</string>
-    <string name="status_bar_network_stats_update_title">更新频率</string>
 
     <!-- Quick settings panel -->
     <string name="quick_settings_panel_title">快速设置面板</string>
