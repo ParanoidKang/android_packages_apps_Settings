@@ -37,6 +37,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String KEY_AM_PM_STYLE = "am_pm_style";
     private static final String KEY_SHOW_CLOCK = "show_clock";
     private static final String KEY_CIRCLE_BATTERY = "circle_battery";
+    private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String KEY_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
@@ -49,6 +50,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mShowClock;
     private CheckBoxPreference mCircleBattery;
+    private CheckBoxPreference mStatusBarTraffic;
     private CheckBoxPreference mStatusBarNotifCount;
     private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
@@ -84,6 +86,9 @@ public class Toolbar extends SettingsPreferenceFragment
         mAmPmStyle.setSummary(mAmPmStyle.getEntry());
         mAmPmStyle.setOnPreferenceChangeListener(this);
 
+        mStatusBarTraffic = (CheckBoxPreference) prefSet.findPreference(KEY_STATUS_BAR_TRAFFIC);
+         mStatusBarTraffic.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_TRAFFIC, 0) == 1));
         mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
         int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.MAX_NOTIFICATION_ICONS, 2);
@@ -99,7 +104,7 @@ public class Toolbar extends SettingsPreferenceFragment
         mNavigationBarControls = (PreferenceScreen) prefSet.findPreference(NAV_BAR_CONTROLS);
 
         try {
-            if (Settings.System.getInt(getActivity().getContentResolver(),
+            if (Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.TIME_12_24) != 12) {
                 mAmPmStyle.setEnabled(false);
                 mAmPmStyle.setSummary(R.string.status_bar_am_pm_info);
@@ -109,11 +114,11 @@ public class Toolbar extends SettingsPreferenceFragment
         }
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(KEY_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getInt(getActivity().getContentResolver(), 
+        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext.getContentResolver(), 
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1);
 
         mStatusBarDoNotDisturb = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_DONOTDISTURB);
-        mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+        mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_DONOTDISTURB, 0) == 1));
 
         if (!Utils.isTablet()) {
@@ -144,16 +149,20 @@ public class Toolbar extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.QS_QUICK_PULLDOWN, mQuickPullDown.isChecked()
                     ? 1 : 0);
+        } else if (preference == mStatusBarTraffic) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_TRAFFIC, mStatusBarTraffic.isChecked()
+                    ? 1 : 0);
         } else if (preference == mStatusBarNotifCount) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT, mStatusBarNotifCount.isChecked()
                     ? 1 : 0);
         } else if (preference == mMenuButtonShow) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mStatusBarDoNotDisturb) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
             return true;
@@ -171,7 +180,7 @@ public class Toolbar extends SettingsPreferenceFragment
             return true;
         } else if (preference == mStatusBarMaxNotif) {
             int maxNotIcons = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
             return true;
         }

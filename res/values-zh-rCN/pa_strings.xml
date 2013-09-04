@@ -584,4 +584,8 @@
      <!-- Backlight brightness settings screen -->
     <string name="adaptive_backlight_title">自动背光</string>
     <string name="adaptive_backlight_summary">智能改变背光显示屏的亮度，有助于最大限度地延长电池寿命</string>
+    
+    <!-- network traffic -->
+    <string name="network_traffic_title">显示网速</string>
+    <string name="network_traffic_summary">在状态栏显示当前网速</string>
 </resources>
