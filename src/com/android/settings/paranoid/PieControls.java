@@ -38,6 +38,7 @@ public class PieControls extends SettingsPreferenceFragment
     private static final String PIE_ANGLE = "pie_angle";
     private static final String PIE_GAP = "pie_gap";
     private static final String PIE_MENU = "pie_menu";
+    private static final String PIE_POWER = "pie_power";
     private static final String PIE_SEARCH = "pie_search";
     private static final String PIE_CENTER = "pie_center";
     private static final String PIE_STICK = "pie_stick";
@@ -50,6 +51,7 @@ public class PieControls extends SettingsPreferenceFragment
     private ListPreference mPieGap;
 
     private CheckBoxPreference mPieMenu;
+    private CheckBoxPreference mPiePower;
     private CheckBoxPreference mPieSearch;
     private CheckBoxPreference mPieCenter;
     private CheckBoxPreference mPieStick;
@@ -67,6 +69,10 @@ public class PieControls extends SettingsPreferenceFragment
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MENU, 1) == 1);
+                
+        mPiePower = (CheckBoxPreference) prefSet.findPreference(PIE_POWER);
+        mPiePower.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.PIE_POWER, 0) == 1);
 
         mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
         mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -127,6 +133,9 @@ public class PieControls extends SettingsPreferenceFragment
         if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
+        } else if (preference == mPiePower) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_POWER, mPiePower.isChecked() ? 1 : 0);
         } else if (preference == mPieSearch) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_SEARCH, mPieSearch.isChecked() ? 1 : 0);
