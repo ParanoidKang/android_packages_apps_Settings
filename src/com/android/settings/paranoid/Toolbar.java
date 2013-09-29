@@ -40,6 +40,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String KEY_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
+    private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";
     private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
     private static final String NAV_BAR_CATEGORY = "toolbar_navigation";
@@ -55,6 +56,7 @@ public class Toolbar extends SettingsPreferenceFragment
     private CheckBoxPreference mStatusBarNotifCount;
     private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
+    private CheckBoxPreference mStatusBarQuickPeek;
     private PreferenceScreen mNavigationBarControls;
     private PreferenceCategory mNavigationCategory;
     private PreferenceCategory mStatusCategory;
@@ -97,6 +99,10 @@ public class Toolbar extends SettingsPreferenceFragment
                 Settings.System.MAX_NOTIFICATION_ICONS, 2);
         mStatusBarMaxNotif.setValue(String.valueOf(maxNotIcons));
         mStatusBarMaxNotif.setOnPreferenceChangeListener(this);
+        
+        mStatusBarQuickPeek = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_QUICK_PEEK);
+        mStatusBarQuickPeek.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUSBAR_PEEK, 0) == 1));
 
         mNavigationCategory = (PreferenceCategory) prefSet.findPreference(NAV_BAR_CATEGORY);
 
@@ -161,6 +167,10 @@ public class Toolbar extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT, mStatusBarNotifCount.isChecked()
                     ? 1 : 0);
+        } else if (preference == mStatusBarQuickPeek) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUSBAR_PEEK, mStatusBarQuickPeek.isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mMenuButtonShow) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);

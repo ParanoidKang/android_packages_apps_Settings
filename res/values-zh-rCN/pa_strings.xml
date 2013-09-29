@@ -567,4 +567,7 @@
     <!-- network traffic -->
     <string name="network_traffic_title">显示网速</string>
     <string name="network_traffic_summary">在状态栏显示当前网速</string>
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">快速查看</string>
+    <string name="statusbar_quick_peek_summary">任意界面下可以从屏幕顶端下拉状态栏</string>
 </resources>
