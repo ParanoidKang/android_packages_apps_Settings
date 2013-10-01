@@ -68,6 +68,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
+    private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
@@ -152,6 +153,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (!isAdaptiveBacklightSupported()) {
             getPreferenceScreen().removePreference(mAdaptiveBacklight);
             mAdaptiveBacklight = null;
+        }
+        
+        mScreenOffAnimation = (CheckBoxPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
+        if (getResources().getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
+            mScreenOffAnimation.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.SCREEN_OFF_ANIMATION, 1) == 1);
+        } else {
+            getPreferenceScreen().removePreference(mScreenOffAnimation);
         }
     }
 
@@ -365,6 +374,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mAccelerometer) {
             RotationPolicy.setRotationLockForAccessibility(
                     getActivity(), !mAccelerometer.isChecked());
+        } else if (preference == mScreenOffAnimation) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_ANIMATION,
+                    mScreenOffAnimation.isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mAdaptiveBacklight) {
             return AdaptiveBacklight.setEnabled(mAdaptiveBacklight.isChecked());
         }
