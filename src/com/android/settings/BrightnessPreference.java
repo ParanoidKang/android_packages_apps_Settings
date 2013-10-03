@@ -50,12 +50,14 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
     // If true, enables the use of the screen auto-brightness adjustment setting.
     private static final boolean USE_SCREEN_AUTO_BRIGHTNESS_ADJUSTMENT =
             PowerManager.useScreenAutoBrightnessAdjustmentFeature();
-
+    private static final String STATE_TWILIGHT = "AutoBrightnessSetup:TwilightAdjustment";
+    
     private final int mScreenBrightnessMinimum;
     private final int mScreenBrightnessMaximum;
 
     private SeekBar mSeekBar;
     private CheckBox mCheckBox;
+    private CheckBox mTwilightAdjustment;
     private TextView mAutoSensitivityTitle;
     private Spinner mAutoSensitivity;
 
@@ -151,7 +153,8 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
         mOldBrightness = getBrightness();
         mSeekBar.setProgress(mOldBrightness);
 
-        mCheckBox = (CheckBox)view.findViewById(R.id.automatic_mode);
+        mCheckBox = (CheckBox) view.findViewById(R.id.automatic_mode);
+        mTwilightAdjustment = (CheckBox) view.findViewById(R.id.twilight_adjustment);
         mAutoSensitivityTitle = (TextView) view.findViewById(R.id.automatic_sensitivity_title);
         mAutoSensitivity = (Spinner) view.findViewById(R.id.automatic_sensitivity);
 
@@ -188,6 +191,9 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
             mAutoSensitivityTitle.setVisibility(View.GONE);
             mAutoSensitivity.setVisibility(View.GONE);
         }
+        
+        mTwilightAdjustment.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.AUTO_BRIGHTNESS_TWILIGHT_ADJUSTMENT, 0) != 0);
         mSeekBar.setOnSeekBarChangeListener(this);
     }
 
@@ -212,6 +218,11 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
         mAutoSensitivityTitle.setEnabled(mAutomaticMode);
         mAutoSensitivity.setEnabled(mAutomaticMode);
         setBrightness(mSeekBar.getProgress(), false);
+        
+        Settings.System.putInt(getContext().getContentResolver(),
+                Settings.System.AUTO_BRIGHTNESS_TWILIGHT_ADJUSTMENT,
+                isChecked ? 1 : 0);
+
         updateAutoBrightnessCustomizeButton();
     }
 
@@ -362,6 +373,7 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
         myState.oldProgress = mOldBrightness;
         myState.curBrightness = mCurBrightness;
         myState.autoSensitivitySelection = mAutoSensitivity.getSelectedItemPosition();
+        myState.twilight = mTwilightAdjustment.isChecked();
 
         // Restore the old state when the activity or dialog is being paused
         restoreOldState();
@@ -384,12 +396,14 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
         setBrightness(myState.progress, false);
         mCurBrightness = myState.curBrightness;
         mAutoSensitivity.setSelection(myState.autoSensitivitySelection);
+        mTwilightAdjustment.setChecked(myState.twilight);
     }
 
     private static class SavedState extends BaseSavedState {
 
         boolean automatic;
         boolean oldAutomatic;
+        boolean twilight;
         int progress;
         int oldProgress;
         int curBrightness;
@@ -403,6 +417,7 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
             oldProgress = source.readInt();
             curBrightness = source.readInt();
             autoSensitivitySelection = source.readInt();
+            twilight = source.readInt() == 1;
         }
 
         @Override
@@ -414,6 +429,7 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
             dest.writeInt(oldProgress);
             dest.writeInt(curBrightness);
             dest.writeInt(autoSensitivitySelection);
+            dest.writeInt(twilight ? 1: 0);
         }
 
         public SavedState(Parcelable superState) {
