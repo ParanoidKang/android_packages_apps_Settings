@@ -1448,6 +1448,8 @@
     <string name="recognizer_title" msgid="3231385184559054457">"语音识别程序"</string>
     <string name="recognizer_settings_title" msgid="432493301215113154">"语音搜索"</string>
     <string name="recognizer_settings_summary" msgid="4472287934134546902">"“<xliff:g id="RECOGNIZER_NAME">%s</xliff:g>”的设置"</string>
+    <string name="disable_fullscreen_keyboard_title">禁用全屏键盘</string>
+    <string name="disable_fullscreen_keyboard_summary">横屏下键盘不会全屏</string>
     <string name="tts_settings" msgid="8186971894801348327">"文字转语音设置"</string>
     <string name="tts_settings_title" msgid="1237820681016639683">"文字转语音 (TTS) 输出"</string>
     <string name="use_default_tts_settings_title" msgid="1577063839539732930">"总是使用我的设置"</string>
