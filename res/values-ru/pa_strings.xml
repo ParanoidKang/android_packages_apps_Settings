@@ -43,7 +43,6 @@
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Настройки подсветки</string>
     <string name="pulse_speed_title">продолжительность и скорость пульсирования</string>
-    <string name="picker_arrow" translatable="false">→</string>
     <string name="default_time">Норма</string>
     <string name="custom_time">Пользоват.</string>
     <string name="dialog_delete_title">Удаление</string>

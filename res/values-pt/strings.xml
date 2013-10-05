@@ -184,7 +184,6 @@
     <string name="proxy_settings_title" msgid="5912878565897294401">"Configurações de proxy"</string>
     <string name="proxy_clear_text" msgid="5555400754952012657">"Limpar"</string>
     <string name="proxy_port_label" msgid="5655276502233453400">"Porta do proxy"</string>
-    <string name="proxy_port_hint" translatable="false">8080</string>
     <string name="proxy_exclusionlist_label" msgid="7700491504623418701">"Evitar proxy para"</string>
     <string name="proxy_exclusionlist_hint" msgid="6084099226687226948">"example.com,mycomp.test.com,localhost"</string>
     <string name="proxy_defaultView_text" msgid="6387985519141433291">"Restaurar padrões"</string>
