@@ -194,6 +194,7 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
         
         mTwilightAdjustment.setChecked(Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.AUTO_BRIGHTNESS_TWILIGHT_ADJUSTMENT, 0) != 0);
+        mTwilightAdjustment.setOnCheckedChangeListener(this);
         mSeekBar.setOnSeekBarChangeListener(this);
     }
 
