@@ -212,19 +212,20 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
     }
 
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        setMode(isChecked ? Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
-                : Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
-        mSeekBar.setProgress(getBrightness());
-        mSeekBar.setEnabled(!mAutomaticMode || USE_SCREEN_AUTO_BRIGHTNESS_ADJUSTMENT);
-        mAutoSensitivityTitle.setEnabled(mAutomaticMode);
-        mAutoSensitivity.setEnabled(mAutomaticMode);
-        setBrightness(mSeekBar.getProgress(), false);
-        
-        Settings.System.putInt(getContext().getContentResolver(),
-                Settings.System.AUTO_BRIGHTNESS_TWILIGHT_ADJUSTMENT,
-                isChecked ? 1 : 0);
-
-        updateAutoBrightnessCustomizeButton();
+        if (buttonView == mTwilightAdjustment) {
+            Settings.System.putInt(getContext().getContentResolver(),
+                    Settings.System.AUTO_BRIGHTNESS_TWILIGHT_ADJUSTMENT,
+                    isChecked ? 1 : 0);
+        } else {
+            setMode(isChecked ? Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
+                    : Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+            mSeekBar.setProgress(getBrightness());
+            mSeekBar.setEnabled(!mAutomaticMode || USE_SCREEN_AUTO_BRIGHTNESS_ADJUSTMENT);
+            mAutoSensitivityTitle.setEnabled(mAutomaticMode);
+            mAutoSensitivity.setEnabled(mAutomaticMode);
+            setBrightness(mSeekBar.getProgress(), false);
+            updateAutoBrightnessCustomizeButton();
+        }
     }
 
     private void updateAutoBrightnessCustomizeButton() {
