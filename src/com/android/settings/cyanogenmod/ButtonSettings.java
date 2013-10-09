@@ -44,11 +44,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_PRESS = "hardware_keys_camera_press";
     private static final String KEY_CAMERA_LONG_PRESS = "hardware_keys_camera_long_press";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
-<<<<<<< HEAD
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-=======
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
->>>>>>> FETCH_HEAD
 
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
@@ -67,11 +64,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final int ACTION_SEARCH = 3;
     private static final int ACTION_VOICE_SEARCH = 4;
     private static final int ACTION_IN_APP_SEARCH = 5;
-<<<<<<< HEAD
     private static final int ACTION_SLEEP = 6;
-=======
-    private static final int ACTION_LAUNCH_CAMERA = 6;
->>>>>>> FETCH_HEAD
+    private static final int ACTION_LAUNCH_CAMERA = 7;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -93,11 +87,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mCameraPressAction;
     private ListPreference mCameraLongPressAction;
     private CheckBoxPreference mShowActionOverflow;
-<<<<<<< HEAD
     private CheckBoxPreference mKillAppLongpressBack;
-=======
     private CheckBoxPreference mSwapVolumeButtons;
->>>>>>> FETCH_HEAD
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
