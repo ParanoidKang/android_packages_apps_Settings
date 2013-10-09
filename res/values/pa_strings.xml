@@ -243,6 +243,7 @@
     <string name="hardware_keys_menu_key_title">Menu button</string>
     <string name="hardware_keys_assist_key_title">Search button</string>
     <string name="hardware_keys_appswitch_key_title">Recents button</string>
+    <string name="hardware_keys_camera_key_title">Camera button</string>
     <string name="hardware_keys_volume_keys_title">Volume buttons</string>
     <string name="hardware_keys_short_press_title">Short press action</string>
     <string name="hardware_keys_long_press_title">Long press action</string>
@@ -258,6 +259,7 @@
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_sleep">Go to sleep</string>
+    <string name="hardware_keys_action_launch_camera">Launch Camera</string>
     <string name="home_wake_title">Home button wake</string>
     <string name="home_wake_summary">Pressing the home button will wake your device</string>
     <!-- Wakeup options -->
@@ -522,6 +524,12 @@
     <string name="category_gamma_title">Gamma</string>
     <string name="gamma_tuning_title_head">Gamma calibration</string>
     <string name="gamma_tuning_summary_head">Tweak gamma values</string>
+<<<<<<< HEAD
+=======
+    <string name="gamma_tuning_contrast">Contrast</string>
+    <string name="gamma_tuning_brightness">Brightness</string>
+
+>>>>>>> FETCH_HEAD
     <!--  Other device settings -->
     <string name="more_device_controls_title">More\u2026</string>
     <string name="more_device_settings_title">Other device options</string>
@@ -569,6 +577,7 @@
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Launch music app</string>
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
+<<<<<<< HEAD
     <!-- network traffic -->
     <string name="network_traffic_title">Network traffic</string>
     <string name="network_traffic_summary">Show network traffic on status bar</string>
@@ -577,4 +586,10 @@
     <string name="statusbar_quick_peek_summary">Peek at statusbar by swiping from top edge of screen when statusbar is hidden or in full screen mode</string>
 
     <string name="auto_brightness_twilight_adjustment">Adjust to sunrise and sunset</string>
+=======
+
+    <!-- Swap volume buttons when the screen is rotated -->
+    <string name="swap_volume_buttons_title">Reorient volume buttons</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
+>>>>>>> FETCH_HEAD
 </resources>
