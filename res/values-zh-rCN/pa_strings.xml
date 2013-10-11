@@ -569,6 +569,9 @@
     <!-- Statusbar Quick Peek -->
     <string name="statusbar_quick_peek_title">快速查看</string>
     <string name="statusbar_quick_peek_summary">任意界面下可以从屏幕顶端下拉状态栏</string>
-
+    
     <string name="auto_brightness_twilight_adjustment">根据日光调节亮度</string>
+    <!-- Swap volume buttons when the screen is rotated -->
+    <string name="swap_volume_buttons_title">交换音量键</string>
+    <string name="swap_volume_buttons_summary">屏幕旋转的时候也会交换音量键位置</string>
 </resources>
