@@ -46,6 +46,7 @@ import android.util.Log;
 import com.android.internal.telephony.util.BlacklistUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
+import com.android.settings.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +89,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
     private static final String KEY_BLACKLIST = "blacklist";
+    private static final String KEY_QUICK_INSTALL = "quickinstall";
 
     private PackageManager mPM;
 
@@ -115,6 +117,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private boolean mIsPrimary;
 
     private PreferenceScreen mBlacklist;
+    private CheckBoxPreference mQuickInstall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -295,14 +298,24 @@ public class SecuritySettings extends SettingsPreferenceFragment
         
         // App security settings
         addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+        PreferenceGroup appCategory = (PreferenceGroup)
+                root.findPreference(KEY_APP_SECURITY_CATEGORY);
+
         mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
 
         // Determine options based on device telephony support
         if (!mPM.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
                 // No telephony, remove dependent options
-            PreferenceGroup appCategory = (PreferenceGroup)
-                    root.findPreference(KEY_APP_SECURITY_CATEGORY);
             appCategory.removePreference(mBlacklist);
+        }
+        
+        // APP quick install
+        mQuickInstall = (CheckBoxPreference) root.findPreference(KEY_QUICK_INSTALL);
+        mQuickInstall.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.PACKAGE_INSTALLER_QUICK_MODE_ENABLED, 0) == 1);
+        
+        if (Utils.isTablet()) {
+            appCategory.removePreference(mQuickInstall);
         }
         
         mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);
@@ -553,6 +566,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
+        } else if (preference == mQuickInstall) {
+            Settings.System.putInt(getContentResolver(), Settings.System.PACKAGE_INSTALLER_QUICK_MODE_ENABLED,
+                    mQuickInstall.isChecked() ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

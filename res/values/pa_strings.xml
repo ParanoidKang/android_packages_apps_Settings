@@ -585,4 +585,8 @@
     <!-- Swap volume buttons when the screen is rotated -->
     <string name="swap_volume_buttons_title">Reorient volume buttons</string>
     <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
+    
+    <!-- Application Quick Install -->
+    <string name="quick_mode_title">Quick Install</string>
+    <string name="quick_mode_summary">Show smaller dialog to install/uninstall,install progress will be hiden to allow people install multiple app quickly</string>
 </resources>

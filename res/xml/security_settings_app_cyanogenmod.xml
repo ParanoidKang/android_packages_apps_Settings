@@ -25,6 +25,11 @@
             android:key="blacklist"
             android:title="@string/blacklist_title"
             android:fragment="com.android.settings.blacklist.BlacklistSettings" />
+            
+        <CheckBoxPreference
+            android:key="quickinstall"
+            android:title="@string/quick_mode_title"
+            android:summary="@string/quick_mode_summary" />
 
     </PreferenceCategory>
 
