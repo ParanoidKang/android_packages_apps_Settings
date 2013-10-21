@@ -589,4 +589,8 @@
     <!-- Application Quick Install -->
     <string name="quick_mode_title">Quick Install</string>
     <string name="quick_mode_summary">Show smaller dialog to install/uninstall,install progress will be hiden to allow people install multiple app quickly</string>
+    
+    <!-- Expanded Desktop Statusbar style -->
+    <string name="expanded_statusbar_show_title">Always display statusbar</string>
+    <string name="expanded_statusbar_show_summary">Display statusbar when expanded desktop</string>
 </resources>

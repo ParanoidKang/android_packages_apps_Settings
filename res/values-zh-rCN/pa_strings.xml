@@ -578,4 +578,8 @@
     <!-- Application Quick Install -->
     <string name="quick_mode_title">快速安装</string>
     <string name="quick_mode_summary">显示更小的安装/卸载窗口，安装过程将会被隐藏以便快速安装更多的应用程序</string>
+    
+    <!-- Expanded Desktop Statusbar style -->
+    <string name="expanded_statusbar_show_title">总是显示状态栏</string>
+    <string name="expanded_statusbar_show_summary">启用扩展桌面时会显示状态栏</string>
 </resources>
