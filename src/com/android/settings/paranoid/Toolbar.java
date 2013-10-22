@@ -182,6 +182,8 @@ public class Toolbar extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.EXPANDED_DESKTOP_ENABLE_STATUSBAR, mExpandedStatusbarShow.isChecked()
                     ? 1 : 0);
+            // Update SystemUI anyway
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.USER_INTERFACE_STATE, 1);
         } else if (preference == mMenuButtonShow) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
