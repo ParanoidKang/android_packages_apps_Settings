@@ -179,11 +179,17 @@ public class Toolbar extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUSBAR_PEEK, mStatusBarQuickPeek.isChecked() ? 1 : 0);
         } else if (preference == mExpandedStatusbarShow) {
+            // Update SystemUI when expanded desktpo enabled
+            boolean isDesktopExtended = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.EXPANDED_DESKTOP_STATE, 0) == 1;
+            if (isDesktopExtended) {
+                Settings.System.putInt(mContext.getContentResolver(),
+                        Settings.System.USER_INTERFACE_STATE, 1);
+            }
+            
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.EXPANDED_DESKTOP_ENABLE_STATUSBAR, mExpandedStatusbarShow.isChecked()
                     ? 1 : 0);
-            // Update SystemUI anyway
-            Settings.System.putInt(mContext.getContentResolver(), Settings.System.USER_INTERFACE_STATE, 1);
         } else if (preference == mMenuButtonShow) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
