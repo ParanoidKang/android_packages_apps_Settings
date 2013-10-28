@@ -29,7 +29,8 @@
         <CheckBoxPreference
             android:key="quickinstall"
             android:title="@string/quick_mode_title"
-            android:summary="@string/quick_mode_summary" />
+            android:summary="@string/quick_mode_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
