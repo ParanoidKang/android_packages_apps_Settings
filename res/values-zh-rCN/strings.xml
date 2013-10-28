@@ -1444,6 +1444,7 @@
     <string name="voice_input_output_settings_title" msgid="2442850635048676991">"语音输入与输出设置"</string>
     <string name="voice_search_settings_title" msgid="2775469246913196536">"语音搜索"</string>
     <string name="keyboard_settings_title" msgid="5080115226780201234">"Android 键盘"</string>
+    <string name="keyboard_settings_additional_category">键盘附加设置</string>
     <string name="voice_category" msgid="1430370497125803904">"语音"</string>
     <string name="recognizer_title" msgid="3231385184559054457">"语音识别程序"</string>
     <string name="recognizer_settings_title" msgid="432493301215113154">"语音搜索"</string>
