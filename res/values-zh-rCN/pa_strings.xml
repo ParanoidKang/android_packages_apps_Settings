@@ -91,6 +91,49 @@
     <string name="battery_bar_percent">条形百分比</string>
     <string name="battery_circle">圆圈</string>
     <string name="battery_circle_percent">圆圈百分比</string>
+    <string name="gesture_category_title">手势</string>
+    <string name="double_tap_to_sleep_title">双击锁屏</string>
+    <string name="double_tap_to_sleep_summary">双击状态栏锁定屏幕</string>
+
+    <!-- Halo -->
+    <string name="halo_settings_title">Halo</string>
+    <string name="halo_behavior_title">Halo 行为</string>
+    <string name="halo_hide_title">打开新窗口后隐藏Halo</string>
+    <string name="halo_hide_summary">打开新窗口后Halo将会隐藏</string>
+    <string name="halo_state_title">Halo 策略</string>
+    <string name="halo_state_summary">启用黑/白名单</string>
+    <string name="halo_state_black">黑名单</string>
+    <string name="halo_state_white">白名单</string>
+    <string name="halo_pause_title">暂停活动的程序</string>
+    <string name="halo_pause_summary">使用Halo打开一个程序时，当前应用将会被暂停</string>
+    <string name="halo_notification_msgbox_title">启用信息气泡</string>
+    <string name="halo_notification_msgbox_summary">为新通知显示信息提示框</string>
+    <string name="halo_unlock_ping_title">唤醒时提醒</string>
+    <string name="halo_unlock_ping_summary">Halo在设备解锁的状态下，如果收到新通知将会始终提醒</string>
+
+    <string name="halo_size_title">Halo 大小</string>
+    <string name="halo_size_summary">设置Halo大小</string>
+    <string name="halo_size_miniscule">最小</string>
+    <string name="halo_size_small">小</string>
+    <string name="halo_size_default">正常 (默认)</string>
+    <string name="halo_size_large">大</string>
+    <string name="halo_size_gigantic">巨大</string>
+    <string name="halo_size_monster">最大</string>
+
+    <string name="halo_notification_count_title">通知数量</string>
+    <string name="halo_notification_count_summary">显示通知数量</string>
+    <string name="halo_notification_count_none">不显示</string>
+    <string name="halo_notification_count_total">显示总数</string>
+    <string name="halo_notification_count_individual">显示单个应用</string>
+    <string name="halo_notification_count_both">全部显示</string>
+
+    <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">添加到Halo黑名单</string>
+    <string name="app_halo_label_white">添加到Halo白名单</string>
+
+    <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
+    <string name="custom_runtime_warning_title">警告</string>
+    <string name="custom_runtime_warning_message">ART并不是由ParanoidAndroid提供的. 这只是一个测试为目的的功能，并且可能会导致不稳定，强制关闭，丢失数据以及无法启动你的设备。查看&lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;ART简介&lt;/a&gt;获得更多信息.&lt;br/&gt;&lt;br/&gt;我们希望您不要反馈bug信息如果你使用ART作为你的运行环境&lt;br/&gt;&lt;br/&gt;要重新启动以将运行环境从<xliff:g id="old" example="libdvm.so">%1$s</xliff:g>改为<xliff:g id="new" example="libart.so">%2$s</xliff:g>吗?</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
