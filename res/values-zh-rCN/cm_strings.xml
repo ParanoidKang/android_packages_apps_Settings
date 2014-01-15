@@ -177,10 +177,6 @@
     <string name="headset_connect_player_title">启动音乐应用</string>
     <string name="headset_connect_player_summary">启动默认音乐应用当头戴设备连接时</string>
 
-    <string name="more_device_controls_title">更多\u2026</string>
-    <string name="more_device_settings_title">其他设备相关选项</string>
-    <string name="sensors_motors_title">传感器 &amp; 振动器</string>
-    <string name="display_calibration_title">显示校准</string>
     <string name="adb_notify">USB 调试通知</string>
     <string name="adb_notify_summary">USB 调试模式连接时将显示一个通知</string>
 </resources>
