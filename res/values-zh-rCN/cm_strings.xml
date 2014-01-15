@@ -15,6 +15,11 @@
  -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="wifi_setting_countrycode_title">WLAN 区域代码</string>
+    <string name="wifi_setting_countrycode_summary">指定 WLAN 使用的区域码</string>
+    <string name="wifi_setting_countrycode_error">设置区域码时遇到了问题。</string>
+    <string name="wifi_setting_priority_title">WLAN 连接优先</string>
+    <string name="wifi_setting_priority_summary">设置各个 WLAN 网络的优先连接顺序</string>
     <string name="auto_brightness_setup_title">自动亮度</string>
     <string name="auto_brightness_adjustment_title">亮度调节</string>
     <string name="auto_brightness_twilight_adjustment">根据日光或灯光调节亮度</string>
@@ -86,13 +91,19 @@
     <string name="performance_settings_warning_title">请谨慎前进</string>
     <string name="performance_settings_warning">这些设置完全是用于测试与实验。这里的改变将直接影响系统性能，并可能导致系统不稳定、数据丢失与硬件损伤。\n\n如果您更改了这里的设置，我们请求您不要向我们提交错误报告。</string>
     <string name="processor_title">处理器</string>
+    <string name="processor_summary">修改CPU调节器与频率</string>
     <string name="cpu_cur_freq_title">当前 CPU 频率</string>
     <string name="cpu_governors_title">CPU 调节器</string>
     <string name="cpu_min_freq_title">最低 CPU 频率</string>
     <string name="cpu_max_freq_title">最高 CPU 频率</string>
+    <string name="cpu_set_on_boot">开机时启动</string>
+    <string name="cpu_set_on_boot_summary">开机时应用CPU设置</string>
     <string name="io_scheds_title">I/O 调度器</string>
     <string name="io_sched_title">I/O 调度器</string>
+    <string name="io_sched_set_on_boot">开机时启动</string>
+    <string name="io_sched_set_on_boot_summary">开机时应用IO设置</string>
     <string name="memory_management_title">内存管理</string>
+    <string name="memory_management_summary">自定义系统内存的使用情况</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">压缩内存以增加虚拟容量 (需要重启)</string>
     <string name="pref_ksm_title">KSM</string>
@@ -120,7 +131,8 @@
     <string name="gestures_action_search">启动搜索</string>
     <string name="gestures_action_recent">最近使用程序</string>
     <string name="stylus_app_not_installed">%s 尚未被安装</string>
-     <string name="button_settings">按键</string>
+    <string name="button_settings">按键</string>
+    <string name="hardware_keys_enable_custom_title">自定义按键功能</string>
     <string name="hardware_keys_home_key_title">Home 键</string>
     <string name="hardware_keys_menu_key_title">菜单键</string>
     <string name="hardware_keys_assist_key_title">搜索键</string>
@@ -150,6 +162,25 @@
 
     <string name="volume_wake_title">音量键唤醒</string>
     <string name="volume_wake_summary">按音量键唤醒设备</string>
+    <string name="volbtn_music_controls_title">音乐控制</string>
+    <string name="volbtn_music_controls_summary">锁屏时，长按音量键切换音乐</string>
+    <string name="volbtn_cursor_control_title">键盘光标控制</string>
+    <string name="volbtn_cursor_control_off">禁用</string>
+    <string name="volbtn_cursor_control_on">音量 加/减 控制键盘光标 左/右</string>
+    <string name="volbtn_cursor_control_on_reverse">音量 加/减 控制键盘光标 右/左</string>
+    <string name="swap_volume_buttons_title">调整音量键功能</string>
+    <string name="swap_volume_buttons_summary">当屏幕旋转时对调音量键的功能</string>
     <string name="confirm_delete_apn">APN 将被删除。</string>
     <string name="advanced_settings_title">高级</string>
+    
+    <string name="headset_category_title">头戴设备</string>
+    <string name="headset_connect_player_title">启动音乐应用</string>
+    <string name="headset_connect_player_summary">启动默认音乐应用当头戴设备连接时</string>
+
+    <string name="more_device_controls_title">更多\u2026</string>
+    <string name="more_device_settings_title">其他设备相关选项</string>
+    <string name="sensors_motors_title">传感器 &amp; 振动器</string>
+    <string name="display_calibration_title">显示校准</string>
+    <string name="adb_notify">USB 调试通知</string>
+    <string name="adb_notify_summary">USB 调试模式连接时将显示一个通知</string>
 </resources>

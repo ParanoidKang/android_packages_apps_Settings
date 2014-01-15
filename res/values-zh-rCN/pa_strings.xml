@@ -70,6 +70,18 @@
     <string name="link_volume_ringtones">链接铃声与通知的音量</string>
     <string name="link_volume_mutes">静音模式将会影响通知</string>
     <string name="volume_ring_only_description">铃声</string>
+    <string name="increasing_ring_title">渐变铃声</string>
+    <string name="checkbox_increasing_ring">启用</string>
+    <string name="increasing_ring_min_volume_title">起始音量</string>
+    <string name="increasing_ring_volume_notice">注意：\n如果起始音量大于当前铃声音量，将会使用当前音量</string>
+    <string name="increasing_ring_interval_title">增大间隔</string>
+    <string name="increasing_ring_interval_eachring">每次</string>
+    <string name="increasing_ring_interval_half_second">0.5 秒</string>
+    <string name="increasing_ring_interval_1second">1 秒</string>
+    <string name="increasing_ring_interval_2seconds">2 秒</string>
+    <string name="increasing_ring_interval_3seconds">3 秒</string>
+    <string name="increasing_ring_interval_5seconds">5 秒</string>
+    <string name="increasing_ring_interval_10seconds">10 秒</string>
     
     <string name="see_through_title">锁屏透明</string>
     <string name="see_through_summary">显示锁屏下的内容,你的信息可能会对他人可见</string>
