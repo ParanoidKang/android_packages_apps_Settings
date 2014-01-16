@@ -134,6 +134,13 @@
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">警告</string>
     <string name="custom_runtime_warning_message">ART并不是由ParanoidAndroid提供的. 这只是一个测试为目的的功能，并且可能会导致不稳定，强制关闭，丢失数据以及无法启动你的设备。查看&lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;ART简介&lt;/a&gt;获得更多信息.&lt;br/&gt;&lt;br/&gt;我们希望您不要反馈bug信息如果你使用ART作为你的运行环境&lt;br/&gt;&lt;br/&gt;要重新启动以将运行环境从<xliff:g id="old" example="libdvm.so">%1$s</xliff:g>改为<xliff:g id="new" example="libart.so">%2$s</xliff:g>吗?</string>
+    
+    <!-- Traffic -->
+    <string name="show_network_speed_title">状态栏网速</string>
+    <string name="show_network_speed_summary">在状态栏显示当前网速</string>
+    <string name="status_bar_traffic_style_hidden">隐藏</string>
+    <string name="status_bar_traffic_style_rx">仅显示下载速度</string>
+    <string name="status_bar_traffic_style_rxtx">显示上传和下载速度</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>

@@ -61,6 +61,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
+    private static final String KEY_STATUS_BAR_TRAFFIC_STYLE = "status_bar_traffic_style";
     private static final String KEY_ADVANCED_DISPLAY_SETTINGS = "advanced_display_settings";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
@@ -74,6 +75,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mBatteryPulse;
 
     private ListPreference mScreenTimeoutPreference;
+    private ListPreference mStatusBarTraffic;
     private Preference mScreenSaverPreference;
 
     private CheckBoxPreference mAdaptiveBacklight;
@@ -123,6 +125,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
+        
+        mStatusBarTraffic = (ListPreference) findPreference(KEY_STATUS_BAR_TRAFFIC_STYLE);
+        int trafficStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_TRAFFIC_STYLE, 0);
+        mStatusBarTraffic.setValue(String.valueOf(trafficStyle));
+        mStatusBarTraffic.setSummary(mStatusBarTraffic.getEntry());
+        mStatusBarTraffic.setOnPreferenceChangeListener(this);
 
         boolean hasNotificationLed = res.getBoolean(
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
@@ -334,9 +342,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
-        }
-        if (KEY_FONT_SIZE.equals(key)) {
+        } else if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
+        } else if (KEY_STATUS_BAR_TRAFFIC_STYLE.equals(key)) {
+            int trafficStyle = Integer.valueOf((String) objValue);
+            int index = mStatusBarTraffic.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_TRAFFIC_STYLE, trafficStyle);
+            mStatusBarTraffic.setSummary(mStatusBarTraffic.getEntries()[index]);
         }
 
         return true;
