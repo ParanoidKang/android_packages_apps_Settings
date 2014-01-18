@@ -162,6 +162,10 @@
     <string name="status_bar_traffic_style_hidden">Hide</string>
     <string name="status_bar_traffic_style_rx">Display upload only</string>
     <string name="status_bar_traffic_style_rxtx">Display upload and download</string>
+    
+    <!-- Quick Install -->
+    <string name="quick_mode_title">Quick Install</string>
+    <string name="quick_mode_summary">Show smaller dialog to install/uninstall,install progress will be hiden to allow people install multiple app quickly</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid version</string>

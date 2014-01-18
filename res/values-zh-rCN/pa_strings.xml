@@ -141,6 +141,10 @@
     <string name="status_bar_traffic_style_hidden">隐藏</string>
     <string name="status_bar_traffic_style_rx">仅显示下载速度</string>
     <string name="status_bar_traffic_style_rxtx">显示上传和下载速度</string>
+    
+    <!-- Quick Install -->
+    <string name="quick_mode_title">快速安装</string>
+    <string name="quick_mode_summary">显示更小的安装/卸载窗口，安装过程将会被隐藏以便快速安装更多的应用程序</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
