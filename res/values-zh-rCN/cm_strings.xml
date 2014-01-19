@@ -152,6 +152,7 @@
     <string name="hardware_keys_action_voice_search">语音搜索</string>
     <string name="hardware_keys_action_in_app_search">程序内搜索</string>
     <string name="hardware_keys_action_sleep">锁屏</string>
+    <string name="hardware_keys_action_last_app">最近任务</string>
     <string name="home_wake_title">Home 键唤醒</string>
     <string name="home_wake_summary">按 Home 键唤醒设备</string>
     <string name="camera_wake_title">相机键唤醒</string>
