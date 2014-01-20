@@ -145,6 +145,9 @@
     <!-- Quick Install -->
     <string name="quick_mode_title">快速安装</string>
     <string name="quick_mode_summary">显示更小的安装/卸载窗口，安装过程将会被隐藏以便快速安装更多的应用程序</string>
+    
+    <!-- Lockscreen widgets -->
+    <string name="security_maximize_widgets_title">最大化锁屏插件</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>

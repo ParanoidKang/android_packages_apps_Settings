@@ -104,6 +104,12 @@
     <!--AppOps-->
     <string name="appops_settings_title">App privacy</string>
 
+    <!--User preferences settings-->
+    <string name="personalization">Personalization</string>
+    <string name="reset_user_preferences_title">Reset preferences</string>
+    <string name="reset_user_preferences_summary">Restores user interface preferences to default values</string>
+    <string name="reset_user_preferences_dialog">Are you sure you want to reset your preferences?</string>
+
     <!--Battery icon selection-->
     <string name="battery_status_icon_title">Status icon</string>
     <string name="battery_bar">Bar</string>
@@ -166,6 +172,9 @@
     <!-- Quick Install -->
     <string name="quick_mode_title">Quick Install</string>
     <string name="quick_mode_summary">Show smaller dialog to install/uninstall,install progress will be hiden to allow people install multiple app quickly</string>
+
+    <!-- Lockscreen widgets -->
+    <string name="security_maximize_widgets_title">Maximize widgets</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid version</string>
