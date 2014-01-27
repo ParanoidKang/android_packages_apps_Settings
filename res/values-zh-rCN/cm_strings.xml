@@ -172,6 +172,7 @@
     <string name="volbtn_cursor_control_on_reverse">音量 加/减 控制键盘光标 右/左</string>
     <string name="swap_volume_buttons_title">调整音量键功能</string>
     <string name="swap_volume_buttons_summary">当屏幕旋转时对调音量键的功能</string>
+    <string name="accessibility_home_button_answers_call_prerefence_title">按Home键接听电话</string>
     <string name="confirm_delete_apn">APN 将被删除。</string>
     <string name="advanced_settings_title">高级</string>
     
