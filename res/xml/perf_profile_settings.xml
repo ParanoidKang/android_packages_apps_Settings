@@ -16,17 +16,19 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/memory_management_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    android:title="@string/perf_profile_title">
+
+    <ListPreference
+        android:key="pref_perf_profile"
+        android:dialogTitle="@string/perf_profile_title"
+        android:title="@string/perf_profile_title"
+        android:entries="@array/perf_profile_entries"
+        android:entryValues="@array/perf_profile_values"
+        android:defaultValue="@string/config_perf_profile_default_entry" />
 
     <CheckBoxPreference
-        android:key="pref_purgeable_assets"
-        android:title="@string/pref_purgeable_assets_title"
-        android:summary="@string/pref_purgeable_assets_summary" />
-
-    <CheckBoxPreference
-        android:key="pref_ksm"
-        android:title="@string/pref_ksm_title"
-        android:summary="@string/pref_ksm_summary" />
+        android:key="pref_perf_profile_set_on_boot"
+        android:title="@string/cpu_set_on_boot"
+        android:summary="@string/cpu_set_on_boot_summary"/>
 
 </PreferenceScreen>
