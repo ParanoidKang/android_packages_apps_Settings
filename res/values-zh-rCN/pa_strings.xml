@@ -153,6 +153,70 @@
     
     <!-- Lockscreen widgets -->
     <string name="security_maximize_widgets_title">最大化锁屏插件</string>
+    
+    <!-- Basic Numbers -->
+    <string name="two">二</string>
+    <string name="three">三</string>
+    <string name="four">四</string>
+    <string name="five">五</string>
+    <string name="six">六</string>
+    
+    <!-- Quiet Hours -->
+    <string name="quiet_hours_title">安静时段</string>
+    <string name="quiet_hours_summary">配置设备应该安静的时段</string>
+    <string name="quiet_hours_note_title">注意</string>
+    <string name="quiet_hours_note_summary">开启安静时段时，来电将正常提示</string>
+    <string name="quiet_hours_enabled">开启安静时段</string>
+    <string name="quiet_hours_enabled_on">安静时段已开启</string>
+    <string name="quiet_hours_enabled_off">安静时段已关闭</string>
+    <string name="quiet_hours_start">起始时段</string>
+    <string name="quiet_hours_start_summary">何时进入安静时段</string>
+    <string name="quiet_hours_end">停止时段</string>
+    <string name="quiet_hours_end_summary">何时关闭安静时段</string>
+    <string name="quiet_hours_ringer_title">铃声静音</string>
+    <string name="quiet_hours_ringer_on">铃声关闭</string>
+    <string name="quiet_hours_ringer_off">铃声开启</string>
+    <string name="quiet_hours_mute">通知静音</string>
+    <string name="quiet_hours_mute_on">通知声关闭</string>
+    <string name="quiet_hours_mute_off">通知声开启</string>
+    <string name="quiet_hours_still">禁用震动</string>
+    <string name="quiet_hours_still_on">震动关闭</string>
+    <string name="quiet_hours_still_off">震动开启</string>
+    <string name="quiet_hours_dim">禁用通知LED</string>
+    <string name="quiet_hours_dim_on">通知LED关闭</string>
+    <string name="quiet_hours_dim_off">通知LED开启</string>
+    <string name="quiet_hours_haptic">禁用震动反馈</string>
+    <string name="quiet_hours_haptic_on">震动反馈关闭</string>
+    <string name="quiet_hours_haptic_off">震动反馈开启</string>
+    <string name="quiet_hours_active_from">从</string>
+    <string name="quiet_hours_active_to">激动到</string>
+    <string name="quiet_hours_auto_sms_group">自动回复</string>
+    <string name="quiet_hours_auto_sms_title">短信</string>
+    <string name="quiet_hours_auto_sms_call_title">来电</string>
+    <string name="quiet_hours_auto_string_title">自动回复</string>
+    <string name="quiet_hours_auto_string_explain">安静时段开启时，系统将会自动回复该信息</string>
+    <string name="quiet_hours_auto_sms_null">[自动回复] 你好，我将稍后与您联系。</string>
+    <string name="quiet_hours_auto_disabled">禁用</string>
+    <string name="quiet_hours_auto_enabled">所有号码</string>
+    <string name="quiet_hours_auto_contacts">仅联系人</string>
+    <string name="quiet_hours_bypass_group">白名单</string>
+    <string name="quiet_hours_sms_code_null">[闹钟]</string>
+    <string name="quiet_hours_sms_bypass_title">短信白名单</string>
+    <string name="quiet_hours_sms_code_title">关键字</string>
+    <string name="quiet_hours_sms_code_explain">如果短信中包含这些这些关键字，设备将会自动响起提示音</string>
+    <string name="quiet_hours_call_bypass_title">来电白名单</string>
+    <string name="quiet_hours_calls_required_title">最近半小时来电</string>
+    <string name="quiet_hours_calls_required_summary">" 次来电被安静时段排除"</string>
+    <string name="quiet_hours_bypass_ringtone_title">铃声</string>
+    <string name="quiet_hours_bypass_ringtone_loop_title">铃声循环</string>
+    <string name="quiet_hours_bypass_ringtone_loop_summary_on">循环播放</string>
+    <string name="quiet_hours_bypass_ringtone_loop_summary_off">仅一次</string>
+    <string name="quiet_hours_alarm_dismiss">忽略脑中</string>
+    <string name="quiet_hours_alarm_and">" 和 "</string>
+    <string name="quiet_hours_alarm_dialog_title">安静时段白名单</string>
+    <string name="quiet_hours_alarm_message">" 符合安静时段白名单!"</string>
+    <string name="start_time_title">起始</string>
+    <string name="end_time_title">结束</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
