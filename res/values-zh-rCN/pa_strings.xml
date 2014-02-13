@@ -97,6 +97,8 @@
     <string name="battery_circle">圆圈</string>
     <string name="battery_circle_percent">圆圈百分比</string>
     <string name="gesture_category_title">手势</string>
+    <string name="double_tap_to_sleep_title">双击锁屏</string>
+    <string name="double_tap_to_sleep_summary">双击状态栏锁屏</string>
 
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
@@ -217,7 +219,7 @@
     <string name="end_time_title">结束</string>
     <string name="font_size_sample">示例</string>
     
-    <string name="status_bar_double_tap_to_sleep_title"双击锁屏</string>
+    <string name="status_bar_double_tap_to_sleep_title">双击锁屏</string>
     <string name="status_bar_double_tap_to_sleep_summary">双击状态栏锁屏</string>
 
     <!--PA version-->
