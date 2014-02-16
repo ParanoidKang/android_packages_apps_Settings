@@ -20,6 +20,8 @@
     <string name="wifi_setting_countrycode_error">设置区域码时遇到了问题。</string>
     <string name="wifi_setting_priority_title">WLAN 连接优先</string>
     <string name="wifi_setting_priority_summary">设置各个 WLAN 网络的优先连接顺序</string>
+    <string name="wake_when_plugged_or_unplugged_title">拔插电源时唤醒</string>
+    <string name="wake_when_plugged_or_unplugged_summary">拔插电源时亮起屏幕</string>
     <string name="auto_brightness_setup_title">自动亮度</string>
     <string name="auto_brightness_adjustment_title">亮度调节</string>
     <string name="auto_brightness_twilight_adjustment">根据日光或灯光调节亮度</string>

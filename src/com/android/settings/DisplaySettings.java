@@ -80,7 +80,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private ListPreference mStatusBarTraffic;
     private Preference mScreenSaverPreference;
-    private PreferenceScreen mBatteryPulse;
 
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mTapToWake;
@@ -100,8 +99,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.display_settings);
         
-        Resources res = getResources();
-
         Resources res = getResources();
 
         mAccelerometer = (CheckBoxPreference) findPreference(KEY_ACCELEROMETER);
