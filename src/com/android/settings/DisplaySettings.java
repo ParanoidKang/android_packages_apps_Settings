@@ -76,7 +76,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private final Configuration mCurConfig = new Configuration();
 
-    private PreferenceScreen mBatteryPulse;
     private ListPreference mScreenTimeoutPreference;
     private ListPreference mStatusBarTraffic;
     private Preference mScreenSaverPreference;
@@ -100,8 +99,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.display_settings);
         
-        Resources res = getResources();
-
         Resources res = getResources();
 
         mAccelerometer = (CheckBoxPreference) findPreference(KEY_ACCELEROMETER);

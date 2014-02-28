@@ -221,6 +221,19 @@
     
     <string name="status_bar_double_tap_to_sleep_title">双击锁屏</string>
     <string name="status_bar_double_tap_to_sleep_summary">双击状态栏锁屏</string>
+    
+    <!-- Screen recorder -->
+    <string name="power_menu_screenrecord_title">启用屏幕录像</string>
+    <string name="screen_recorder_title">屏幕录像</string>
+    <string name="screen_recorder_summary">设置</string>
+    <string name="screen_recorder_video_dimensions_title">视频大小</string>
+    <string name="screen_recorder_video_bitrate_title">比特率</string>
+    <string name="screen_recorder_record_audio_title">录制声音</string>
+    <string name="screen_recorder_record_audio_summary">录制屏幕的同时也录制声音</string>
+
+    <!-- USB Mass Storage -->
+    <string name="storage_rescan_media">重新扫描存储器</string>
+    <string name="storage_rescan_media_complete">扫描完成</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
