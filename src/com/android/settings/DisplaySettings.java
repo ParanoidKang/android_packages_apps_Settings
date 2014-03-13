@@ -17,6 +17,7 @@
 package com.android.settings;
 
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
+import static android.provider.Settings.System.SCREEN_OFF_ANIMATION;
 
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
@@ -69,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
+    private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -85,6 +87,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private ListPreference mStatusBarTraffic;
     private Preference mScreenSaverPreference;
+    private ListPreference mScreenOffAnimationPreference;
 
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mTapToWake;
@@ -131,7 +134,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
 
-        mFontSizePref = (FontDialogPreference) findPreference(KEY_FONT_SIZE);
+        mScreenOffAnimationPreference = (ListPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
+        final int currentAnimation = Settings.System.getInt(resolver, SCREEN_OFF_ANIMATION,
+                1 /* CRT-off */);
+        mScreenOffAnimationPreference.setValue(String.valueOf(currentAnimation));
+        mScreenOffAnimationPreference.setOnPreferenceChangeListener(this);
+        updateScreenOffAnimationPreferenceDescription(currentAnimation);
+
+        mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
         
@@ -196,6 +206,24 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (!isPostProcessingSupported()) {
             getPreferenceScreen().removePreference(mScreenColorSettings);
         }
+    }
+
+    private void updateScreenOffAnimationPreferenceDescription(int currentAnim) {
+        ListPreference preference = mScreenOffAnimationPreference;
+        String summary;
+        if (currentAnim < 0) {
+            // Unsupported value
+            summary = "";
+        } else {
+            final CharSequence[] entries = preference.getEntries();
+            final CharSequence[] values = preference.getEntryValues();
+            if (entries == null || entries.length == 0) {
+                summary = "";
+            } else {
+                summary = entries[currentAnim].toString();
+            }
+        }
+        preference.setSummary(summary);
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -396,7 +424,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_TRAFFIC_STYLE, trafficStyle);
             mStatusBarTraffic.setSummary(mStatusBarTraffic.getEntries()[index]);
         }
-
+        if (KEY_SCREEN_OFF_ANIMATION.equals(key)) {
+            int value = Integer.parseInt((String) objValue);
+            try {
+                Settings.System.putInt(getContentResolver(), SCREEN_OFF_ANIMATION, value);
+                updateScreenOffAnimationPreferenceDescription(value);
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist screen-off animation setting", e);
+            }
+        }
+        
         return true;
     }
 
