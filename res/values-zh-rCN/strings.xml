@@ -2042,4 +2042,16 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"拍照"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"从图库中选择照片"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+    
+    <!-- Recent panel -->
+    <string name="recent_panel_category">最近任务</string>
+    <string name="recent_panel_scale_title">大小</string>
+    <string name="recent_panel_scale_summary">最近任务面板大小百分比</string>
+    <string name="recent_panel_100">100% (默认)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">在左侧显示</string>
+    <string name="recent_panel_lefty_mode_summary">在左侧边缘显示最近任务面板</string>
 </resources>
