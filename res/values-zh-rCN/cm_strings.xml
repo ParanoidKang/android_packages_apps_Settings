@@ -189,4 +189,8 @@
 
     <string name="adb_notify">USB 调试通知</string>
     <string name="adb_notify_summary">USB 调试模式连接时将显示一个通知</string>
+    
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">启用虚拟导航栏</string>
+    <string name="disable_navkeys_summary">启用虚拟导航栏并禁用物理按键</string>
 </resources>
