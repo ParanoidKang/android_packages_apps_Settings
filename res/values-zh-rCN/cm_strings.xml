@@ -186,9 +186,11 @@
     <string name="headset_category_title">头戴设备</string>
     <string name="headset_connect_player_title">启动音乐应用</string>
     <string name="headset_connect_player_summary">启动默认音乐应用当头戴设备连接时</string>
-
     <string name="adb_notify">USB 调试通知</string>
     <string name="adb_notify_summary">USB 调试模式连接时将显示一个通知</string>
+    <!-- EdgeGesture service -->
+    <string name="edge_gesture_service_title">拦截手势触摸事件</string>
+    <string name="edge_gesture_service_summary">不发送导航栏和状态栏的触摸事件到应用程序</string>
     
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">启用虚拟导航栏</string>
