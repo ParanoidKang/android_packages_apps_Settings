@@ -168,6 +168,8 @@
     <string name="camera_sleep_on_release_summary">仅当按钮被按下的时候，半按将会保持屏幕点亮</string>
     <string name="camera_music_controls_title">相机键音乐控制</string>
     <string name="camera_music_controls_summary">当屏幕变暗的时候，长按相机键将播放/暂停当前的音乐</string>
+    <string name="data_usage_cycle_editor_subtitle_cm">周期起始日期:</string>
+    <string name="data_usage_lengths_spinner_subtitle">周期长度:</string>
 
     <string name="volume_wake_title">音量键唤醒</string>
     <string name="volume_wake_summary">按音量键唤醒设备</string>
