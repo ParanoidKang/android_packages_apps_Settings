@@ -279,7 +279,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
-                getPreferenceScreen(), KEY_BLUETOOTH_INPUT_SETTINGS);
+                prefScreen, KEY_BLUETOOTH_INPUT_SETTINGS);
     }
 
     private ListPreference initActionList(String key, int value) {
@@ -341,10 +341,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    private static void writeDisableNavkeysOption(Context context, boolean enabled) {
+    private void writeDisableNavkeysOption(Context context, boolean enabled) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final int defaultBrightness = context.getResources().getInteger(
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
 
         Settings.System.putInt(context.getContentResolver(),
                 Settings.System.DEV_FORCE_SHOW_NAVBAR, enabled ? 1 : 0);
@@ -352,17 +354,26 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         /* Save/restore button timeouts to disable them in softkey mode */
         Editor editor = prefs.edit();
-
         if (enabled) {
             int currentBrightness = Settings.System.getInt(context.getContentResolver(),
                     Settings.System.BUTTON_BRIGHTNESS, defaultBrightness);
             editor.putInt("pre_navbar_button_backlight", currentBrightness);
             Settings.System.putInt(context.getContentResolver(),
                     Settings.System.BUTTON_BRIGHTNESS, 0);
+            backlight.setSummary(R.string.backlight_summary_disabled);
         } else {
+            int timeout = backlight.getTimeout();
+            int brightness = prefs.getInt("pre_navbar_button_backlight", defaultBrightness);
             Settings.System.putInt(context.getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS,
-            prefs.getInt("pre_navbar_button_backlight", defaultBrightness));
+                    Settings.System.BUTTON_BRIGHTNESS, brightness);
+            if (brightness == 0) {
+                backlight.setSummary(R.string.backlight_summary_disabled);
+            } else if (timeout == 0) {
+                backlight.setSummary(R.string.backlight_summary_enabled);
+            } else {
+                backlight.setSummary(context.getString(R.string.backlight_summary_enabled_with_timeout,
+                        backlight.getTimeoutString(timeout)));
+            }
         }
         editor.commit();
     }
@@ -413,8 +424,31 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             return;
         }
 
-        writeDisableNavkeysOption(context, Settings.System.getInt(context.getContentResolver(),
-                Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) != 0);
+        boolean enabled = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) != 0;
+
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final int defaultBrightness = context.getResources().getInteger(
+                com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
+
+        Settings.System.putInt(context.getContentResolver(),
+                Settings.System.DEV_FORCE_SHOW_NAVBAR, enabled ? 1 : 0);
+        KeyDisabler.setActive(enabled);
+
+        /* Save/restore button timeouts to disable them in softkey mode */
+        Editor editor = prefs.edit();
+        if (enabled) {
+            int currentBrightness = Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, defaultBrightness);
+            editor.putInt("pre_navbar_button_backlight", currentBrightness);
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, 0);
+        } else {
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS,
+                    prefs.getInt("pre_navbar_button_backlight", defaultBrightness));
+        }
+        editor.commit();
     }
 
 

@@ -245,12 +245,12 @@ public class ButtonBacklightBrightness extends DialogPreference implements
         }
     }
 
-    private String getTimeoutString(int timeout) {
+    public String getTimeoutString(int timeout) {
         return getContext().getResources().getQuantityString(
                 R.plurals.backlight_timeout_time, timeout, timeout);
     }
 
-    private int getTimeout() {
+    public int getTimeout() {
         return Settings.System.getInt(mResolver,
                 Settings.System.BUTTON_BACKLIGHT_TIMEOUT, DEFAULT_BUTTON_TIMEOUT * 1000) / 1000;
     }
