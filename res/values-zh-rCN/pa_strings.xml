@@ -234,6 +234,12 @@
     <!-- USB Mass Storage -->
     <string name="storage_rescan_media">重新扫描存储器</string>
     <string name="storage_rescan_media_complete">扫描完成</string>
+    
+     <!-- Screen off animation -->
+    <string name="screen_off_animation">关屏动画</string>
+    <string name="screen_off_fadeout">关</string>
+    <string name="screen_off_electronbeam">电子束</string>
+    <string name="screen_off_scaledown">缩小</string>
 
     <!-- Lockscreen Notifications -->
     <!-- Categories -->
