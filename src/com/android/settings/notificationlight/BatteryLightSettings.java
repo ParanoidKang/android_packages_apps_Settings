@@ -74,7 +74,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         mEnabledPref = (CheckBoxPreference)
                 findPreference(BATTERY_LIGHT_ENABLED);
         mEnabledPref.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.BATTERY_LIGHT_ENABLED, 0) == 1);
+                Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1);
         mEnabledPref.setOnPreferenceChangeListener(this);
     }
 
