@@ -93,6 +93,12 @@
             android:entries="@array/entries_status_bar_traffic_style"
             android:entryValues="@array/values_status_bar_traffic_style"
             android:defaultValue="0" />
+
+        <ListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values" />
  
         <CheckBoxPreference
             android:key="wake_when_plugged_or_unplugged"
@@ -111,11 +117,5 @@
             android:title="@string/double_tap_to_wake_title"
             android:summary="@string/double_tap_to_wake_summary"
             android:defaultValue="false" />
-
-        <ListPreference
-                android:key="screen_off_animation"
-                android:title="@string/screen_off_animation"
-                android:entries="@array/screen_off_animation_entries"
-                android:entryValues="@array/screen_off_animation_values" />
 
 </PreferenceScreen>
