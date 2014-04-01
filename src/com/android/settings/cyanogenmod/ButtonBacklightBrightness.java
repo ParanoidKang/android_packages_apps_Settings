@@ -21,10 +21,12 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.DialogPreference;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
@@ -391,7 +393,11 @@ public class ButtonBacklightBrightness extends DialogPreference implements
         }
 
         public void applyBrightness() {
-            Settings.System.putInt(mResolver, mSetting, getBrightness(false));
+            final SharedPreferences prefs = PreferenceManager
+                    .getDefaultSharedPreferences(getContext());
+            final int brightness = getBrightness(false);
+            prefs.edit().putInt("pre_navbar_button_backlight", brightness).commit();
+            Settings.System.putInt(mResolver, mSetting, brightness);
         }
 
         /* Behaviors when it's a seekbar */
