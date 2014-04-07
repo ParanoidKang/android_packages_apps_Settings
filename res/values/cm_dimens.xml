@@ -25,5 +25,4 @@
     <dimen name="auto_brightness_preview_marker_size">3dip</dimen>
     <dimen name="auto_brightness_preview_grid_margin">3dip</dimen>
     <dimen name="auto_brightness_dialog_more_button_size">48dp</dimen>
-    
 </resources>
