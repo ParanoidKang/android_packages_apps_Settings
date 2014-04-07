@@ -88,7 +88,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarTraffic;
     private Preference mScreenSaverPreference;
     private ListPreference mScreenOffAnimationPreference;
-    private PreferenceScreen mBatteryPulse;
 
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mTapToWake;
