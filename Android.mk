@@ -28,6 +28,3 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res $(LOCAL_PATH)/../../../external/koush/Wi
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
 
 include $(BUILD_PACKAGE)
-
-# Use the folloing include to make our test apk.
-include $(call all-makefiles-under,$(LOCAL_PATH))
