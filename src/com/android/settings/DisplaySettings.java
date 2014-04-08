@@ -278,6 +278,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         screenTimeoutPreference.setEnabled(revisedEntries.size() > 0);
     }
 
+    private void updateLightPulseSummary() {
+        if (mNotificationPulse != null) {
+            if (Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
+                mNotificationPulse.setSummary(R.string.notification_light_enabled);
+            } else {
+                mNotificationPulse.setSummary(R.string.notification_light_disabled);
+            }
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -332,6 +343,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         updateAccelerometerRotationCheckbox();
         readFontSizePreference(mFontSizePref);
         updateScreenSaverSummary();
+        updateLightPulseSummary();
     }
 
     private void updateScreenSaverSummary() {
