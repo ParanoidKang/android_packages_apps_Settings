@@ -241,6 +241,8 @@
     <string name="screen_off_electronbeam">电子束</string>
     <string name="screen_off_scaledown">缩小</string>
 
+    <string name="device_hostname">设备名称</string>
+
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
     <string name="pa_version_default">未知</string>
