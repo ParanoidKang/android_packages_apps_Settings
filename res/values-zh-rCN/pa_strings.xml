@@ -155,7 +155,7 @@
     <string name="security_maximize_widgets_title">最大化锁屏插件</string>
     
     <!-- Basic Numbers -->
-    <string name="two">二</string>
+    <string name="two">两</string>
     <string name="three">三</string>
     <string name="four">四</string>
     <string name="five">五</string>
@@ -173,23 +173,23 @@
     <string name="quiet_hours_start_summary">何时进入安静时段</string>
     <string name="quiet_hours_end">停止时段</string>
     <string name="quiet_hours_end_summary">何时关闭安静时段</string>
-    <string name="quiet_hours_ringer_title">铃声静音</string>
-    <string name="quiet_hours_ringer_on">铃声关闭</string>
-    <string name="quiet_hours_ringer_off">铃声开启</string>
-    <string name="quiet_hours_mute">通知静音</string>
-    <string name="quiet_hours_mute_on">通知声关闭</string>
-    <string name="quiet_hours_mute_off">通知声开启</string>
+    <string name="quiet_hours_ringer_title">禁用铃声</string>
+    <string name="quiet_hours_ringer_on">铃声已禁用</string>
+    <string name="quiet_hours_ringer_off">铃声已启用</string>
+    <string name="quiet_hours_mute">禁用通知声</string>
+    <string name="quiet_hours_mute_on">通知声已禁用</string>
+    <string name="quiet_hours_mute_off">通知声已启用</string>
     <string name="quiet_hours_still">禁用震动</string>
-    <string name="quiet_hours_still_on">震动关闭</string>
-    <string name="quiet_hours_still_off">震动开启</string>
-    <string name="quiet_hours_dim">禁用通知LED</string>
-    <string name="quiet_hours_dim_on">通知LED关闭</string>
-    <string name="quiet_hours_dim_off">通知LED开启</string>
+    <string name="quiet_hours_still_on">震动已禁用</string>
+    <string name="quiet_hours_still_off">震动已启用</string>
+    <string name="quiet_hours_dim">禁用通知呼吸灯</string>
+    <string name="quiet_hours_dim_on">通知呼吸灯已禁用</string>
+    <string name="quiet_hours_dim_off">通知呼吸灯已启用</string>
     <string name="quiet_hours_haptic">禁用震动反馈</string>
-    <string name="quiet_hours_haptic_on">震动反馈关闭</string>
-    <string name="quiet_hours_haptic_off">震动反馈开启</string>
+    <string name="quiet_hours_haptic_on">震动反馈已禁用</string>
+    <string name="quiet_hours_haptic_off">震动反馈已启用</string>
     <string name="quiet_hours_active_from">从</string>
-    <string name="quiet_hours_active_to">激动到</string>
+    <string name="quiet_hours_active_to">激活到</string>
     <string name="quiet_hours_auto_sms_group">自动回复</string>
     <string name="quiet_hours_auto_sms_title">短信</string>
     <string name="quiet_hours_auto_sms_call_title">来电</string>
@@ -199,22 +199,22 @@
     <string name="quiet_hours_auto_disabled">禁用</string>
     <string name="quiet_hours_auto_enabled">所有号码</string>
     <string name="quiet_hours_auto_contacts">仅联系人</string>
-    <string name="quiet_hours_bypass_group">白名单</string>
+    <string name="quiet_hours_bypass_group">例外</string>
     <string name="quiet_hours_sms_code_null">[闹钟]</string>
-    <string name="quiet_hours_sms_bypass_title">短信白名单</string>
+    <string name="quiet_hours_sms_bypass_title">例外短信</string>
     <string name="quiet_hours_sms_code_title">关键字</string>
-    <string name="quiet_hours_sms_code_explain">如果短信中包含这些这些关键字，设备将会自动响起提示音</string>
-    <string name="quiet_hours_call_bypass_title">来电白名单</string>
-    <string name="quiet_hours_calls_required_title">最近半小时来电</string>
-    <string name="quiet_hours_calls_required_summary">" 次来电被安静时段排除"</string>
+    <string name="quiet_hours_sms_code_explain">如果短信中包含这些这些关键字，设备将会自动响起铃声</string>
+    <string name="quiet_hours_call_bypass_title">例外来电</string>
+    <string name="quiet_hours_calls_required_title">半小时内来电</string>
+    <string name="quiet_hours_calls_required_summary">"次来电后响铃"</string>
     <string name="quiet_hours_bypass_ringtone_title">铃声</string>
     <string name="quiet_hours_bypass_ringtone_loop_title">铃声循环</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_on">循环播放</string>
     <string name="quiet_hours_bypass_ringtone_loop_summary_off">仅一次</string>
-    <string name="quiet_hours_alarm_dismiss">忽略脑中</string>
+    <string name="quiet_hours_alarm_dismiss">忽略闹钟</string>
     <string name="quiet_hours_alarm_and">" 和 "</string>
-    <string name="quiet_hours_alarm_dialog_title">安静时段白名单</string>
-    <string name="quiet_hours_alarm_message">" 符合安静时段白名单!"</string>
+    <string name="quiet_hours_alarm_dialog_title">例外安静时段</string>
+    <string name="quiet_hours_alarm_message">" 属于安静时段的例外"</string>
     <string name="start_time_title">起始</string>
     <string name="end_time_title">结束</string>
     <string name="font_size_sample">示例</string>
@@ -242,6 +242,46 @@
     <string name="screen_off_scaledown">缩小</string>
 
     <string name="device_hostname">设备名称</string>
+
+    <!-- Lockscreen Notifications -->
+    <!-- Categories -->
+    <string name="general">基本</string>
+    <string name="layout">布局</string>
+    <string name="privacy">隐私</string>
+
+    <string name="lockscreen_notifications">锁屏通知</string>
+    <string name="lockscreen_notifications_summary">在锁屏显示当前通知</string>
+    <string name="pocket_mode">口袋模式</string>
+    <string name="pocket_mode_summary">从口袋中拿出设备时亮起屏幕并显示所有通知，将设备放回口袋时屏幕会自动关闭</string>
+    <string name="show_always">始终显示</string>
+    <string name="show_always_summary">无论有没有通知，从口袋中拿出设备都将亮起屏幕</string>
+    <string name="hide_low_priority">隐藏低优先级</string>
+    <string name="hide_low_priority_summary">隐藏低优先级的通知，例如Google Now的天气通知</string>
+    <string name="hide_non_clearable">隐藏不可清除的通知</string>
+    <string name="hide_non_clearable_summary">隐藏所有不可清除的通知</string>
+    <string name="dismiss_all">允许隐藏所有通知</string>
+    <string name="dismiss_all_summary">允许隐藏所有通知。该操作只将其从锁屏隐藏，而不会清除在通知栏的通知</string>
+    <string name="expanded_view">展开模式</string>
+    <string name="expanded_view_summary">长按切换正常模式与展开模式,展开模式会显示您的隐私信息</string>
+    <string name="force_expanded_view">默认显示展开模式</string>
+    <string name="force_expanded_view_summary">默认以展开模式显示通知</string>
+    <string name="wake_on_notification">新通知唤醒</string>
+    <string name="wake_on_notification_summary">当有新通知的时候唤醒设备</string>
+    <string name="notifications_height">通知数量</string>
+    <string name="notifications_height_summary">一次性显示通知的数量</string>
+    <string name="offset_top">距离屏幕顶部高度:</string>
+    <string name="privacy_mode">隐私模式</string>
+    <string name="privacy_mode_summary">只显示通知图标</string>
+    <string name="excluded_apps_title">例外应用</string>
+    <string name="excluded_apps_summary">例外应用将不会显示在锁屏通知里</string>
+    <string name="notification_color">通知背景色</string>
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">取色器</string>
+    <string name="press_color_to_apply">选择下面的颜色以应用</string>
+    <string name="hex">颜色值:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">设置</string>
+    <string name="color_default">默认</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
