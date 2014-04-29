@@ -29,7 +29,10 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
@@ -71,11 +74,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String KEY_PEEK = "notification_peek";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private CheckBoxPreference mAccelerometer;
     private FontDialogPreference mFontSizePref;
+    private CheckBoxPreference mNotificationPeek;
     private CheckBoxPreference mWakeWhenPluggedOrUnplugged;
 
     private PreferenceScreen mNotificationPulse;
@@ -167,6 +172,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mBatteryPulse = null;
             }
         }
+
+        mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
+        mNotificationPeek.setPersistent(false);
 
         mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
         if (!isAdaptiveBacklightSupported()) {
@@ -356,6 +364,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         updateScreenSaverSummary();
         updateLightPulseSummary();
         updateBatteryPulseSummary();
+        updatePeekCheckbox();
     }
 
     private void updateScreenSaverSummary() {
@@ -387,6 +396,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         pref.setSummary(getString(R.string.summary_font_size, fontDesc));
     }
 
+    private void updatePeekCheckbox() {
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.PEEK_STATE, 0) == 1;
+        mNotificationPeek.setChecked(enabled);
+    }
+
     public void writeFontSizePreference(Object objValue) {
         try {
             mCurConfig.fontScale = Float.parseFloat(objValue.toString());
@@ -410,6 +425,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mTapToWake) {
             return TapToWake.setEnabled(mTapToWake.isChecked());
+        } else if (preference == mNotificationPeek) {
+            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
+                    mNotificationPeek.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

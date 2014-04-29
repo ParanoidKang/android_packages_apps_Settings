@@ -38,6 +38,9 @@
     <string name="dialog_delete_message">移除选中的项目？</string>
     <string name="dialog_test_message">请将屏幕关闭以便测试新的指示灯设置。关闭此对话框将停止测试。</string>
     <string name="dialog_test_button">关闭</string>
+    <string name="notification_category">通知</string>
+    <string name="notification_peek_title">智能通知</string>
+    <string name="notification_peek_summary">拿起设备时智能显示最新通知</string>
     <string name="display_lights_settings_title">显示 &amp; 指示灯</string>
     <string name="lights_category_title">指示灯</string>
     <string name="notification_light_general_title">常规</string>
