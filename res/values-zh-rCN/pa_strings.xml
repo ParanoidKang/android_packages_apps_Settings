@@ -103,42 +103,6 @@
     <string name="double_tap_to_sleep_title">双击锁屏</string>
     <string name="double_tap_to_sleep_summary">双击状态栏锁屏</string>
 
-    <!-- Halo -->
-    <string name="halo_settings_title">Halo</string>
-    <string name="halo_behavior_title">Halo 行为</string>
-    <string name="halo_hide_title">打开新窗口后隐藏Halo</string>
-    <string name="halo_hide_summary">打开新窗口后Halo将会隐藏</string>
-    <string name="halo_state_title">Halo 策略</string>
-    <string name="halo_state_summary">启用黑/白名单</string>
-    <string name="halo_state_black">黑名单</string>
-    <string name="halo_state_white">白名单</string>
-    <string name="halo_pause_title">暂停活动的程序</string>
-    <string name="halo_pause_summary">使用Halo打开一个程序时，当前应用将会被暂停</string>
-    <string name="halo_notification_msgbox_title">启用信息气泡</string>
-    <string name="halo_notification_msgbox_summary">为新通知显示信息提示框</string>
-    <string name="halo_unlock_ping_title">唤醒时提醒</string>
-    <string name="halo_unlock_ping_summary">Halo在设备解锁的状态下，如果收到新通知将会始终提醒</string>
-
-    <string name="halo_size_title">Halo 大小</string>
-    <string name="halo_size_summary">设置Halo大小</string>
-    <string name="halo_size_miniscule">最小</string>
-    <string name="halo_size_small">小</string>
-    <string name="halo_size_default">正常 (默认)</string>
-    <string name="halo_size_large">大</string>
-    <string name="halo_size_gigantic">巨大</string>
-    <string name="halo_size_monster">最大</string>
-
-    <string name="halo_notification_count_title">通知数量</string>
-    <string name="halo_notification_count_summary">显示通知数量</string>
-    <string name="halo_notification_count_none">不显示</string>
-    <string name="halo_notification_count_total">显示总数</string>
-    <string name="halo_notification_count_individual">显示单个应用</string>
-    <string name="halo_notification_count_both">全部显示</string>
-
-    <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
-    <string name="app_halo_label_black">添加到Halo黑名单</string>
-    <string name="app_halo_label_white">添加到Halo白名单</string>
-
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">警告</string>
     <string name="custom_runtime_warning_message">ART并不是由ParanoidAndroid提供的. 这只是一个测试为目的的功能，并且可能会导致不稳定，强制关闭，丢失数据以及无法启动你的设备。查看&lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;ART简介&lt;/a&gt;获得更多信息.&lt;br/&gt;&lt;br/&gt;我们希望您不要反馈bug信息如果你使用ART作为你的运行环境&lt;br/&gt;&lt;br/&gt;要重新启动以将运行环境从<xliff:g id="old" example="libdvm.so">%1$s</xliff:g>改为<xliff:g id="new" example="libart.so">%2$s</xliff:g>吗?</string>
@@ -163,67 +127,6 @@
     <string name="four">四</string>
     <string name="five">五</string>
     <string name="six">六</string>
-    
-    <!-- Quiet Hours -->
-    <string name="quiet_hours_title">安静时段</string>
-    <string name="quiet_hours_summary">配置设备应该安静的时段</string>
-    <string name="quiet_hours_note_title">注意</string>
-    <string name="quiet_hours_note_summary">开启安静时段时，来电将正常提示</string>
-    <string name="quiet_hours_enabled">开启安静时段</string>
-    <string name="quiet_hours_enabled_on">安静时段已开启</string>
-    <string name="quiet_hours_enabled_off">安静时段已关闭</string>
-    <string name="quiet_hours_start">起始时段</string>
-    <string name="quiet_hours_start_summary">何时进入安静时段</string>
-    <string name="quiet_hours_end">停止时段</string>
-    <string name="quiet_hours_end_summary">何时关闭安静时段</string>
-    <string name="quiet_hours_ringer_title">禁用铃声</string>
-    <string name="quiet_hours_ringer_on">铃声已禁用</string>
-    <string name="quiet_hours_ringer_off">铃声已启用</string>
-    <string name="quiet_hours_mute">禁用通知声</string>
-    <string name="quiet_hours_mute_on">通知声已禁用</string>
-    <string name="quiet_hours_mute_off">通知声已启用</string>
-    <string name="quiet_hours_still">禁用震动</string>
-    <string name="quiet_hours_still_on">震动已禁用</string>
-    <string name="quiet_hours_still_off">震动已启用</string>
-    <string name="quiet_hours_dim">禁用通知呼吸灯</string>
-    <string name="quiet_hours_dim_on">通知呼吸灯已禁用</string>
-    <string name="quiet_hours_dim_off">通知呼吸灯已启用</string>
-    <string name="quiet_hours_haptic">禁用震动反馈</string>
-    <string name="quiet_hours_haptic_on">震动反馈已禁用</string>
-    <string name="quiet_hours_haptic_off">震动反馈已启用</string>
-    <string name="quiet_hours_active_from">从</string>
-    <string name="quiet_hours_active_to">激活到</string>
-    <string name="quiet_hours_auto_sms_group">自动回复</string>
-    <string name="quiet_hours_auto_sms_title">短信</string>
-    <string name="quiet_hours_auto_sms_call_title">来电</string>
-    <string name="quiet_hours_auto_string_title">自动回复</string>
-    <string name="quiet_hours_auto_string_explain">安静时段开启时，系统将会自动回复该信息</string>
-    <string name="quiet_hours_auto_sms_null">[自动回复] 你好，我将稍后与您联系。</string>
-    <string name="quiet_hours_auto_disabled">禁用</string>
-    <string name="quiet_hours_auto_enabled">所有号码</string>
-    <string name="quiet_hours_auto_contacts">仅联系人</string>
-    <string name="quiet_hours_bypass_group">例外</string>
-    <string name="quiet_hours_sms_code_null">[闹钟]</string>
-    <string name="quiet_hours_sms_bypass_title">例外短信</string>
-    <string name="quiet_hours_sms_code_title">关键字</string>
-    <string name="quiet_hours_sms_code_explain">如果短信中包含这些这些关键字，设备将会自动响起铃声</string>
-    <string name="quiet_hours_call_bypass_title">例外来电</string>
-    <string name="quiet_hours_calls_required_title">半小时内来电</string>
-    <string name="quiet_hours_calls_required_summary">"次来电后响铃"</string>
-    <string name="quiet_hours_bypass_ringtone_title">铃声</string>
-    <string name="quiet_hours_bypass_ringtone_loop_title">铃声循环</string>
-    <string name="quiet_hours_bypass_ringtone_loop_summary_on">循环播放</string>
-    <string name="quiet_hours_bypass_ringtone_loop_summary_off">仅一次</string>
-    <string name="quiet_hours_alarm_dismiss">忽略闹钟</string>
-    <string name="quiet_hours_alarm_and">" 和 "</string>
-    <string name="quiet_hours_alarm_dialog_title">例外安静时段</string>
-    <string name="quiet_hours_alarm_message">" 属于安静时段的例外"</string>
-    <string name="start_time_title">起始</string>
-    <string name="end_time_title">结束</string>
-    <string name="font_size_sample">示例</string>
-    
-    <string name="status_bar_double_tap_to_sleep_title">双击锁屏</string>
-    <string name="status_bar_double_tap_to_sleep_summary">双击状态栏锁屏</string>
     
     <!-- Screen recorder -->
     <string name="power_menu_screenrecord_title">启用屏幕录像</string>
