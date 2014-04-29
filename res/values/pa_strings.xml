@@ -127,8 +127,8 @@
 
     <!--Double tap to sleep-->
     <string name="gesture_category_title">Gestures</string>
-    <string name="double_tap_to_sleep_title">Double tap to sleep</string>
-    <string name="double_tap_to_sleep_summary">Double tap statusbar to lock device</string>
+    <string name="status_bar_double_tap_to_sleep_title">Double tap to sleep</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Double tap statusbar to lock device</string>
 
     <!-- Screen off animation -->
     <string name="screen_off_animation">Screen-off animation</string>

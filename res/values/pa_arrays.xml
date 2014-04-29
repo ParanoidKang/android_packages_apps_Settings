@@ -98,18 +98,6 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-    
-    <!-- QuietHours Incoming Contact -->
-    <string-array name="incoming_contact_entries" translatable="false">
-        <item>@string/quiet_hours_auto_disabled</item>
-        <item>@string/quiet_hours_auto_enabled</item>
-        <item>@string/quiet_hours_auto_contacts</item>
-    </string-array>
-    <string-array name="incoming_contact_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
 
     <!-- Screen-off animations -->
     <string-array name="screen_off_animation_entries" translatable="false">
