@@ -188,6 +188,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">设置</string>
     <string name="color_default">默认</string>
+    <!-- Whether to display the IME switcher notifcation -->
+    <string name="ime_switcher_notify">输入法选择通知</string>
+    <string name="ime_switcher_notify_summary">是否在通知栏显示输入法选择通知</string>
 
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
