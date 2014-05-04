@@ -6,10 +6,6 @@
     <PreferenceCategory
         android:key="category_general"
         android:title="@string/general" >
-        <CheckBoxPreference
-            android:key="lockscreen_notifications"
-            android:title="@string/lockscreen_notifications"
-            android:summary="@string/lockscreen_notifications_summary" />
 
         <CheckBoxPreference
             android:key="pocket_mode"
@@ -45,7 +41,6 @@
             android:key="excluded_apps"
             android:persistent="false"
             android:title="@string/excluded_apps_title"
-            android:dependency="lockscreen_notifications"
             android:summary="@string/excluded_apps_summary" />
 
     </PreferenceCategory>

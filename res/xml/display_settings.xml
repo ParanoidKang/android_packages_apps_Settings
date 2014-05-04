@@ -117,6 +117,18 @@
             android:key="notification_peek"
             android:title="@string/notification_peek_title"
             android:summary="@string/notification_peek_summary" />
+        
+        <CheckBoxPreference 
+            android:key="lockscreen_notifications"
+            android:title="@string/lockscreen_notifications_enabled"
+            android:summary="@string/lockscreen_notifications_summary"
+            android:dependency="notification_peek" />
+
+        <PreferenceScreen
+            android:key="lockscreen_notifications_prefs"
+            android:title="@string/lockscreen_notifications_customize"
+            android:dependency="lockscreen_notifications"
+            android:fragment="com.android.settings.AOSPAL.LockscreenNotifications" />
 
         <PreferenceScreen
                 android:fragment="com.android.settings.notificationlight.NotificationLightSettings"

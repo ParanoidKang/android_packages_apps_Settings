@@ -99,9 +99,6 @@
     <string name="battery_bar_percent">条形百分比</string>
     <string name="battery_circle">圆圈</string>
     <string name="battery_circle_percent">圆圈百分比</string>
-    <string name="gesture_category_title">手势</string>
-    <string name="double_tap_to_sleep_title">双击锁屏</string>
-    <string name="double_tap_to_sleep_summary">双击状态栏锁屏</string>
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">警告</string>
@@ -161,6 +158,8 @@
     <string name="privacy">隐私</string>
 
     <string name="lockscreen_notifications">锁屏通知</string>
+    <string name="lockscreen_notifications_enabled">启用锁屏通知</string>
+    <string name="lockscreen_notifications_customize">自定义锁屏通知</string>
     <string name="lockscreen_notifications_summary">在锁屏显示当前通知</string>
     <string name="pocket_mode">口袋模式</string>
     <string name="pocket_mode_summary">从口袋中拿出设备时亮起屏幕并显示所有通知，将设备放回口袋时屏幕会自动关闭</string>

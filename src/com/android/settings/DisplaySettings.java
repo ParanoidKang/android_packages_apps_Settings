@@ -75,6 +75,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_PEEK = "notification_peek";
+    private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -82,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private FontDialogPreference mFontSizePref;
     private CheckBoxPreference mNotificationPeek;
     private CheckBoxPreference mWakeWhenPluggedOrUnplugged;
+    private CheckBoxPreference mLockscreenNotifications;
 
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
@@ -175,6 +177,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
         mNotificationPeek.setPersistent(false);
+        
+        mLockscreenNotifications = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
+        mLockscreenNotifications.setPersistent(false);
 
         mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
         if (!isAdaptiveBacklightSupported()) {
@@ -365,6 +370,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         updateLightPulseSummary();
         updateBatteryPulseSummary();
         updatePeekCheckbox();
+        updateLockscreenNotifications();
     }
 
     private void updateScreenSaverSummary() {
@@ -402,6 +408,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mNotificationPeek.setChecked(enabled);
     }
 
+    private void updateLockscreenNotifications() {
+        mLockscreenNotifications.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_NOTIFICATIONS, 0) == 1);
+    }
+
     public void writeFontSizePreference(Object objValue) {
         try {
             mCurConfig.fontScale = Float.parseFloat(objValue.toString());
@@ -426,10 +437,25 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mTapToWake) {
             return TapToWake.setEnabled(mTapToWake.isChecked());
         } else if (preference == mNotificationPeek) {
-            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
-                    mNotificationPeek.isChecked() ? 1 : 0);
+            if (mNotificationPeek.isChecked()) {
+                Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE, 1);
+                Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
+            } else if (mNotificationPeek.isChecked() && !isPeek()){
+                Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE, 0);
+                Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS, 1);
+            } else if (!mNotificationPeek.isChecked()) {
+                Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE, 0);
+                Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
+            }
+        } else if (preference == mLockscreenNotifications) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS,
+                    !isPeek()  ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    private boolean isPeek() {
+        return !(mLockscreenNotifications.isChecked() && mLockscreenNotifications.isEnabled()); 
     }
 
     @Override

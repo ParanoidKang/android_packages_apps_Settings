@@ -25,7 +25,6 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockscreenNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
     private static final String KEY_POCKET_MODE = "pocket_mode";
     private static final String KEY_SHOW_ALWAYS = "show_always";
     private static final String KEY_HIDE_LOW_PRIORITY = "hide_low_priority";
@@ -41,7 +40,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private static final String KEY_EXCLUDED_APPS = "excluded_apps";
     private static final String KEY_NOTIFICATION_COLOR = "notification_color";
 
-    private CheckBoxPreference mLockscreenNotifications;
     private CheckBoxPreference mPocketMode;
     private CheckBoxPreference mShowAlways;
     private CheckBoxPreference mWakeOnNotification;
@@ -64,14 +62,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         PreferenceScreen prefs = getPreferenceScreen();
         final ContentResolver cr = getActivity().getContentResolver();
 
-        mLockscreenNotifications = (CheckBoxPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
-        mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS, 0) == 1);
-
         mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
         mPocketMode.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 0) == 1);
-        mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
 
         mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
         mShowAlways.setChecked(Settings.System.getInt(cr,
@@ -81,37 +74,33 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
         mWakeOnNotification.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION, 1) == 1);
-        mWakeOnNotification.setEnabled(mLockscreenNotifications.isChecked());
 
         mHideLowPriority = (CheckBoxPreference) prefs.findPreference(KEY_HIDE_LOW_PRIORITY);
         mHideLowPriority.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_HIDE_LOW_PRIORITY, 0) == 1);
-        mHideLowPriority.setEnabled(mLockscreenNotifications.isChecked());
 
         mHideNonClearable = (CheckBoxPreference) prefs.findPreference(KEY_HIDE_NON_CLEARABLE);
         mHideNonClearable.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_HIDE_NON_CLEARABLE, 0) == 1);
-        mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
 
         mDismissAll = (CheckBoxPreference) prefs.findPreference(KEY_DISMISS_ALL);
         mDismissAll.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_DISMISS_ALL, 1) == 1);
-        mDismissAll.setEnabled(!mHideNonClearable.isChecked() && mLockscreenNotifications.isChecked());
+        mDismissAll.setEnabled(!mHideNonClearable.isChecked());
 
         mPrivacyMode = (CheckBoxPreference) prefs.findPreference(KEY_PRIVACY_MODE);
         mPrivacyMode.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE, 0) == 1);
-        mPrivacyMode.setEnabled(mLockscreenNotifications.isChecked());
 
         mExpandedView = (CheckBoxPreference) prefs.findPreference(KEY_EXPANDED_VIEW);
         mExpandedView.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_EXPANDED_VIEW, 1) == 1);
-        mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
+        mExpandedView.setEnabled(!mPrivacyMode.isChecked());
 
         mForceExpandedView = (CheckBoxPreference) prefs.findPreference(KEY_FORCE_EXPANDED_VIEW);
         mForceExpandedView.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_FORCE_EXPANDED_VIEW, 0) == 1);
-        mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
+        mForceExpandedView.setEnabled(mExpandedView.isChecked()
                     && !mPrivacyMode.isChecked());
 
         mOffsetTop = (SeekBarPreference) prefs.findPreference(KEY_OFFSET_TOP);
@@ -119,7 +108,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
                 Settings.System.LOCKSCREEN_NOTIFICATIONS_OFFSET_TOP, 0.3f) * 100));
         mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + mOffsetTop.getProgress() + "%");
         mOffsetTop.setOnPreferenceChangeListener(this);
-        mOffsetTop.setEnabled(mLockscreenNotifications.isChecked());
 
         mNotificationsHeight = (NumberPickerPreference) prefs.findPreference(KEY_NOTIFICATIONS_HEIGHT);
         mNotificationsHeight.setValue(Settings.System.getInt(cr,
@@ -131,7 +119,6 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mNotificationsHeight.setMinValue(1);
         mNotificationsHeight.setMaxValue(max);
         mNotificationsHeight.setOnPreferenceChangeListener(this);
-        mNotificationsHeight.setEnabled(mLockscreenNotifications.isChecked());
 
         mNotificationColor = (ColorPickerPreference) prefs.findPreference(KEY_NOTIFICATION_COLOR);
         mNotificationColor.setAlphaSliderEnabled(true);
@@ -159,21 +146,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         ContentResolver cr = getActivity().getContentResolver();
-        if (preference == mLockscreenNotifications) {
-            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS,
-                    mLockscreenNotifications.isChecked() ? 1 : 0);
-            mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
-            mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
-            mWakeOnNotification.setEnabled(mLockscreenNotifications.isChecked());
-            mHideLowPriority.setEnabled(mLockscreenNotifications.isChecked());
-            mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
-            mDismissAll.setEnabled(!mHideNonClearable.isChecked() && mLockscreenNotifications.isChecked());
-            mNotificationsHeight.setEnabled(mLockscreenNotifications.isChecked());
-            mOffsetTop.setEnabled(mLockscreenNotifications.isChecked());
-            mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
-                        && !mPrivacyMode.isChecked());
-            mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
-        } else if (preference == mPocketMode) {
+        if (preference == mPocketMode) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE,
                     mPocketMode.isChecked() ? 1 : 0);
             mShowAlways.setEnabled(mPocketMode.isChecked());
@@ -203,9 +176,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         } else if (preference == mPrivacyMode) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE,
                     mPrivacyMode.isChecked() ? 1 : 0);
-            mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
+            mForceExpandedView.setEnabled(mExpandedView.isChecked()
                         && !mPrivacyMode.isChecked());
-            mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
+            mExpandedView.setEnabled(!mPrivacyMode.isChecked());
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
