@@ -113,6 +113,11 @@
     <string name="status_bar_traffic_style_hidden">隐藏</string>
     <string name="status_bar_traffic_style_rx">仅显示下载速度</string>
     <string name="status_bar_traffic_style_rxtx">显示上传和下载速度</string>
+
+    <!--Double tap to sleep-->
+    <string name="gesture_category_title">手势</string>
+    <string name="status_bar_double_tap_to_sleep_title">双击锁屏</string>
+    <string name="status_bar_double_tap_to_sleep_summary">双击状态栏锁屏</string>
     
     <!-- Quick Install -->
     <string name="quick_mode_title">快速安装</string>
