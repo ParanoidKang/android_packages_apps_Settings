@@ -205,6 +205,14 @@
     <string name="root_access_adb">仅ADB</string>
     <string name="root_access_all">所有</string>
 
+    <!-- Low battery warning policy -->
+    <string name="low_battery_warning_policy_title">低电量警告</string>
+    <string name="low_battery_warning_policy_popup_sound">弹出警告窗口和声音</string>
+    <string name="low_battery_warning_policy_notif_sound">显示通知和声音</string>
+    <string name="low_battery_warning_policy_popup">仅弹出警告窗口</string>
+    <string name="low_battery_warning_policy_notif">仅显示通知</string>
+    <string name="low_battery_warning_policy_sound">仅提示声音</string>
+
     <!--PA version-->
     <string name="pa_version">ParanoidAndroid 版本</string>
     <string name="pa_version_default">未知</string>
