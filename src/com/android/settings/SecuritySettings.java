@@ -49,7 +49,6 @@ import android.view.DisplayInfo;
 import android.view.WindowManager;
 
 import com.android.internal.widget.LockPatternUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -114,8 +113,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mToggleVerifyApps;
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private CheckBoxPreference mEnableKeyguardWidgets;
-    private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mQuickInstall;
+    // private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mMaximizeKeyguardWidgets;
 
     private Preference mNotificationAccess;
@@ -216,11 +215,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
         }
 
         // lockscreen see through
-        mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_THROUGH);
+        /*mSeeThrough = (CheckBoxPreference) root.findPreference(KEY_SEE_THROUGH);
         if (mSeeThrough != null) {
             mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-        }
+        }*/
 
         // biometric weak liveliness
         mBiometricWeakLiveliness =
@@ -670,10 +669,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
             } else {
                 setNonMarketAppsAllowed(false);
             }
-        } else if (preference == mSeeThrough) {
+        }/* else if (preference == mSeeThrough) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
-        } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
+        } */else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
         } else if (preference == mQuickInstall) {
