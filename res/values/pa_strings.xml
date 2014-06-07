@@ -280,7 +280,6 @@
     <string name="pa_version">ParanoidAndroid version</string>
     <string name="pa_version_default">Unknown</string>
 
-<<<<<<< HEAD
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -291,7 +290,6 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
-=======
     <!-- Theme chooser -->
     <string name="themes_settings_title">Themes</string>
     <string name="themepacks_settings_title">Theme Packs</string>
@@ -302,5 +300,4 @@
     <string name="lockscreen_wallpaper_settings_title">Lockscreen Wallpapers</string>
     <string name="bootanim_settings_title">Boot Animations</string>
     <string name="soundpack_settings_title">Sound Packs</string>
->>>>>>> FETCH_HEAD
 </resources>
